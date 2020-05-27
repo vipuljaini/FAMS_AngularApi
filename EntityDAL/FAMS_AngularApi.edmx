@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FAMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="BINDACCOUNTS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ParentID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="BINDREPORTS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fromdate" Type="varchar" Mode="In" />
+          <Parameter Name="Todate" Type="varchar" Mode="In" />
+          <Parameter Name="customerid" Type="int" Mode="In" />
+          <Parameter Name="Firstlevel" Type="varchar" Mode="In" />
+          <Parameter Name="Secondlevel" Type="varchar" Mode="In" />
+          <Parameter Name="Thirdlevel" Type="varchar" Mode="In" />
+          <Parameter Name="Firstlevelid" Type="varchar" Mode="In" />
+          <Parameter Name="Secondlevelid" Type="varchar" Mode="In" />
+          <Parameter Name="Thirdlevelid" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="FAMS_Customer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QueryType" Type="varchar" Mode="In" />
+          <Parameter Name="Emailid" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="StateId" Type="bigint" Mode="In" />
+          <Parameter Name="Jsondata" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="FAMS_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QueryType" Type="varchar" Mode="In" />
+          <Parameter Name="Emailid" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="PasswordKey" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="FAMSCashTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StandardAccount" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="AccountName" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="BankBalance" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="LiquidFundMV" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Payable" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Receivable" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="PendingOrdersCash" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="AvailableCashandEq" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="MarketValue" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="CashEqasofMV" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ModelName" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ClientStatus" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="InceptionDate" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="SchemeName" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Constraints" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="FAMSHoldingTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StandardAccounts" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="SubCat" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Quantity" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="UnitCost" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Cost" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Price" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="MarketValue" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="GainLoss" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="GL" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="AssetsPer" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="FAMSNAVTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SandardAccounts" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Amount" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="FAMSTransTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Standardaccount" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="TranDate" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="SettlementDate" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Security" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Exchg" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Quantity" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="UnitPrice" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Brkg" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="STT" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="SettlementAmount" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="INSERTTBTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountId" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="AccountSubId" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="AccountSubcat" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="OpeningbalDR" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="OpeningbalCR" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="TransDuringperiodDR" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="TransDuringperiodCR" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ClosingbalDR" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ClosingbalCR" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="parseJSON" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="JSON" Type="nvarchar(max)" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="element_id" Type="int" Nullable="false" />
+                <Property Name="sequenceNo" Type="int" />
+                <Property Name="parent_ID" Type="int" />
+                <Property Name="Object_ID" Type="int" />
+                <Property Name="NAME" Type="nvarchar" MaxLength="2000" />
+                <Property Name="StringValue" Type="nvarchar(max)" Nullable="false" />
+                <Property Name="ValueType" Type="varchar" MaxLength="10" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="Sp_DemoReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QueryType" Type="varchar" Mode="In" />
+          <Parameter Name="CustomerAccount" Type="nvarchar" Mode="In" />
+          <Parameter Name="Fromdate" Type="varchar" Mode="In" />
+          <Parameter Name="Todate" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_TrialBalanceReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QueryType" Type="varchar" Mode="In" />
+          <Parameter Name="Accounts" Type="varchar" Mode="In" />
+          <Parameter Name="CustomerAccount" Type="varchar" Mode="In" />
+          <Parameter Name="AccountSubLayer" Type="varchar" Mode="In" />
+          <Parameter Name="AccountType" Type="varchar" Mode="In" />
+          <Parameter Name="FromDate" Type="varchar" Mode="In" />
+          <Parameter Name="ToDate" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_user" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QueryType" Type="varchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="AccountNo" Type="varchar" Mode="In" />
+          <Parameter Name="EmailId" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="PasswordKey" Type="varchar" Mode="In" />
+          <Parameter Name="UserType" Type="int" Mode="In" />
+          <Parameter Name="UserId" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_UserLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QueryType" Type="varchar" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo" Type="varchar" Mode="In" />
+          <Parameter Name="EmailId" Type="varchar" Mode="In" />
+          <Parameter Name="ChangePassword" Type="varchar" Mode="In" />
+          <Parameter Name="ChangePasswordKey" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+          <Parameter Name="TokenID" Type="nvarchar" Mode="In" />
+          <Parameter Name="IPAddress" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="MacAddress" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="IsLogin" Type="int" Mode="In" />
+          <Parameter Name="idleTime" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="FAMSModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FAMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="parseJSON_Result">
+          <Property Name="element_id" Type="Int32" Nullable="false" />
+          <Property Name="sequenceNo" Type="Int32" />
+          <Property Name="parent_ID" Type="Int32" />
+          <Property Name="Object_ID" Type="Int32" />
+          <Property Name="NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="StringValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ValueType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </ComplexType>
+        <EntityContainer Name="FAMSEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="parseJSON" IsComposable="true" ReturnType="Collection(FAMSModel.parseJSON_Result)">
+            <Parameter Name="JSON" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="BINDACCOUNTS" ReturnType="Collection(FAMSModel.BINDACCOUNTS_Result)">
+            <Parameter Name="ParentID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="BINDREPORTS" ReturnType="Collection(FAMSModel.BINDREPORTS_Result)">
+            <Parameter Name="fromdate" Mode="In" Type="String" />
+            <Parameter Name="Todate" Mode="In" Type="String" />
+            <Parameter Name="customerid" Mode="In" Type="Int32" />
+            <Parameter Name="Firstlevel" Mode="In" Type="String" />
+            <Parameter Name="Secondlevel" Mode="In" Type="String" />
+            <Parameter Name="Thirdlevel" Mode="In" Type="String" />
+            <Parameter Name="Firstlevelid" Mode="In" Type="String" />
+            <Parameter Name="Secondlevelid" Mode="In" Type="String" />
+            <Parameter Name="Thirdlevelid" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FAMS_Customer" ReturnType="Collection(FAMSModel.FAMS_Customer_Result)">
+            <Parameter Name="QueryType" Mode="In" Type="String" />
+            <Parameter Name="Emailid" Mode="In" Type="String" />
+            <Parameter Name="UserId" Mode="In" Type="Int64" />
+            <Parameter Name="StateId" Mode="In" Type="Int64" />
+            <Parameter Name="Jsondata" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FAMS_Login" ReturnType="Collection(String)">
+            <Parameter Name="QueryType" Mode="In" Type="String" />
+            <Parameter Name="Emailid" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="PasswordKey" Mode="In" Type="String" />
+            <Parameter Name="UserId" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="FAMSCashTransactions">
+            <Parameter Name="StandardAccount" Mode="In" Type="String" />
+            <Parameter Name="AccountName" Mode="In" Type="String" />
+            <Parameter Name="BankBalance" Mode="In" Type="String" />
+            <Parameter Name="LiquidFundMV" Mode="In" Type="String" />
+            <Parameter Name="Payable" Mode="In" Type="String" />
+            <Parameter Name="Receivable" Mode="In" Type="String" />
+            <Parameter Name="PendingOrdersCash" Mode="In" Type="String" />
+            <Parameter Name="AvailableCashandEq" Mode="In" Type="String" />
+            <Parameter Name="MarketValue" Mode="In" Type="String" />
+            <Parameter Name="CashEqasofMV" Mode="In" Type="String" />
+            <Parameter Name="ModelName" Mode="In" Type="String" />
+            <Parameter Name="ClientStatus" Mode="In" Type="String" />
+            <Parameter Name="InceptionDate" Mode="In" Type="String" />
+            <Parameter Name="SchemeName" Mode="In" Type="String" />
+            <Parameter Name="Constraints" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FAMSHoldingTrans">
+            <Parameter Name="StandardAccounts" Mode="In" Type="String" />
+            <Parameter Name="SubCat" Mode="In" Type="String" />
+            <Parameter Name="Quantity" Mode="In" Type="String" />
+            <Parameter Name="UnitCost" Mode="In" Type="String" />
+            <Parameter Name="Cost" Mode="In" Type="String" />
+            <Parameter Name="Price" Mode="In" Type="String" />
+            <Parameter Name="MarketValue" Mode="In" Type="String" />
+            <Parameter Name="GainLoss" Mode="In" Type="String" />
+            <Parameter Name="GL" Mode="In" Type="String" />
+            <Parameter Name="AssetsPer" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FAMSNAVTransactions">
+            <Parameter Name="SandardAccounts" Mode="In" Type="String" />
+            <Parameter Name="Amount" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FAMSTransTransactions">
+            <Parameter Name="Standardaccount" Mode="In" Type="String" />
+            <Parameter Name="TranDate" Mode="In" Type="String" />
+            <Parameter Name="SettlementDate" Mode="In" Type="String" />
+            <Parameter Name="Security" Mode="In" Type="String" />
+            <Parameter Name="Exchg" Mode="In" Type="String" />
+            <Parameter Name="Quantity" Mode="In" Type="String" />
+            <Parameter Name="UnitPrice" Mode="In" Type="String" />
+            <Parameter Name="Brkg" Mode="In" Type="String" />
+            <Parameter Name="STT" Mode="In" Type="String" />
+            <Parameter Name="SettlementAmount" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INSERTTBTransactions">
+            <Parameter Name="AccountId" Mode="In" Type="String" />
+            <Parameter Name="AccountSubId" Mode="In" Type="String" />
+            <Parameter Name="AccountSubcat" Mode="In" Type="String" />
+            <Parameter Name="OpeningbalDR" Mode="In" Type="String" />
+            <Parameter Name="OpeningbalCR" Mode="In" Type="String" />
+            <Parameter Name="TransDuringperiodDR" Mode="In" Type="String" />
+            <Parameter Name="TransDuringperiodCR" Mode="In" Type="String" />
+            <Parameter Name="ClosingbalDR" Mode="In" Type="String" />
+            <Parameter Name="ClosingbalCR" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_DemoReport" ReturnType="Collection(FAMSModel.Sp_DemoReport_Result)">
+            <Parameter Name="QueryType" Mode="In" Type="String" />
+            <Parameter Name="CustomerAccount" Mode="In" Type="String" />
+            <Parameter Name="Fromdate" Mode="In" Type="String" />
+            <Parameter Name="Todate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_TrialBalanceReport" ReturnType="Collection(FAMSModel.Sp_TrialBalanceReport_Result)">
+            <Parameter Name="QueryType" Mode="In" Type="String" />
+            <Parameter Name="Accounts" Mode="In" Type="String" />
+            <Parameter Name="CustomerAccount" Mode="In" Type="String" />
+            <Parameter Name="AccountSubLayer" Mode="In" Type="String" />
+            <Parameter Name="AccountType" Mode="In" Type="String" />
+            <Parameter Name="FromDate" Mode="In" Type="String" />
+            <Parameter Name="ToDate" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_user" ReturnType="Collection(Int32)">
+            <Parameter Name="QueryType" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="AccountNo" Mode="In" Type="String" />
+            <Parameter Name="EmailId" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="PasswordKey" Mode="In" Type="String" />
+            <Parameter Name="UserType" Mode="In" Type="Int32" />
+            <Parameter Name="UserId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UserLogin" ReturnType="Collection(FAMSModel.sp_UserLogin_Result)">
+            <Parameter Name="QueryType" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="PhoneNo" Mode="In" Type="String" />
+            <Parameter Name="EmailId" Mode="In" Type="String" />
+            <Parameter Name="ChangePassword" Mode="In" Type="String" />
+            <Parameter Name="ChangePasswordKey" Mode="In" Type="String" />
+            <Parameter Name="UserId" Mode="In" Type="Int64" />
+            <Parameter Name="TokenID" Mode="In" Type="String" />
+            <Parameter Name="IPAddress" Mode="In" Type="String" />
+            <Parameter Name="MacAddress" Mode="In" Type="String" />
+            <Parameter Name="IsLogin" Mode="In" Type="Int32" />
+            <Parameter Name="idleTime" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="BINDACCOUNTS_Result">
+          <Property Type="Int32" Name="ACID" Nullable="false" />
+          <Property Type="String" Name="Accountname" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="BINDREPORTS_Result">
+          <Property Type="Int32" Name="TBID" Nullable="false" />
+          <Property Type="String" Name="AccontName" Nullable="true" />
+          <Property Type="String" Name="AccontSubName" Nullable="true" />
+          <Property Type="String" Name="AccontSubCat" Nullable="true" />
+          <Property Type="String" Name="OpeningbalDR" Nullable="true" />
+          <Property Type="String" Name="OpeningbalCR" Nullable="true" />
+          <Property Type="String" Name="TransduringDR" Nullable="true" />
+          <Property Type="String" Name="TransduringCR" Nullable="true" />
+          <Property Type="String" Name="ClosingbalDR" Nullable="true" />
+          <Property Type="String" Name="ClosingbalCR" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="FAMS_Customer_Result">
+          <Property Type="Int32" Name="CustTypeId" Nullable="false" />
+          <Property Type="String" Name="CustType" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Sp_DemoReport_Result">
+          <Property Type="String" Name="TransDescription" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="TransDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SettlementDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Security" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Exchange" Nullable="true" MaxLength="200" />
+          <Property Type="Decimal" Name="Quantity" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="BrKg" Nullable="true" Precision="10" Scale="3" />
+          <Property Type="Decimal" Name="STT" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="SettlementAmount" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="Sp_TrialBalanceReport_Result">
+          <Property Type="Int32" Name="ParentID" Nullable="true" />
+          <Property Type="String" Name="TBHeader" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="OBDebit" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="OBCredit" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="TransDebit" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="TransCredit" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="CBDebit" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="CBCredit" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="sp_UserLogin_Result">
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PasswordKey" Nullable="true" MaxLength="100" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FAMSModelStoreContainer" CdmEntityContainer="FAMSEntities">
+          <FunctionImportMapping FunctionName="FAMSModel.Store.parseJSON" FunctionImportName="parseJSON">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FAMSModel.parseJSON_Result">
+                <ScalarProperty Name="element_id" ColumnName="element_id" />
+                <ScalarProperty Name="sequenceNo" ColumnName="sequenceNo" />
+                <ScalarProperty Name="parent_ID" ColumnName="parent_ID" />
+                <ScalarProperty Name="Object_ID" ColumnName="Object_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="StringValue" ColumnName="StringValue" />
+                <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="BINDACCOUNTS" FunctionName="FAMSModel.Store.BINDACCOUNTS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FAMSModel.BINDACCOUNTS_Result">
+                <ScalarProperty Name="ACID" ColumnName="ACID" />
+                <ScalarProperty Name="Accountname" ColumnName="Accountname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="BINDREPORTS" FunctionName="FAMSModel.Store.BINDREPORTS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FAMSModel.BINDREPORTS_Result">
+                <ScalarProperty Name="TBID" ColumnName="TBID" />
+                <ScalarProperty Name="AccontName" ColumnName="AccontName" />
+                <ScalarProperty Name="AccontSubName" ColumnName="AccontSubName" />
+                <ScalarProperty Name="AccontSubCat" ColumnName="AccontSubCat" />
+                <ScalarProperty Name="OpeningbalDR" ColumnName="OpeningbalDR" />
+                <ScalarProperty Name="OpeningbalCR" ColumnName="OpeningbalCR" />
+                <ScalarProperty Name="TransduringDR" ColumnName="TransduringDR" />
+                <ScalarProperty Name="TransduringCR" ColumnName="TransduringCR" />
+                <ScalarProperty Name="ClosingbalDR" ColumnName="ClosingbalDR" />
+                <ScalarProperty Name="ClosingbalCR" ColumnName="ClosingbalCR" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FAMS_Customer" FunctionName="FAMSModel.Store.FAMS_Customer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FAMSModel.FAMS_Customer_Result">
+                <ScalarProperty Name="CustTypeId" ColumnName="CustTypeId" />
+                <ScalarProperty Name="CustType" ColumnName="CustType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FAMS_Login" FunctionName="FAMSModel.Store.FAMS_Login" />
+          <FunctionImportMapping FunctionImportName="FAMSCashTransactions" FunctionName="FAMSModel.Store.FAMSCashTransactions" />
+          <FunctionImportMapping FunctionImportName="FAMSHoldingTrans" FunctionName="FAMSModel.Store.FAMSHoldingTrans" />
+          <FunctionImportMapping FunctionImportName="FAMSNAVTransactions" FunctionName="FAMSModel.Store.FAMSNAVTransactions" />
+          <FunctionImportMapping FunctionImportName="FAMSTransTransactions" FunctionName="FAMSModel.Store.FAMSTransTransactions" />
+          <FunctionImportMapping FunctionImportName="INSERTTBTransactions" FunctionName="FAMSModel.Store.INSERTTBTransactions" />
+          <FunctionImportMapping FunctionImportName="Sp_DemoReport" FunctionName="FAMSModel.Store.Sp_DemoReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FAMSModel.Sp_DemoReport_Result">
+                <ScalarProperty Name="TransDescription" ColumnName="TransDescription" />
+                <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+                <ScalarProperty Name="SettlementDate" ColumnName="SettlementDate" />
+                <ScalarProperty Name="Security" ColumnName="Security" />
+                <ScalarProperty Name="Exchange" ColumnName="Exchange" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="BrKg" ColumnName="BrKg" />
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="SettlementAmount" ColumnName="SettlementAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_TrialBalanceReport" FunctionName="FAMSModel.Store.Sp_TrialBalanceReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FAMSModel.Sp_TrialBalanceReport_Result">
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="TBHeader" ColumnName="TBHeader" />
+                <ScalarProperty Name="OBDebit" ColumnName="OBDebit" />
+                <ScalarProperty Name="OBCredit" ColumnName="OBCredit" />
+                <ScalarProperty Name="TransDebit" ColumnName="TransDebit" />
+                <ScalarProperty Name="TransCredit" ColumnName="TransCredit" />
+                <ScalarProperty Name="CBDebit" ColumnName="CBDebit" />
+                <ScalarProperty Name="CBCredit" ColumnName="CBCredit" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_user" FunctionName="FAMSModel.Store.Sp_user" />
+          <FunctionImportMapping FunctionImportName="sp_UserLogin" FunctionName="FAMSModel.Store.sp_UserLogin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FAMSModel.sp_UserLogin_Result">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordKey" ColumnName="PasswordKey" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
