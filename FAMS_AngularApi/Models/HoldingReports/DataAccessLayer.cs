@@ -8,7 +8,7 @@ using FAMS_AngularApi.Models.SummaryReports;
 
 namespace FAMS_AngularApi.Models.HoldingReports
 {
-    public class DataAccessLayer
+    public class DataAccessLayer 
     {
         public Dictionary<string, object> BindGrid(JasonFields Data)
         {
