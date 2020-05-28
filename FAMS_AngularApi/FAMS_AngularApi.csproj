@@ -46,6 +46,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BusinessLibrary">
+      <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Encryptions">
       <HintPath>..\..\..\..\Downloads\Encryptions.dll</HintPath>
     </Reference>
@@ -59,6 +62,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http">
+      <HintPath>bin\System.Net.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
@@ -80,8 +86,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http">
     </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -168,11 +172,27 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PMSEmployeesController.cs" />
+    <Compile Include="Controllers\SummaryReportsController.cs" />
+    <Compile Include="Controllers\TrailBalanceController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CommonFields.cs" />
+    <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
+    <Compile Include="Models\HoldingReports\GridAllFields.cs" />
+    <Compile Include="Models\PMSEmployees\BindAllFields.cs" />
+    <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
+    <Compile Include="Models\PMSEmployees\JsonAllFields.cs" />
+    <Compile Include="Models\SummaryReports\GridAllFields.cs" />
+    <Compile Include="Models\SummaryReports\JasonFields.cs" />
+    <Compile Include="Models\SummaryReports\SummaryReportsDataAccess.cs" />
+    <Compile Include="Models\TrailBalance\DataAccessLayer.cs" />
+    <Compile Include="Models\TrailBalance\GridAllFields.cs" />
+    <Compile Include="Models\TrailBalance\JsonFields.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -228,7 +248,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -258,6 +277,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityDAL\EntityDAL.csproj">
+      <Project>{CF4643A5-80C9-40B9-AE92-F71B78B5EFD0}</Project>
+      <Name>EntityDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
