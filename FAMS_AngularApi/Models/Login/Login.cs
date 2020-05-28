@@ -128,7 +128,6 @@ namespace FAMS_AngularApi.Models.Login
             EmailSent emailobect = new EmailSent();
             try
             {
-
                 List<Responsevalue> dataList = new List<Responsevalue>(); List<UserDetails> dataList1 = new List<UserDetails>();
                 var Result = dbcontext.MultipleResults("[dbo].[Sp_UserLogin]").With<Responsevalue>().With<UserDetails>().Execute("@QueryType", "@EmailId", "ChkEmail", email);
                 dataList = Result.FirstOrDefault().Cast<Responsevalue>().ToList();
