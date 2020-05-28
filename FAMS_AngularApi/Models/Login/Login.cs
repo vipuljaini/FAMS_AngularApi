@@ -66,6 +66,7 @@ namespace FAMS_AngularApi.Models.Login
                                     Flag.WareHouseId = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.WareHouseId).First().ToString()));
                                     Flag.AccountNo = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.AccountNo).First().ToString()));
                                     Flag.IsDefaultPswdChange = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.IsDefaultPswdChange).First().ToString()));
+                                    Flag.UserType = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.UserType).First().ToString()));
                                     Flag.Flag = "1";
                                     Flag.FlagValue = "ReportsDashboard";
                                 }
@@ -78,6 +79,7 @@ namespace FAMS_AngularApi.Models.Login
                                     Flag.WareHouseId = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.WareHouseId).First().ToString()));
                                     Flag.AccountNo = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.AccountNo).First().ToString()));
                                     Flag.IsDefaultPswdChange = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.IsDefaultPswdChange).First().ToString()));
+                                    Flag.UserType = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.UserType).First().ToString()));
                                     Flag.Flag = "1";
                                     Flag.FlagValue = "ReportsDashboard";
                                 }
@@ -89,6 +91,7 @@ namespace FAMS_AngularApi.Models.Login
                                     Flag.WareHouseId = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.WareHouseId).First().ToString()));
                                     Flag.AccountNo = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.AccountNo).First().ToString()));
                                     Flag.IsDefaultPswdChange = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.IsDefaultPswdChange).First().ToString()));
+                                    Flag.UserType = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.UserType).First().ToString()));
                                     Flag.Flag = "1";
                                     Flag.FlagValue = "Dashboard";
 
