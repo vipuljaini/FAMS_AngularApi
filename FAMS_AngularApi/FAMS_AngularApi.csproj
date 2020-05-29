@@ -49,8 +49,9 @@
     <Reference Include="BusinessLibrary">
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Encryptions">
-      <HintPath>..\..\..\..\Downloads\Encryptions.dll</HintPath>
+    <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityDAL">
       <HintPath>..\EntityDAL\bin\Debug\EntityDAL.dll</HintPath>
@@ -187,6 +188,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CustodianController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
 
@@ -195,11 +197,17 @@
     <Compile Include="Controllers\TrailBalanceController.cs" />
 
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SecurityDetailsController.cs" />
+
 
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Custodian\Country.cs" />
+    <Compile Include="Models\Custodian\Custodian.cs" />
+    <Compile Include="Models\Custodian\CustodianDataAccessLayer.cs" />
+    <Compile Include="Models\Custodian\PMS.cs" />
 
     <Compile Include="Models\CommonFields.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
@@ -221,7 +229,12 @@
     <Compile Include="Models\Login\Logindetails.cs" />
     <Compile Include="Models\Login\Responsevalue.cs" />
     <Compile Include="Models\Login\UserDetails.cs" />
-
+    <Compile Include="Models\Security\Country.cs" />
+    <Compile Include="Models\Security\Custodian.cs" />
+    <Compile Include="Models\Security\Sector.cs" />
+    <Compile Include="Models\Security\Security.cs" />
+    <Compile Include="Models\Security\SecurityDataAccessLayer.cs" />
+    <Compile Include="Models\Security\SecurityDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
