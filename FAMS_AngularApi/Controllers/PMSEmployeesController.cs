@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace FAMS_AngularApi.Controllers
 {
-    public class PMSEmployeesController : ApiController
+    public class PMSEmployeesController : ApiController 
     {
         DataAccessLayer ObjDAL = new DataAccessLayer();
         [HttpPost]
