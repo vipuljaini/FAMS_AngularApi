@@ -197,31 +197,31 @@ namespace FAMS_AngularApi.Models.Login
 
             return common;
         }
-        //public IEnumerable<ChangePasswordRes> UpdatePassworddtail(ChangePasswordJsn changepassword)
-        //{
-        //    List<ChangePasswordRes> common = new List<ChangePasswordRes>();
-        //    ChangePasswordRes changepasswordobect = new ChangePasswordRes();
-        //    try
-        //    {
-        //        List<Forgotflag> dataList = new List<Forgotflag>();
-        //        var Result = dbcontext.MultipleResults("[dbo].[sp_UserLogin]").With<Forgotflag>().Execute("@QueryType", "@ChangePassword",
-        //                   "@UserId", "UpdatePassword", changepassword.password, Dbsecurity.Decypt(changepassword.Userid));
-        //        dataList = Result.FirstOrDefault().Cast<Forgotflag>().ToList();
-        //        if (dataList.Count > 0)
-        //        {
-        //            changepasswordobect.Flag = "1";
-        //            changepasswordobect.FlagValue = "Password Updated Successfuly !!";
-        //            common.Add(changepasswordobect);
-        //        }
-        //        else
-        //        {
-        //            changepasswordobect.Flag = "0";
-        //            changepasswordobect.FlagValue = "Invalid UserId !!";
-        //            common.Add(changepasswordobect);
-        //        }
-        //    }
-        //    catch (Exception ex) { throw ex; }
-        //    return common;
-        //}
+        public IEnumerable<ChangePasswordRes> UpdatePassworddtail(ChangePasswordJsn changepassword)
+        {
+            List<ChangePasswordRes> common = new List<ChangePasswordRes>();
+            ChangePasswordRes changepasswordobect = new ChangePasswordRes();
+            try
+            {
+                List<Forgotflag> dataList = new List<Forgotflag>();
+                var Result = dbcontext.MultipleResults("[dbo].[Sp_UserLogin]").With<Forgotflag>().Execute("@QueryType", "@ChangePassword",
+                           "@UserId", "UpdatePassword", changepassword.password, Dbsecurity.Decypt(changepassword.Userid));
+                dataList = Result.FirstOrDefault().Cast<Forgotflag>().ToList();
+                if (dataList.Count > 0)
+                {
+                    changepasswordobect.Flag = "1";
+                    changepasswordobect.FlagValue = "Password Updated Successfuly !!";
+                    common.Add(changepasswordobect);
+                }
+                else
+                {
+                    changepasswordobect.Flag = "0";
+                    changepasswordobect.FlagValue = "Invalid UserId !!";
+                    common.Add(changepasswordobect);
+                }
+            }
+            catch (Exception ex) { throw ex; }
+            return common;
+        }
     }
 }
