@@ -51,7 +51,7 @@
     </Reference>
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Encryptions.dll</HintPath>
+      <HintPath>C:\Users\AMYDEV02\Desktop\FAMS DLL\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityDAL">
       <HintPath>..\EntityDAL\bin\Debug\EntityDAL.dll</HintPath>
@@ -66,13 +66,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-
-    <Reference Include="System.Net.Http">
-      <HintPath>bin\System.Net.Http.dll</HintPath>
-
+    <!--<Reference Include="System.Net.Http">
+      <HintPath>bin\System.Net.Http.dll</HintPath>-->
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-
     </Reference>
     <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
@@ -102,12 +99,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-
+    <!--<Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>-->
     <Reference Include="System.Net.Http">
-
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
@@ -191,15 +185,11 @@
     <Compile Include="Controllers\CustodianController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-
     <Compile Include="Controllers\PMSEmployeesController.cs" />
     <Compile Include="Controllers\SummaryReportsController.cs" />
     <Compile Include="Controllers\TrailBalanceController.cs" />
-
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SecurityDetailsController.cs" />
-
-
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -208,7 +198,6 @@
     <Compile Include="Models\Custodian\Custodian.cs" />
     <Compile Include="Models\Custodian\CustodianDataAccessLayer.cs" />
     <Compile Include="Models\Custodian\PMS.cs" />
-
     <Compile Include="Models\CommonFields.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />
@@ -221,7 +210,6 @@
     <Compile Include="Models\TrailBalance\DataAccessLayer.cs" />
     <Compile Include="Models\TrailBalance\GridAllFields.cs" />
     <Compile Include="Models\TrailBalance\JsonFields.cs" />
-
     <Compile Include="Models\Login\CommonFlag.cs" />
     <Compile Include="Models\Login\EmailSent.cs" />
     <Compile Include="Models\Login\Formdataget.cs" />
