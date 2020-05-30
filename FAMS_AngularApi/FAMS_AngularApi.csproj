@@ -49,6 +49,7 @@
     <Reference Include="BusinessLibrary">
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
+
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\AMYDEV02\Desktop\FAMS DLL\Encryptions.dll</HintPath>
@@ -193,11 +194,14 @@
     <Compile Include="Controllers\SummaryReportsController.cs" />
     <Compile Include="Controllers\TrailBalanceController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+
     <Compile Include="Controllers\SecurityDetailsController.cs" />
+
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+
 
     <Compile Include="Models\AllCustomer\CustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\CustomerResponse.cs" />
@@ -209,7 +213,6 @@
     <Compile Include="Models\Custodian\Custodian.cs" />
     <Compile Include="Models\Custodian\CustodianDataAccessLayer.cs" />
     <Compile Include="Models\Custodian\PMS.cs" />
-
     <Compile Include="Models\CommonFields.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />
@@ -221,6 +224,7 @@
     <Compile Include="Models\NotesMaster\JsonUserDetails.cs" />
     <Compile Include="Models\NotesMaster\NoteMasterDetails.cs" />
     <Compile Include="Models\PMSEmployees\BindAllFields.cs" />
+    <Compile Include="Models\PMSEmployees\BindCustodianFields.cs" />
     <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\JsonAllFields.cs" />
     <Compile Include="Models\SummaryReports\GridAllFields.cs" />
@@ -236,6 +240,7 @@
     <Compile Include="Models\Login\Logindetails.cs" />
     <Compile Include="Models\Login\Responsevalue.cs" />
     <Compile Include="Models\Login\UserDetails.cs" />
+
 
     <Compile Include="Models\Security\Country.cs" />
     <Compile Include="Models\Security\Custodian.cs" />

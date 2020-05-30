@@ -12,22 +12,23 @@ namespace FAMS_AngularApi.Controllers
     {
         DataAccessLayer ObjDAL = new DataAccessLayer();
         [HttpPost]
-        [Route("api/PMSEmployees/SaveData")]
-        public Dictionary<string, object> SaveDataApi(JsonAllFields Data)
+        [Route("api/PMSEmployees/SaveData/{UserId}")]
+        public Dictionary<string, object> SaveDataApi(JsonAllFields Data, string UserId)
         {
-            return ObjDAL.SaveData(Data);
+            return ObjDAL.SaveData(Data, UserId);
         }
         [HttpGet]
-        [Route("api/PMSEmployees/BindGrid")]
-        public Dictionary<string, object> BindGridApi()
+        [Route("api/PMSEmployees/BindGrid/{UserId}")]
+        public Dictionary<string, object> BindGridApi(string UserId)
         {
-            return ObjDAL.BindGrid();
+            return ObjDAL.BindGrid(UserId);
         }
         [HttpGet]
-        [Route("api/PMSEmployees/BindCustodian")]
-        public Dictionary<string, object> BindCustodianApi()
+        [Route("api/PMSEmployees/BindCustodian/{UserId}")]
+        public Dictionary<string, object> BindCustodianApi(string UserId)
         {
-            return ObjDAL.BindCustodian();
+            return ObjDAL.BindCustodian(UserId);
         }
+
     }
 }
