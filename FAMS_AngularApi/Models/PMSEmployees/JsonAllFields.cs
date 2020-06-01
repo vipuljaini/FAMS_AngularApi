@@ -17,5 +17,6 @@ namespace FAMS_AngularApi.Models.PMSEmployees
         public string Custodian { get; set; }
         public string InceptionDate { get; set; }
         public string EmpLinkingDate { get; set; }
+        public string UserId { get; set; }
     }
 }

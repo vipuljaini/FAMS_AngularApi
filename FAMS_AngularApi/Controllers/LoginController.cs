@@ -24,11 +24,11 @@ namespace FAMS_AngularApi.Controllers
         {
             return objlogin.SendMail(email);
         }
-        //[HttpPost]
-        //[Route("api/Login/Updatepassword")]
-        //public IEnumerable<ChangePasswordRes> Updatepassword([FromBody] ChangePasswordJsn Changepassword)
-        //{
-        //    return objlogin.UpdatePassworddtail(Changepassword);
-        //}
+        [HttpPost]
+        [Route("api/Login/Updatepassword")]
+        public IEnumerable<ChangePasswordRes> Updatepassword([FromBody] ChangePasswordJsn Changepassword)
+        {
+            return objlogin.UpdatePassworddtail(Changepassword);
+        }
     }
 }
