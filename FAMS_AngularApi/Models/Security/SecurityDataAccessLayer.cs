@@ -1,4 +1,5 @@
 ﻿using BusinessLibrary;
+using Encryptions;
 using EntityDAL;
 using System;
 using System.Collections.Generic;
@@ -55,11 +56,24 @@ namespace FAMS_AngularApi.Models.Security
             }
         }
 
-        public Dictionary<string, object> GetAllSecurity()
+        public Dictionary<string, object> GetAllSecurityCodeDetails()
         {
             try
             {
-                var Result = Common.Getdata(context.MultipleResults("[dbo].[FAMS_SecurityDetails]").With<Sector>().Execute("@QueryType", "BindSecurity"));
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[FAMS_SecurityDetails]").With<Security>().Execute("@QueryType", "BindSecurityCodeDetails"));
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Dictionary<string, object> GetAllSecurity(string SecurityDetailsId)
+        {
+            try
+            {
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[FAMS_SecurityDetails]").With<Security>().Execute("@QueryType", "@SecurityDetailId", "BindSecurity", SecurityDetailsId));
                 return Result;
             }
             catch (Exception ex)
@@ -81,15 +95,28 @@ namespace FAMS_AngularApi.Models.Security
                 throw ex;
             }
         }
+        public Dictionary<string, object> FillSecurityCodeDetails(string SecurityCode)
+        {
+            try
+            {
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[FAMS_SecurityDetails]").With<SecurityCodeDetails>().Execute("@QueryType", "@SecurityCode", "FillSecurityCodeDetails", SecurityCode));
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        
 
         //To Add new employee record 
         public IEnumerable<Custodian> AddSecurityDetails(SecurityDetails securityDetails, string UserId)
         {
             try
             {
-
-                var Result = context.MultipleResults("[dbo].[FAMS_SecurityDetails]").With<SecurityDetails>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@ListCode", "@Name", "@SecurityCode", "@SectorCode", "@UserId", "SaveSecurityDetails", securityDetails.CountryCode, securityDetails.CustodianCode, securityDetails.ListCode, securityDetails.NAME, securityDetails.Active, securityDetails.SecurityCode, securityDetails.SectorCode, UserId);
+                string isActive = (securityDetails.Active == "true" ? "1" : "0");
+                var Result = context.MultipleResults("[dbo].[FAMS_SecurityDetails]").With<SecurityDetails>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@ListCode", "@Name", "@SecurityCode", "@SecurityName", "@SectorCode", "@Active", "@UserId", "SaveSecurityDetails", securityDetails.CountryCode, securityDetails.CustodianCode, securityDetails.ListCode, securityDetails.ListName,  securityDetails.SecurityCode, securityDetails.SecurityName, securityDetails.SectorCode,isActive, Dbsecurity.Decypt(UserId));
                 foreach (var _securityDetails in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();

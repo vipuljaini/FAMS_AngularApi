@@ -15,11 +15,15 @@ namespace FAMS_AngularApi.Models.Security
         public string CountryCode { get; set; }
         public string CustodianCode { get; set; }
         public string SecurityCode { get; set; }
+        public string SecurityName { get; set; }
         public string SectorCode { get; set; }
 
         public string ListCode { get; set; }
-        public string NAME { get; set; }
+        public string ListName { get; set; }
         public string Active { get; set; }
+        public Int64 SecurityDetailId { get; set; }
+
         
+
     }
 }

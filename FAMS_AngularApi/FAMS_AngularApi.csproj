@@ -187,8 +187,10 @@
     <Compile Include="Controllers\AllCustomerController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+
     <Compile Include="Controllers\NotesMasterController.cs" />
     <Compile Include="Controllers\CustodianController.cs" />
+
     <Compile Include="Controllers\PMSEmployeesController.cs" />
     <Compile Include="Controllers\SummaryReportsController.cs" />
     <Compile Include="Controllers\TrailBalanceController.cs" />
@@ -221,6 +223,7 @@
     <Compile Include="Models\PMSEmployees\BindCustodianFields.cs" />
     <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\JsonAllFields.cs" />
+    <Compile Include="Models\Security\SecurityCodeDetails.cs" />
     <Compile Include="Models\SummaryReports\GridAllFields.cs" />
     <Compile Include="Models\SummaryReports\JasonFields.cs" />
     <Compile Include="Models\SummaryReports\SummaryReportsDataAccess.cs" />
