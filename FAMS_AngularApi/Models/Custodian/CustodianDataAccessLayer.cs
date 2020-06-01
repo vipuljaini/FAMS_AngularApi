@@ -6,6 +6,7 @@ using FAMS_AngularApi.Models.Custodian;
 
 using BusinessLibrary;
 using EntityDAL;
+using Encryptions;
 
 namespace FAMS_AngularApi.Models.Custodian
 {
@@ -55,13 +56,39 @@ namespace FAMS_AngularApi.Models.Custodian
             }
         }
 
+        public Dictionary<string, object> FillPMSDetails(string PMSCode)
+        {
+            try
+            {
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[FAMS_Custodian]").With<PMS>().Execute("@QueryType","@PMSCode", "FillPMSDetails",PMSCode));
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public Dictionary<string, object> GetAllPMSDetails(string CustodianId)
+        {
+            try
+            {
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[FAMS_Custodian]").With<PMS>().Execute("@QueryType", "@CustodianId", "BindPMSDetails", CustodianId));
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         //To Add new employee record 
         public IEnumerable<Custodian> AddCustodian(Custodian custodian,string UserId)
         {
             try
             {
-               
-                var Result = context.MultipleResults("[dbo].[FAMS_Custodian]").With<Custodian>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@CustodianName", "@PMSCode", "@UserId", "SaveCustodian",custodian.CountryCode,custodian.CustodianCode,custodian.CustodianName,custodian.PMSCode,UserId);
+
+                string isActive = (custodian.Active == true ? "1" : "0");
+                var Result = context.MultipleResults("[dbo].[FAMS_Custodian]").With<Custodian>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@CustodianName", "@PMSCode", "@PMSName", "@PMSAccountNumber", "@Active", "@UserId", "SaveCustodian",custodian.CountryCode,custodian.CustodianCode,custodian.CustodianName,custodian.PMSCode,custodian.PMSName,custodian.PMSAccountNumber, isActive, Dbsecurity.Decypt(UserId));
                 foreach (var _custodian in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();

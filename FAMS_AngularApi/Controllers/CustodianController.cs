@@ -39,8 +39,23 @@ namespace FAMS_AngularApi.Controllers
             return objCustodian.GetAllCustodian();
         }
 
+        [HttpGet]
+        [Route("api/Custodian/FillPMSDetails/{PMSCode}")]
+        public Dictionary<string, object> FillPMSDetails(string PMSCode)
+        {
+            return objCustodian.FillPMSDetails(PMSCode);
+        }
+
+
+        [HttpGet]
+        [Route("api/Custodian/GetAllPMSDetails/{CustodianId}")]
+        public Dictionary<string, object> GetAllPMSDetails(string CustodianId)
+        {
+            return objCustodian.GetAllPMSDetails(CustodianId);
+        }
+
         [HttpPost]
-        [Route("api/Custodian/AddCustodian")]
+        [Route("api/Custodian/AddCustodian/{UserId}")]
         public IEnumerable<Custodian> AddCustodian([FromBody] Custodian custodian,string UserId)
         {
             return objCustodian.AddCustodian(custodian, UserId);

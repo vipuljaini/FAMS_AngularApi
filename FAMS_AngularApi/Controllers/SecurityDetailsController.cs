@@ -39,21 +39,35 @@ namespace FAMS_AngularApi.Controllers
         }
 
         [HttpGet]
-        [Route("api/SecurityDetails/GetAllSecurity")]
-        public Dictionary<string, object> GetAllSecurity()
+        [Route("api/SecurityDetails/GetAllSecurityCodeDetails")]
+        public Dictionary<string, object> GetAllSecurityCodeDetails()
         {
-            return objSecurityDetails.GetAllSecurity();
+            return objSecurityDetails.GetAllSecurityCodeDetails();
+        }
+
+        [HttpGet]
+        [Route("api/SecurityDetails/GetAllSecurity/{SecurityDetailsId}")]
+        public Dictionary<string, object> GetAllSecurity(string SecurityDetailsId)
+        {
+            return objSecurityDetails.GetAllSecurity(SecurityDetailsId);
         }
 
         [HttpGet]
         [Route("api/SecurityDetails/BindAllSecurityDetails")]
         public Dictionary<string, object> BindAllSecurityDetails()
         {
-            return objSecurityDetails.GetAllSector();
+            return objSecurityDetails.BindAllSecurityDetails();
+        }
+
+        [HttpGet]
+        [Route("api/SecurityDetails/FillSecurityCodeDetails/{SecurityCode}")]
+        public Dictionary<string, object> FillSecurityCodeDetails(string SecurityCode)
+        {
+            return objSecurityDetails.FillSecurityCodeDetails(SecurityCode);
         }
 
         [HttpPost]
-        [Route("api/SecurityDetails/AddSecurityDetails")]
+        [Route("api/SecurityDetails/AddSecurityDetails/{UserId}")]
         public IEnumerable<Custodian> AddSecurityDetails([FromBody] SecurityDetails securityDetails, string UserId)
         {
             return objSecurityDetails.AddSecurityDetails(securityDetails, UserId);
