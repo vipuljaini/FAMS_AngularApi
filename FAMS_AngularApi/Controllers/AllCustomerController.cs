@@ -12,11 +12,11 @@ namespace FAMS_AngularApi.Controllers
     public class AllCustomerController : ApiController
     {
         DataAccessLayer ObjDAL = new DataAccessLayer();
-        [HttpPost]
-        [Route("api/AllCustomer/BindGrid")]
-        public Dictionary<string, object> BindGridApi(JsonUserDetails Data)
+        [HttpGet]
+        [Route("api/AllCustomer/BindGrid/{UserId}")]
+        public Dictionary<string, object> BindGridApi(string UserId)
         {
-            return ObjDAL.BindGrid(Data);
+            return ObjDAL.BindGrid(UserId);
         }
 
 

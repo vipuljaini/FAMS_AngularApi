@@ -16,12 +16,12 @@ namespace FAMS_AngularApi.Models.AllCustomer
 {
     public class DataAccessLayer
     {
-        public Dictionary<string, object> BindGrid(JsonUserDetails Data)
+        public Dictionary<string, object> BindGrid(string UserId)
         {
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<CustomerDetails>().Execute("@QueryType","@UserId", "BindUser",Dbsecurity.Decypt(Data.UserId).ToString()));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<CustomerDetails>().Execute("@QueryType","@UserId", "BindUser",Dbsecurity.Decypt(UserId).ToString()));
                 return results;
             }
             catch (Exception ex)
