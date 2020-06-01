@@ -12,11 +12,25 @@ namespace FAMS_AngularApi.Controllers
     public class HoldingReportsController : ApiController
     {
         DataAccessLayer ObjDAL = new DataAccessLayer();
-        [HttpPost]
-        [Route("api/HoldingReports/BindGrid")]
-        public Dictionary<string, object> BindGridApi(JasonFields Data)
+
+        [HttpGet]
+        [Route("api/HoldingReports/BindCustomer")]
+        public Dictionary<string, object> BindCustomer()
         {
-            return ObjDAL.BindGrid(Data);
+            return ObjDAL.BindCustomer();
+        }
+        //[HttpPost]
+        //[Route("api/HoldingReports/BindGridAllFields")]
+        //public Dictionary<string, object> BindGridApi(JasonFields Data)
+        //{
+        //    return ObjDAL.BindGrid(Data);
+        //}
+
+        [HttpGet]
+        [Route("api/HoldingReports/BindGridAllFields/{CustomerAccount}/{UserId}")]
+        public Dictionary<string, object> BindGridApi(string CustomerAccount,string UserId)
+        {
+            return ObjDAL.BindGrid(CustomerAccount,UserId);
         }
     }
 }
