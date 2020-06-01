@@ -52,7 +52,7 @@
     </Reference>
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Downloads\Encryptions.dll</HintPath>
+      <HintPath>bin\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -187,10 +187,8 @@
     <Compile Include="Controllers\AllCustomerController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-
     <Compile Include="Controllers\NotesMasterController.cs" />
     <Compile Include="Controllers\CustodianController.cs" />
-
     <Compile Include="Controllers\PMSEmployeesController.cs" />
     <Compile Include="Controllers\SummaryReportsController.cs" />
     <Compile Include="Controllers\TrailBalanceController.cs" />
@@ -210,6 +208,7 @@
     <Compile Include="Models\Custodian\CustodianDataAccessLayer.cs" />
     <Compile Include="Models\Custodian\PMS.cs" />
     <Compile Include="Models\CommonFields.cs" />
+    <Compile Include="Models\HoldingReports\Customer.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />
     <Compile Include="Models\Login\ChangePasswordJsn.cs" />
