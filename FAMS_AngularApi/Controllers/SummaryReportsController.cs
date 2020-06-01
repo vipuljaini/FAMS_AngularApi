@@ -17,5 +17,6 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjSRDA.BindGrid(Data);
         }
+
     }
 }
