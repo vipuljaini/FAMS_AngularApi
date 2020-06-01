@@ -16,7 +16,7 @@ namespace FAMS_AngularApi.Models.HoldingReports
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<GridAllFields>()
-                          .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetHoldingReportData", Data.CustomerAccount, Data.FromDate, Data.ToDate));
+                          .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetHoldingReportData", Data.CustomerAccount, Data.Fromdate, Data.Todate));
                 return results;
             }
             catch (Exception ex)

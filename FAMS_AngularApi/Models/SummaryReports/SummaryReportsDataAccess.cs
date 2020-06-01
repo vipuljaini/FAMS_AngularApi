@@ -15,7 +15,7 @@ namespace FAMS_AngularApi.Models.SummaryReports
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<GridAllFields>()
-                          .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetSummaryReportData", Data.CustomerAccount, Data.FromDate, Data.ToDate));
+                          .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetSummaryReportData", Data.CustomerAccount, Data.Fromdate, Data.Todate));
                 return results;
 
             }
