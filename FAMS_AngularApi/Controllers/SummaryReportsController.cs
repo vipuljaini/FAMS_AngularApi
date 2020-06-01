@@ -16,6 +16,7 @@ namespace FAMS_AngularApi.Controllers
         public Dictionary<string, object> BindGriidApi(JasonFields Data)
         {
             return ObjSRDA.BindGrid(Data);
+
         }
 
     }
