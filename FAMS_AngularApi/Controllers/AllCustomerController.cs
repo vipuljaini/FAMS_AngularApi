@@ -21,10 +21,10 @@ namespace FAMS_AngularApi.Controllers
 
 
         [HttpPost]
-        [Route("api/AllCustomer/InsertCustomerDetails")]
-        public Dictionary<string, object> SaveCustomerDetails(JsonCustomerDetails Data)
+        [Route("api/AllCustomer/InsertCustomerDetails/{UserId}")]
+        public IEnumerable<CustomerResponse> SaveCustomerDetails(JsonCustomerDetails Data, string UserId)
         {
-            return ObjDAL.SaveCustomer(Data);
+            return ObjDAL.SaveCustomer(Data,UserId);
         }
     }
 }

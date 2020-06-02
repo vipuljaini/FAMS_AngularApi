@@ -124,7 +124,7 @@ namespace FAMS_AngularApi.Models.Login
 
         public IEnumerable<EmailSent> SendMail(string email)
         {
-            List<EmailSent> common = new List<EmailSent>();
+            List<EmailSent> common = new List<EmailSent>(); 
             EmailSent emailobect = new EmailSent();
             try
             {
