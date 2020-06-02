@@ -10,4 +10,5 @@ namespace FAMS_AngularApi.Models.PMSEmployees
         public Nullable<Int64> CustodianCode { get; set; }
         public string CustodianName { get; set; }
     }
+
 }
