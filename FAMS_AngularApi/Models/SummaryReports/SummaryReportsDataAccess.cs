@@ -13,6 +13,7 @@ namespace FAMS_AngularApi.Models.SummaryReports
     {
         public Dictionary<string, object> BindGrid(JasonFields Data , string UserId)
         {
+
             FAMSEntities context = new FAMSEntities();
             try
             {
