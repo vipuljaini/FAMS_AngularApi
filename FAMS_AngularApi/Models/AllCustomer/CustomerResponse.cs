@@ -7,8 +7,6 @@ namespace FAMS_AngularApi.Models.AllCustomer
 {
     public class CustomerResponse
     {
-        public string Flag { get; set; }
-        public string FlagValue { get; set; }
-        public string value { get; set; }
+        public Int32 value { get; set; }
     }
 }
