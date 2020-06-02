@@ -223,6 +223,7 @@
     <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\JsonAllFields.cs" />
     <Compile Include="Models\Security\SecurityCodeDetails.cs" />
+    <Compile Include="Models\SummaryReports\BindCustomerAllFields.cs" />
     <Compile Include="Models\SummaryReports\GridAllFields.cs" />
     <Compile Include="Models\SummaryReports\JasonFields.cs" />
     <Compile Include="Models\SummaryReports\SummaryReportsDataAccess.cs" />
