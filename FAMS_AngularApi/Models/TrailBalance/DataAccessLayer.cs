@@ -16,7 +16,7 @@ namespace FAMS_AngularApi.Models.TrailBalance
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_TrialBalanceReport]").With<GridAllFields>()
-                           .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "@Accounts", "@AccountSubLayer", "BindGride", Data.CustomerAccount, Data.FromDate, Data.ToDate, Data.Accounts, Data.AccountSubLayer));
+                           .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "@Accounts", "@AccountSubLayer", "BindGride", Data.CustomerAccount, Data.FromDate, Data.ToDate, Data.Account, Data.AccountSubLayer));
                 return results;
 
             }

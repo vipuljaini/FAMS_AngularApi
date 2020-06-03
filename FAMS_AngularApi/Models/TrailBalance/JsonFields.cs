@@ -10,7 +10,7 @@ namespace FAMS_AngularApi.Models.TrailBalance
         public string FromDate { get; set; }
         public string ToDate { get; set; }
         public string CustomerAccount { get; set; }
-        public string Accounts { get; set; }
+        public string Account { get; set; }
         public string AccountSubLayer { get; set; }
     }
 }
