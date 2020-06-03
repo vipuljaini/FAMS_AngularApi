@@ -62,5 +62,13 @@ namespace FAMS_AngularApi.Controllers
         }
 
 
+        [HttpPost]
+        [Route("api/Custodian/UpdateCustodian/{UserId}/{CustodianId}")]
+        public IEnumerable<Custodian> UpdateCustodian([FromBody] Custodian custodian, string UserId,string CustodianId)
+        {
+            return objCustodian.UpdateCustodian(custodian, UserId, CustodianId);
+        }
+
+
     }
 }
