@@ -102,6 +102,27 @@ namespace FAMS_AngularApi.Models.Custodian
                 throw ex;
             }
         }
+        //To Add new employee record 
+        public IEnumerable<Custodian> UpdateCustodian(Custodian custodian, string UserId,string CustodianId)
+        {
+            try
+            {
+
+                string isActive = (custodian.Active == true ? "1" : "0");
+                var Result = context.MultipleResults("[dbo].[FAMS_Custodian]").With<Custodian>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@CustodianName", "@PMSCode", "@PMSName", "@PMSAccountNumber", "@Active", "@UserId", "@CustodianId", "UpdateCustodian", custodian.CountryCode, custodian.CustodianCode, custodian.CustodianName, custodian.PMSCode, custodian.PMSName, custodian.PMSAccountNumber, isActive, Dbsecurity.Decypt(UserId),CustodianId);
+                foreach (var _custodian in Result)
+                {
+                    //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
+                    dataList_Custodian = _custodian.Cast<Custodian>().ToList();
+                }
+                return dataList_Custodian;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
     }

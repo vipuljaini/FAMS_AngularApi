@@ -68,9 +68,16 @@ namespace FAMS_AngularApi.Controllers
 
         [HttpPost]
         [Route("api/SecurityDetails/AddSecurityDetails/{UserId}")]
-        public IEnumerable<Custodian> AddSecurityDetails([FromBody] SecurityDetails securityDetails, string UserId)
+        public IEnumerable<SecurityDetails> AddSecurityDetails([FromBody] SecurityDetails securityDetails, string UserId)
         {
             return objSecurityDetails.AddSecurityDetails(securityDetails, UserId);
+        }
+
+        [HttpPost]
+        [Route("api/SecurityDetails/UpdateSecurityDetails/{UserId}/{SecurityDetailsId}")]
+        public IEnumerable<SecurityDetails> UpdateSecurityDetails([FromBody] SecurityDetails securityDetails, string UserId, string SecurityDetailsId)
+        {
+            return objSecurityDetails.UpdateSecurityDetails(securityDetails, UserId, SecurityDetailsId);
         }
     }
 }

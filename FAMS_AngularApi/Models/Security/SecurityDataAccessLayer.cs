@@ -111,7 +111,7 @@ namespace FAMS_AngularApi.Models.Security
         
 
         //To Add new employee record 
-        public IEnumerable<Custodian> AddSecurityDetails(SecurityDetails securityDetails, string UserId)
+        public IEnumerable<SecurityDetails> AddSecurityDetails(SecurityDetails securityDetails, string UserId)
         {
             try
             {
@@ -122,7 +122,29 @@ namespace FAMS_AngularApi.Models.Security
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
                     dataList_SecurityDetails = _securityDetails.Cast<SecurityDetails>().ToList();
                 }
-                return dataList_Custodian;
+                return dataList_SecurityDetails;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //To Add new employee record 
+        public IEnumerable<SecurityDetails> UpdateSecurityDetails(SecurityDetails securityDetails, string UserId, string SecurityDetailId)
+        {
+            try
+            {
+
+                string isActive = (securityDetails.Active == "true" ? "1" : "0");
+                var Result = context.MultipleResults("[dbo].[FAMS_SecurityDetails]").With<SecurityDetails>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@ListCode", "@Name", "@SecurityCode", "@SecurityName", "@SectorCode", "@Active", "@UserId", "@SecurityDetailId", "UpdateSecurityDetails", securityDetails.CountryCode, securityDetails.CustodianCode, securityDetails.ListCode, securityDetails.ListName, securityDetails.SecurityCode, securityDetails.SecurityName, securityDetails.SectorCode, isActive, Dbsecurity.Decypt(UserId),SecurityDetailId);
+                foreach (var _securityDetails in Result)
+                {
+                    //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
+                    dataList_SecurityDetails = _securityDetails.Cast<SecurityDetails>().ToList();
+                }
+                return dataList_SecurityDetails;
 
             }
             catch (Exception ex)
