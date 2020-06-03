@@ -12,10 +12,16 @@ namespace FAMS_AngularApi.Controllers
     {
         SummaryReportsDataAccess ObjSRDA = new SummaryReportsDataAccess();
         [HttpPost]
-        [Route("api/SummaryReports/BindGrid")]
-        public Dictionary<string, object> BindGriidApi(JasonFields Data)
+        [Route("api/SummaryReports/BindGrid/{UserId}")]
+        public Dictionary<string, object> BindGriidApi(JasonFields Data, string UserId)
         {
-            return ObjSRDA.BindGrid(Data);
+            return ObjSRDA.BindGrid(Data, UserId);
+        }
+        [HttpGet]
+        [Route("api/SummaryReports/BindCustomers/{UserId}")]
+        public Dictionary<string, object> BindCustomersApi(string UserId)
+        {
+            return ObjSRDA.BindCustomers(UserId);
         }
     }
 }
