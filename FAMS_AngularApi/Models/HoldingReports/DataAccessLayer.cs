@@ -34,6 +34,7 @@ namespace FAMS_AngularApi.Models.HoldingReports
                 //          .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "@Todate", "GetHoldingReportData", Data.CustomerAccount, Data.FromDate, Data.ToDate));
                 //return results;
 
+
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<GridAllFields>().With<GridAllFields1>().With<GridAllFields2>().With<GridAllFields3>().With<GridAllFields4>()
                           .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "GetHoldingReportData", CustomerAccount, Date));
 
