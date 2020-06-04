@@ -36,5 +36,6 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.BindCustomers(PMSEmpId);
         }
+
     }
 }
