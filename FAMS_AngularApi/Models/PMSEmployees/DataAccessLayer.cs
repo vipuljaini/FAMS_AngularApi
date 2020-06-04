@@ -44,6 +44,7 @@ namespace FAMS_AngularApi.Models.PMSEmployees
                 throw ex;
             }
         }
+
         public Dictionary<string, object> BindCustodian(CommonFields Data)
         {
             FAMSEntities context = new FAMSEntities();
@@ -67,7 +68,6 @@ namespace FAMS_AngularApi.Models.PMSEmployees
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_PMSEmployees]").With<BindAllCustomersFields>()
                           .Execute("@Querytype", "@PMSEmpId", "BindCustomers", PMSEmpId)); 
                 return results;
-
             }
             catch (Exception ex)
             {

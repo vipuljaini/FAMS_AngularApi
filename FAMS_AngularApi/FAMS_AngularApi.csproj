@@ -46,17 +46,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BusinessLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
+    <Reference Include="BusinessLibrary">
+      <HintPath>C:\Users\Rock\Downloads\BusinessLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Encryptions.dll</HintPath>
+    <Reference Include="Encryptions">
+      <HintPath>C:\Users\Rock\Downloads\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\EntityDAL\bin\Debug\EntityDAL.dll</HintPath>
+      <HintPath>C:\Users\Rock\Downloads\EntityDAL.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -221,6 +219,7 @@
     <Compile Include="Models\NotesMaster\NoteMasterDetails.cs" />
     <Compile Include="Models\PMSCustomerList\PMSCustomerList.cs" />
     <Compile Include="Models\PMSCustomerList\PMSCustomerListDataAccessLayer.cs" />
+    <Compile Include="Models\PMSEmployees\BindAllCustomersFields.cs" />
     <Compile Include="Models\PMSEmployees\BindAllFields.cs" />
     <Compile Include="Models\PMSEmployees\BindCustodianFields.cs" />
     <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
