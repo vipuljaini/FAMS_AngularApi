@@ -211,6 +211,7 @@
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />
     <Compile Include="Models\Login\ChangePasswordJsn.cs" />
+    <Compile Include="Models\Login\ChangePasswordJson.cs" />
     <Compile Include="Models\Login\ChangePasswordRes.cs" />
     <Compile Include="Models\Login\Forgotflag.cs" />
     <Compile Include="Models\NotesMaster\DataAccessLayer.cs" />
