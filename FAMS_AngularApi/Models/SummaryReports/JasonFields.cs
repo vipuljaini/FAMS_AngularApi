@@ -10,5 +10,6 @@ namespace FAMS_AngularApi.Models.SummaryReports
         public string Fromdate { get; set; }
         public string Todate { get; set; }
         public string CustomerAccount { get; set; }
+        public string UserId { get; set; }
     }
 }

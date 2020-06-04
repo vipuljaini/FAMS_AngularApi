@@ -8,5 +8,6 @@ namespace FAMS_AngularApi.Models
     public class CommonFields
     {
         public Int32 Result { get; set; }
+        public string  UserId { get; set; }
     }
 }

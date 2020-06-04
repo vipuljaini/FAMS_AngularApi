@@ -1,4 +1,5 @@
-﻿using FAMS_AngularApi.Models.SummaryReports;
+﻿using FAMS_AngularApi.Models;
+using FAMS_AngularApi.Models.SummaryReports;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,16 +13,16 @@ namespace FAMS_AngularApi.Controllers
     {
         SummaryReportsDataAccess ObjSRDA = new SummaryReportsDataAccess();
         [HttpPost]
-        [Route("api/SummaryReports/BindGrid/{UserId}")]
-        public Dictionary<string, object> BindGriidApi(JasonFields Data, string UserId)
+        [Route("api/SummaryReports/BindGrid")]
+        public Dictionary<string, object> BindGriidApi(JasonFields Data)
         {
-            return ObjSRDA.BindGrid(Data, UserId);
+            return ObjSRDA.BindGrid(Data);
         }
-        [HttpGet]
-        [Route("api/SummaryReports/BindCustomers/{UserId}")]
-        public Dictionary<string, object> BindCustomersApi(string UserId)
+        [HttpPost]
+        [Route("api/SummaryReports/BindCustomers")]
+        public Dictionary<string, object> BindCustomersApi(CommonFields Data)
         {
-            return ObjSRDA.BindCustomers(UserId);
+            return ObjSRDA.BindCustomers(Data);
         }
     }
 }

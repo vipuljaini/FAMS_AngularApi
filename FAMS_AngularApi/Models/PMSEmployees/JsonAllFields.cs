@@ -7,6 +7,7 @@ namespace FAMS_AngularApi.Models.PMSEmployees
 {
     public class JsonAllFields
     {
+        public string PMSEmpId { get; set; }
         public string EmployeeCode { get; set; }
         public string EmployeeName { get; set; }
         public string Gender { get; set; }
@@ -17,6 +18,7 @@ namespace FAMS_AngularApi.Models.PMSEmployees
         public string Custodian { get; set; }
         public string InceptionDate { get; set; }
         public string EmpLinkingDate { get; set; }
+        public Nullable<Boolean> Active { get; set; }
         public string UserId { get; set; }
     }
 }

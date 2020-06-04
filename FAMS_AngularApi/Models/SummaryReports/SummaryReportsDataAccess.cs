@@ -11,7 +11,7 @@ namespace FAMS_AngularApi.Models.SummaryReports
 {
     public class SummaryReportsDataAccess
     {
-        public Dictionary<string, object> BindGrid(JasonFields Data, string UserId)
+        public Dictionary<string, object> BindGrid(JasonFields Data)
         {
             FAMSEntities context = new FAMSEntities();
             try
@@ -26,7 +26,7 @@ namespace FAMS_AngularApi.Models.SummaryReports
                 throw ex;
             }
         }
-        public Dictionary<string, object> BindCustomers(string UserId)
+        public Dictionary<string, object> BindCustomers(CommonFields Data)
         {
             FAMSEntities context = new FAMSEntities();
             try

@@ -1,4 +1,5 @@
-﻿using FAMS_AngularApi.Models.PMSEmployees;
+﻿using FAMS_AngularApi.Models;
+using FAMS_AngularApi.Models.PMSEmployees;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,23 +13,29 @@ namespace FAMS_AngularApi.Controllers
     {
         DataAccessLayer ObjDAL = new DataAccessLayer();
         [HttpPost]
-        [Route("api/PMSEmployees/SaveData/{UserId}")]
-        public Dictionary<string, object> SaveDataApi(JsonAllFields Data, string UserId)
+        [Route("api/PMSEmployees/SaveData")]
+        public Dictionary<string, object> SaveDataApi(JsonAllFields Data)
         {
-            return ObjDAL.SaveData(Data, UserId);
+            return ObjDAL.SaveData(Data);
         }
-        [HttpGet]
-        [Route("api/PMSEmployees/BindGrid/{UserId}")]
-        public Dictionary<string, object> BindGridApi(string UserId)
+        [HttpPost]
+        [Route("api/PMSEmployees/BindGrid")]
+        public Dictionary<string, object> BindGridApi(CommonFields Data)
         {
-            return ObjDAL.BindGrid(UserId);
+            return ObjDAL.BindGrid(Data);
         }
-        [HttpGet]
-        [Route("api/PMSEmployees/BindCustodian/{UserId}")]
-        public Dictionary<string, object> BindCustodianApi(string UserId)
+        [HttpPost]
+        [Route("api/PMSEmployees/BindCustodian")] 
+        public Dictionary<string, object> BindCustodianApi(CommonFields Data)
         {
-            return ObjDAL.BindCustodian(UserId);
+            return ObjDAL.BindCustodian(Data);
         }
 
+        [HttpGet]
+        [Route("api/PMSEmployees/BindCustomers/{PMSEmpId}")]
+        public Dictionary<string, object> BindCustomersApi(string PMSEmpId)
+        {
+            return ObjDAL.BindCustomers(PMSEmpId);
+        }
     }
 }
