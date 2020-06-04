@@ -26,5 +26,12 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.SaveCustomer(Data,UserId);
         }
+
+        [HttpPost]
+        [Route("api/AllCustomer/UpdateCustomerDetails/{UserId}/{CustomerId}")]
+        public IEnumerable<CustomerResponse> UpdateCustomerDetails(JsonCustomerDetails Data, string UserId, string CustomerId)
+        {
+            return ObjDAL.UpdateCustomer(Data, UserId, CustomerId);
+        }
     }
 }
