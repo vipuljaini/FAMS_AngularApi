@@ -16,23 +16,23 @@ namespace FAMS_AngularApi.Models.HoldingReports
         public string CustomerAccount { get; set; }
         public string CustomerName { get; set; }
         public string Security { get; set; }
-        public decimal Quantity { get; set; }
-        public decimal UnitCost { get; set; }
-        public decimal Cost { get; set; }
-        public decimal Price { get; set; }
-        public decimal MarketValue { get; set; }
-        public decimal GainLoss { get; set; }
-        public decimal GainLossPer { get; set; }
-        public decimal Assets { get; set; }
+        public Nullable<decimal> Quantity { get; set; }
+        public Nullable<decimal> UnitCost { get; set; }
+        public Nullable<decimal> Cost { get; set; }
+        public Nullable<decimal> Price { get; set; }
+        public Nullable<decimal> MarketValue { get; set; }
+        public Nullable<decimal> GainLoss { get; set; }
+        public Nullable<decimal> GainLossPer { get; set; }
+        public Nullable<decimal> Assets { get; set; }
     }
 
     public class GridAllFields1
     {
-        public decimal TotalCost { get; set; }
-        public decimal TotalMarketValue { get; set; }
-        public decimal TotalGainLoss { get; set; }
-        public decimal TotalGLPerc { get; set; }
-        public decimal TotalAssets { get; set; }
+        public Nullable<decimal> TotalCost { get; set; }
+        public Nullable<decimal> TotalMarketValue { get; set; }
+        public Nullable<decimal> TotalGainLoss { get; set; }
+        public Nullable<decimal> TotalGLPerc { get; set; }
+        public Nullable<decimal> TotalAssets { get; set; }
     }
 
     public class GridAllFields2
@@ -41,31 +41,31 @@ namespace FAMS_AngularApi.Models.HoldingReports
         public string CustomerAccount { get; set; }
         public string CustomerName { get; set; }
         public string Security { get; set; }
-        public decimal Quantity { get; set; }
-        public decimal UnitCost { get; set; }
-        public decimal Cost { get; set; }
-        public decimal Price { get; set; }
-        public decimal MarketValue { get; set; }
-        public decimal GainLoss { get; set; }
-        public decimal GainLossPer { get; set; }
-        public decimal Assets { get; set; }
+        public Nullable<decimal> Quantity { get; set; }
+        public Nullable<decimal> UnitCost { get; set; }
+        public Nullable<decimal> Cost { get; set; }
+        public Nullable<decimal> Price { get; set; }
+        public Nullable<decimal> MarketValue { get; set; }
+        public Nullable<decimal> GainLoss { get; set; }
+        public Nullable<decimal> GainLossPer { get; set; }
+        public Nullable<decimal> Assets { get; set; }
     }
 
     public class GridAllFields3
     {
-        public decimal TotalCost { get; set; }
-        public decimal TotalMarketValue { get; set; }
-        public decimal TotalGainLoss { get; set; }
-        public decimal TotalGLPerc { get; set; }
-        public decimal TotalAssets { get; set; }
+        public Nullable<decimal> TotalCost { get; set; }
+        public Nullable<decimal> TotalMarketValue { get; set; }
+        public Nullable<decimal> TotalGainLoss { get; set; }
+        public Nullable<decimal> TotalGLPerc { get; set; }
+        public Nullable<decimal> TotalAssets { get; set; }
     }
 
     public class GridAllFields4
     {
-        public decimal TotalCost { get; set; }
-        public decimal TotalMarketValue { get; set; }
-        public decimal TotalGainLoss { get; set; }
-        public decimal TotalGLPerc { get; set; }
-        public decimal TotalAssets { get; set; }
+        public Nullable<decimal> TotalCost { get; set; }
+        public Nullable<decimal> TotalMarketValue { get; set; }
+        public Nullable<decimal> TotalGainLoss { get; set; }
+        public Nullable<decimal> TotalGLPerc { get; set; }
+        public Nullable<decimal> TotalAssets { get; set; }
     }
 }

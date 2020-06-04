@@ -7,7 +7,7 @@ namespace FAMS_AngularApi.Models.AllCustomer
 {
     public class CustomerDetails
     {
-        //public Int64 UserId { get; set; }
+        public Int64 UserId { get; set; }
         public Int64 Sno { get; set; }
         public string UserName { get; set; }
         public string EmailId { get; set; }
