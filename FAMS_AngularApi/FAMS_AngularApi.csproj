@@ -189,6 +189,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NotesMasterController.cs" />
     <Compile Include="Controllers\CustodianController.cs" />
+    <Compile Include="Controllers\PMSCustomerListController.cs" />
     <Compile Include="Controllers\PMSEmployeesController.cs" />
     <Compile Include="Controllers\SummaryReportsController.cs" />
     <Compile Include="Controllers\TrailBalanceController.cs" />
@@ -218,6 +219,8 @@
     <Compile Include="Models\NotesMaster\JsonNotesDetails.cs" />
     <Compile Include="Models\NotesMaster\JsonUserDetails.cs" />
     <Compile Include="Models\NotesMaster\NoteMasterDetails.cs" />
+    <Compile Include="Models\PMSCustomerList\PMSCustomerList.cs" />
+    <Compile Include="Models\PMSCustomerList\PMSCustomerListDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\BindAllFields.cs" />
     <Compile Include="Models\PMSEmployees\BindCustodianFields.cs" />
     <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
@@ -298,6 +301,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\PMSCustomerList\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
