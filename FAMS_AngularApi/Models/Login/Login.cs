@@ -225,18 +225,18 @@ namespace FAMS_AngularApi.Models.Login
         }
 
 
-        //public Dictionary<string, object> ChangePasswordForNewUser(ChangePasswordJson Changepassword)
-        //{
-        //    FAMSEntities context = new FAMSEntities();
-        //    try
-        //    {
-        //        var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<Forgotflag>().Execute("@Querytype", "@CustomerAccount", "@Fromdate", "GetHoldingReportData", CustomerAccount, Date));
-        //        return results;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+        public Dictionary<string, object> ChangePasswordForNewUser(ChangePasswordJson Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<Forgotflag>().Execute("@Querytype", "@OldPassword", "@NewPassword", "@UserId", "ChangePassWordNewUser", Data.OldPassword, Data.NewPassword,Data.UserId));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
