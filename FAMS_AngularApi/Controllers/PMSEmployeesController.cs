@@ -30,6 +30,12 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.BindCustodian(Data);
         }
+        [HttpPost]
+        [Route("api/PMSEmployees/Search")]
+        public Dictionary<string, object> SearchApi(SearchFields Data)
+        {
+            return ObjDAL.Search(Data);
+        }
         [HttpGet]
         [Route("api/PMSEmployees/BindCustomers/{PMSEmpId}")]
         public Dictionary<string, object> BindCustomersApi(string PMSEmpId)
