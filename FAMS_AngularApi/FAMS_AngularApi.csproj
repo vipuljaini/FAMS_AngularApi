@@ -52,7 +52,9 @@
     </Reference>
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+
       <HintPath>C:\Users\YoekiDev\Downloads\Encryptions.dll</HintPath>
+
     </Reference>
     <Reference Include="EntityDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -190,6 +192,7 @@
     <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LinkSetupController.cs" />
     <Compile Include="Controllers\NotesMasterController.cs" />
     <Compile Include="Controllers\CustodianController.cs" />
     <Compile Include="Controllers\PMSCustomerListController.cs" />
@@ -224,6 +227,9 @@
     <Compile Include="Models\HoldingReports\Customer.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />
+    <Compile Include="Models\LinkSetup\DataAccessLayer.cs" />
+    <Compile Include="Models\LinkSetup\JsonLink.cs" />
+    <Compile Include="Models\LinkSetup\LinkAllFields.cs" />
     <Compile Include="Models\Login\ChangePasswordJsn.cs" />
     <Compile Include="Models\Login\ChangePasswordJson.cs" />
     <Compile Include="Models\Login\ChangePasswordRes.cs" />
