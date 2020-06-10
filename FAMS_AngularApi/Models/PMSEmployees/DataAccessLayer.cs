@@ -44,6 +44,21 @@ namespace FAMS_AngularApi.Models.PMSEmployees
                 throw ex;
             }
         }
+        public Dictionary<string, object> Search(SearchFields Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_PMSEmployees]").With<BindAllFields>()
+                          .Execute("@Querytype", "@SearchData" ,"@UserId", "SearchData", Data.Result ,Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public Dictionary<string, object> BindCustodian(CommonFields Data)
         {

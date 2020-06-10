@@ -52,7 +52,9 @@
     </Reference>
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Downloads\Encryptions.dll</HintPath>
+
+      <HintPath>C:\Users\YoekiDev\Downloads\Encryptions.dll</HintPath>
+
     </Reference>
     <Reference Include="EntityDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -185,6 +187,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AllCustomerController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LinkSetupController.cs" />
@@ -192,7 +197,10 @@
     <Compile Include="Controllers\CustodianController.cs" />
     <Compile Include="Controllers\PMSCustomerListController.cs" />
     <Compile Include="Controllers\PMSEmployeesController.cs" />
+    <Compile Include="Controllers\SectorController.cs" />
+    <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\SummaryReportsController.cs" />
+    <Compile Include="Controllers\TBStructureController.cs" />
     <Compile Include="Controllers\TrailBalanceController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SecurityDetailsController.cs" />
@@ -205,11 +213,17 @@
     <Compile Include="Models\AllCustomer\DataAccessLayer.cs" />
     <Compile Include="Models\AllCustomer\JsonCustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\JsonUserDetails.cs" />
+    <Compile Include="Models\City\City.cs" />
+    <Compile Include="Models\City\CityDataAccessLayer.cs" />
+    <Compile Include="Models\Country\Country.cs" />
+    <Compile Include="Models\Country\CountryDataAccessLayer.cs" />
     <Compile Include="Models\Custodian\Country.cs" />
     <Compile Include="Models\Custodian\Custodian.cs" />
     <Compile Include="Models\Custodian\CustodianDataAccessLayer.cs" />
     <Compile Include="Models\Custodian\PMS.cs" />
     <Compile Include="Models\CommonFields.cs" />
+    <Compile Include="Models\Designation\Designation.cs" />
+    <Compile Include="Models\Designation\DesignationDataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\Customer.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />
@@ -231,11 +245,21 @@
     <Compile Include="Models\PMSEmployees\BindCustodianFields.cs" />
     <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\JsonAllFields.cs" />
+
+    <Compile Include="Models\Sector\Sector.cs" />
+    <Compile Include="Models\Sector\SectorDataAccessLayer.cs" />
+
+    <Compile Include="Models\PMSEmployees\SearchFields.cs" />
+
     <Compile Include="Models\Security\SecurityCodeDetails.cs" />
+    <Compile Include="Models\State\State.cs" />
+    <Compile Include="Models\State\StateDataAccessLayer.cs" />
     <Compile Include="Models\SummaryReports\BindCustomerAllFields.cs" />
     <Compile Include="Models\SummaryReports\GridAllFields.cs" />
     <Compile Include="Models\SummaryReports\JasonFields.cs" />
     <Compile Include="Models\SummaryReports\SummaryReportsDataAccess.cs" />
+    <Compile Include="Models\TBStructure\TBStructure.cs" />
+    <Compile Include="Models\TBStructure\TBStructureDataAccessLayer.cs" />
     <Compile Include="Models\TrailBalance\DataAccessLayer.cs" />
     <Compile Include="Models\TrailBalance\GridAllFields.cs" />
     <Compile Include="Models\TrailBalance\JsonFields.cs" />
@@ -307,7 +331,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\City\" />
+    <Folder Include="Views\Country\" />
+    <Folder Include="Views\Designation\" />
     <Folder Include="Views\PMSCustomerList\" />
+    <Folder Include="Views\Sector\" />
+    <Folder Include="Views\State\" />
+    <Folder Include="Views\TBStructure\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
