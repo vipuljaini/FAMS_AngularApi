@@ -102,6 +102,7 @@ namespace FAMS_AngularApi.Models.Login
                                     Flag.FlagValue = "Incorrect";
                                 }
                                 #endregion
+                                Flag.Password =Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.Password).First().ToString());
                                 common.Add(Flag);
                             }
                         }
@@ -225,18 +226,18 @@ namespace FAMS_AngularApi.Models.Login
         }
 
 
-        //public Dictionary<string, object> ChangePasswordForNewUser(ChangePasswordJson Changepassword)
-        //{
-        //    FAMSEntities context = new FAMSEntities();
-        //    try
-        //    {
-        //        var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<Forgotflag>().Execute("@Querytype", "@CustomerAccount", "@Fromdate", "GetHoldingReportData", CustomerAccount, Date));
-        //        return results;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+        public Dictionary<string, object> ChangePasswordForNewUser(ChangePasswordJson Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[sp_UserLogin]").With<CommonFields>().Execute("@Querytype", "@OldPassword", "@ChangePassword", "@UserId", "ChangePassWordNewUser", Data.OldPassword, Data.NewPassword, Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
