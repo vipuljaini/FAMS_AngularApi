@@ -185,6 +185,7 @@
     <Compile Include="Controllers\AllCustomerController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MyNotesController.cs" />
     <Compile Include="Controllers\NotesMasterController.cs" />
     <Compile Include="Controllers\CustodianController.cs" />
     <Compile Include="Controllers\PMSCustomerListController.cs" />
@@ -214,6 +215,8 @@
     <Compile Include="Models\Login\ChangePasswordJson.cs" />
     <Compile Include="Models\Login\ChangePasswordRes.cs" />
     <Compile Include="Models\Login\Forgotflag.cs" />
+    <Compile Include="Models\MyNotes\BindAllFields.cs" />
+    <Compile Include="Models\MyNotes\DataAccessLayer.cs" />
     <Compile Include="Models\NotesMaster\DataAccessLayer.cs" />
     <Compile Include="Models\NotesMaster\JsonNotesDetails.cs" />
     <Compile Include="Models\NotesMaster\JsonUserDetails.cs" />

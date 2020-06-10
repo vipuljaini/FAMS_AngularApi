@@ -11,12 +11,12 @@ namespace FAMS_AngularApi.Models.NotesMaster
 {
     public class DataAccessLayer
     {
+        FAMSEntities context = new FAMSEntities();
         public Dictionary<string, object> BindGrid(JsonUserDetails Data)
         {
-            FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<NoteMasterDetails>().Execute("@QueryType", "@UserId", "BindNotesGrid", Dbsecurity.Decypt(Data.UserId).ToString()));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<NoteMasterDetails>().Execute("@QueryType", "@UserId", "BindGrid", Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
                 return results;
             }
             catch (Exception ex)
@@ -25,6 +25,18 @@ namespace FAMS_AngularApi.Models.NotesMaster
             }
         }
 
+        public Dictionary<string, object> SaveData(JsonNotesDetails Data) {
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<CommonFields>().Execute("@QueryType", "@Subject", "@Note", "@Attachment", "@UserId", "SaveData", Data.Subject,Data.Note,Data.Attachment,Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    
         //public Dictionary<string, object> SaveCustomer(JsonNotesDetails Data)
         //{
         //    FAMSEntities context = new FAMSEntities();
