@@ -68,4 +68,22 @@ namespace FAMS_AngularApi.Models.HoldingReports
         public Nullable<decimal> TotalGLPerc { get; set; }
         public Nullable<decimal> TotalAssets { get; set; }
     }
+
+    public class GridAllFields5
+    {
+        //public string PMSProvide { get; set; }
+        //public string CustomerAccount { get; set; }
+        //public string CustomerName { get; set; }
+
+        public string Security { get; set; }
+        public string Quantity { get; set; }
+        public string UnitCost { get; set; }
+        public string Cost { get; set; }
+        public string Price { get; set; }
+        public string MarketValue { get; set; }
+        public string GainLoss { get; set; }
+        public string GainLossPer { get; set; }
+        public string Assets { get; set; }
+    }
+
 }
