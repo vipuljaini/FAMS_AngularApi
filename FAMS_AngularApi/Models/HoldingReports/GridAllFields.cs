@@ -74,6 +74,7 @@ namespace FAMS_AngularApi.Models.HoldingReports
         //public string PMSProvide { get; set; }
         //public string CustomerAccount { get; set; }
         //public string CustomerName { get; set; }
+
         public string Security { get; set; }
         public string Quantity { get; set; }
         public string UnitCost { get; set; }

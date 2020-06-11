@@ -40,7 +40,7 @@ namespace FAMS_AngularApi.Models.HoldingReports
 
                 //var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<GridAllFields1>().With<GridAllFields3>().With<GridAllFields4>()
                 //          .Execute("@Querytype", "@CustomerAccount", "@Fromdate", "GetHoldingReportData", CustomerAccount, Date));
-                return results;
+                return results; 
             }
             catch (Exception ex)
             {
