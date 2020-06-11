@@ -11,6 +11,6 @@ namespace FAMS_AngularApi.Models.LinkSetup
         public string LinkName { get; set; }
         public string IconName { get; set; }
         public string url { get; set; }
-        public Int64 ParetmenuID { get; set; }
+        public Int32 ParetmenuID { get; set; }
     }
 }
