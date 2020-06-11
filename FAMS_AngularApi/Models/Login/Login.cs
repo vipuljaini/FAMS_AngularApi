@@ -96,6 +96,19 @@ namespace FAMS_AngularApi.Models.Login
                                     Flag.FlagValue = "Dashboard";
 
                                 }
+                                else if (Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.UserType).First().ToString()) == "4")
+                                {
+                                    Flag.UserId = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.UserId).First().ToString()));
+                                    Flag.EmailId = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.EmailId).First().ToString()));
+                                    Flag.UserName = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.UserName).First().ToString()));
+                                    Flag.WareHouseId = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.WareHouseId).First().ToString()));
+                                    Flag.AccountNo = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.AccountNo).First().ToString()));
+                                    Flag.IsDefaultPswdChange = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.IsDefaultPswdChange).First().ToString()));
+                                    Flag.UserType = Dbsecurity.Encrypt(Convert.ToString(dataList.Cast<Logindetails>().ToList().Select(x => x.UserType).First().ToString()));
+                                    Flag.Flag = "1";
+                                    Flag.FlagValue = "Dashboard";
+
+                                }
                                 else
                                 {
                                     Flag.Flag = "0";
