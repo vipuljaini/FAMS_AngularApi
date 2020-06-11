@@ -13,13 +13,18 @@ namespace FAMS_AngularApi.Controllers
     {
         DataAccessLayer ObjDAL = new DataAccessLayer();
         [HttpPost]
-        [Route("api/NotesMaster/BindGrid")]
+        [Route("api/NoteMaster/BindGrid")]
         public Dictionary<string, object> BindGridApi(JsonUserDetails Data)
         {
             return ObjDAL.BindGrid(Data);
         }
 
-
+        [HttpPost]
+        [Route("api/NoteMaster/SaveData")]
+        public Dictionary<string, object> SaveDataApi(JsonNotesDetails Data)
+        {
+            return ObjDAL.SaveData(Data);
+        }
 
         //[HttpPost]
         //[Route("api/NotesMaster/InsertNotes")]

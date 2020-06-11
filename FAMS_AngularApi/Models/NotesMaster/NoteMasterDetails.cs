@@ -7,13 +7,13 @@ namespace FAMS_AngularApi.Models.NotesMaster
 {
     public class NoteMasterDetails
     {
-        public string Subject { get; set; }
-        public string Note  { get; set; }
-        public Nullable<Boolean> IsBold { get; set; }
-        public Nullable<Boolean> IsItalic { get; set; }
-        public Nullable<Boolean> IsUnderLine { get; set; }
-        public string Attachment { get; set; }
-        public DateTime CreatedOn { get; set; }
+        public Nullable<Int64> srNo { get; set; }
+        public Nullable<Int64> NMId { get; set; }
+        //public Nullable<Boolean> IsBold { get; set; }
+        //public Nullable<Boolean> IsItalic { get; set; }
+        //public Nullable<Boolean> IsUnderLine { get; set; }
+        public string subject { get; set; }
+        public string dateofsubmission { get; set; }
 
 
     }
