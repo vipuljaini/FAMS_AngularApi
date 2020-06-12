@@ -23,5 +23,10 @@ namespace FAMS_AngularApi.Models.SummaryReports
         public Nullable<decimal> ClosingOutstanding { get; set; }
         public string FromDate { get; set; }
         public string ToDate { get; set; }
+
+
+        public string CustomerAccountNo { get; set; }
+        public string CustomerName { get; set; }
+
     }
 }
