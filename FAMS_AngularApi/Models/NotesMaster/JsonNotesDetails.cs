@@ -14,5 +14,6 @@ namespace FAMS_AngularApi.Models.NotesMaster
         public string IsUnderLine { get; set; }
         public string Attachment { get; set; }
         public string UserId { get; set; }
+
     }
 }
