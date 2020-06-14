@@ -75,13 +75,13 @@ namespace FAMS_AngularApi.Models.PMSEmployees
                 throw ex;
             }
         }
-        public Dictionary<string, object> BindCustomers(string PMSEmpId)
+        public Dictionary<string, object> BindCustomers(Fields Data)
         {
             FAMSEntities context = new FAMSEntities();
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_PMSEmployees]").With<BindAllCustomersFields>()
-                          .Execute("@Querytype", "@PMSEmpId", "BindCustomers", PMSEmpId)); 
+                          .Execute("@Querytype", "@PMSEmpId", "@UserId", "BindCustomers", Data.PAMSEmpId, Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%"))))); 
                 return results;
             }
             catch (Exception ex)

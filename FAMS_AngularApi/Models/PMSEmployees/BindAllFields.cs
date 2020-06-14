@@ -14,7 +14,5 @@ namespace FAMS_AngularApi.Models.PMSEmployees
         public string Gender { get; set; }
         public string Qualification { get; set; }
         public string About { get; set; }
-   
-        //public string CustId { get; set; }
     }
 }
