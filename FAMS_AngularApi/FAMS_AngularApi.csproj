@@ -47,13 +47,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BusinessLibrary">
-      <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
+      <HintPath>C:\Users\Rock\Downloads\BusinessLibrary.dll</HintPath>
     </Reference>
-
-    <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Downloads\Encryptions.dll</HintPath>
-
+    <Reference Include="Encryptions">
+      <HintPath>C:\Users\Rock\Downloads\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
