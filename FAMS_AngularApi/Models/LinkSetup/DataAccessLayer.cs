@@ -39,6 +39,7 @@ namespace FAMS_AngularApi.Models.LinkSetup
             {
                 throw ex;
             }
+
         }
 
     }
