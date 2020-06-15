@@ -49,9 +49,11 @@
     <Reference Include="BusinessLibrary">
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
+
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Downloads\Encryptions.dll</HintPath>
+
     </Reference>
     <Reference Include="EntityDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -214,6 +216,7 @@
     <Compile Include="Models\AllCustomer\JsonCustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\JsonUserDetails.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields.cs" />
+    <Compile Include="Models\BrokerMaster\BindAllFields2.cs" />
     <Compile Include="Models\BrokerMaster\BrokerMasterDataAccess.cs" />
     <Compile Include="Models\BrokerMaster\JsonData.cs" />
     <Compile Include="Models\City\City.cs" />
@@ -230,6 +233,7 @@
     <Compile Include="Models\HoldingReports\Customer.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />
+    <Compile Include="Models\LinkSetup\BindAllTabs.cs" />
     <Compile Include="Models\LinkSetup\DataAccessLayer.cs" />
     <Compile Include="Models\LinkSetup\JsonLink.cs" />
     <Compile Include="Models\LinkSetup\LinkAllFields.cs" />

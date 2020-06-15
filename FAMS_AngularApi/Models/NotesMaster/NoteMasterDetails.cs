@@ -14,6 +14,8 @@ namespace FAMS_AngularApi.Models.NotesMaster
         //public Nullable<Boolean> IsUnderLine { get; set; }
         public string subject { get; set; }
         public string dateofsubmission { get; set; }
+        public string Note { get; set; }
+        public string FontSize { get; set; }
 
 
     }

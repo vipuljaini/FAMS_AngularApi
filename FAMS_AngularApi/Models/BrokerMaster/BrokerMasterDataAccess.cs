@@ -15,7 +15,7 @@ namespace FAMS_AngularApi.Models.BrokerMaster
         {
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_BrokerMaster]").With<BindAllFields>().Execute("@QueryType", "@UserId", "BindGrid", Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_BrokerMaster]").With<BindAllFields>().With<BindAllFields2>().Execute("@QueryType", "@UserId", "BindGrid", Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
                 return results;
             }
             catch (Exception ex)
@@ -27,9 +27,17 @@ namespace FAMS_AngularApi.Models.BrokerMaster
         {
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_BrokerMaster]").With<CommonFields>().Execute("@QueryType", "@BrokerName", "@TradeName", "@RegistrationNo", "@GSTNo", "@StockExchangeName", "@Email", "@Telephone", "@ContactEmail", "@Phone", "@Extension", "@MobileNo", "@ContactPerson", "@UserId", "SaveData",
-                    Data.BrokerName,Data.TradeName,Data.RegistrationNo,Data.GSTNo,Data.StockExchangeName,Data.Email,Data.Telephone,Data.ContactEmail,Data.Phone,Data.Extension,Data.MobileNo,Data.ContactPerson, Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
-                return results;
+                if (Data.BMId == "") {
+                    var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_BrokerMaster]").With<CommonFields>().Execute("@QueryType", "@BrokerName", "@TradeName", "@RegistrationNo", "@GSTNo", "@StockExchangeName", "@Email", "@Telephone", "@ContactEmail", "@Phone", "@Extension", "@MobileNo", "@ContactPerson", "@UserId", "SaveData",
+                        Data.BrokerName, Data.TradeName, Data.RegistrationNo, Data.GSTNo, Data.StockExchangeName, Data.Email, Data.Telephone, Data.ContactEmail, Data.Phone, Data.Extension, Data.MobileNo, Data.ContactPerson, Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                    return results;
+                }
+                else
+                {
+                    var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_BrokerMaster]").With<CommonFields>().Execute("@QueryType", "@BrokerName", "@TradeName", "@RegistrationNo", "@GSTNo", "@StockExchangeName", "@Email", "@Telephone", "@ContactEmail", "@Phone", "@Extension", "@MobileNo", "@ContactPerson", "@BMId", "@UserId", "UpdateData",
+                       Data.BrokerName, Data.TradeName, Data.RegistrationNo, Data.GSTNo, Data.StockExchangeName, Data.Email, Data.Telephone, Data.ContactEmail, Data.Phone, Data.Extension, Data.MobileNo, Data.ContactPerson, Data.BMId ,Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                    return results;
+                }
             }
             catch (Exception ex)
             {

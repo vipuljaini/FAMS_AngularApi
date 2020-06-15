@@ -28,8 +28,15 @@ namespace FAMS_AngularApi.Models.NotesMaster
         public Dictionary<string, object> SaveData(JsonNotesDetails Data) {
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<CommonFields>().Execute("@QueryType", "@Subject", "@Note", "@Attachment", "@UserId", "SaveData", Data.Subject,Data.Note,Data.Attachment,Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
-                return results;
+                if (Data.NMId=="") {
+                    var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<CommonFields>().Execute("@QueryType", "@Subject", "@Note", "@Attachment", "@UserId", "SaveData", Data.Subject, Data.Note, Data.Attachment, Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                    return results;
+                }
+                else
+                {
+                    var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<CommonFields>().Execute("@QueryType", "@Subject", "@Note", "@Attachment", "@NMId", "@UserId", "Update", Data.Subject, Data.Note, Data.Attachment, Data.NMId,Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                    return results;
+                }
             }
             catch (Exception ex)
             {
