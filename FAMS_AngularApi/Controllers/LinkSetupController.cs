@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using FAMS_AngularApi.Models;
 using FAMS_AngularApi.Models.LinkSetup;
 
 
@@ -17,6 +18,12 @@ namespace FAMS_AngularApi.Controllers
         public Dictionary<string, object> getLinksUserWise([FromBody] JsonLink LinkData)
         {
             return ObjDAL.GetLinks(LinkData);
+        }
+        [HttpPost]
+        [Route("api/LinkSetup/BindAllTab")]
+        public Dictionary<string, object> BindAllTabApi([FromBody] CommonFields Data)
+        {
+            return ObjDAL.BindAllTabs(Data);
         }
     }
 }

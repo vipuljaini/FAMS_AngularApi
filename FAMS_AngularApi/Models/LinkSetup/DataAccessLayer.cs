@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using BusinessLibrary;
+using Encryptions;
 using EntityDAL;
 
 namespace FAMS_AngularApi.Models.LinkSetup
@@ -24,5 +25,21 @@ namespace FAMS_AngularApi.Models.LinkSetup
                 throw ex;
             }
         }
+
+        FAMSEntities context = new FAMSEntities();
+        public Dictionary<string, object> BindAllTabs(CommonFields Data)
+        {
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[sp_linksetup]").With<BindAllTabs>().Execute("@QueryType",  "BindAllTabs"));       
+                return results;
+               // , Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))  "@UserId",
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
