@@ -31,6 +31,7 @@ namespace FAMS_AngularApi.Controllers
             return objlogin.UpdatePassworddtail(Changepassword);
         }
 
+
         [HttpPost]
         [Route("api/Login/ChangePasswordForNewUser")]
         public Dictionary<string, object> ChangePasswordForNewUser([FromBody] ChangePasswordJson Changepassword)
