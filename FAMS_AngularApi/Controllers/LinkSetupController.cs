@@ -17,7 +17,6 @@ namespace FAMS_AngularApi.Controllers
         [Route("api/LinkSetup/GetLinks")]
         public Dictionary<string, object> getLinksUserWise([FromBody] JsonLink LinkData)
         {
-
             return ObjDAL.GetLinks(LinkData);
         }
         [HttpPost]
