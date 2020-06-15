@@ -47,14 +47,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BusinessLibrary">
-
       <HintPath>..\BusinessLibrary\bin\Debug\BusinessLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-
-      <HintPath>..\..\..\..\Downloads\Encryptions.dll</HintPath>
-
+    <Reference Include="Encryptions">
+      <HintPath>C:\Users\Rock\Downloads\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -191,14 +187,11 @@
     <Compile Include="Controllers\BrokerMasterController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LinkSetupController.cs" />
     <Compile Include="Controllers\MyNotesController.cs" />
     <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
-
     <Compile Include="Controllers\LinkSetupController.cs" />
-
     <Compile Include="Controllers\NotesMasterController.cs" />
     <Compile Include="Controllers\CustodianController.cs" />
     <Compile Include="Controllers\PMSCustomerListController.cs" />

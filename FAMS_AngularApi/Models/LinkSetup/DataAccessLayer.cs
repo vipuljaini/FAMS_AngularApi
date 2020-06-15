@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using BusinessLibrary;
-using Encryptions;
+//using Encryptions;
 using EntityDAL;
 
 namespace FAMS_AngularApi.Models.LinkSetup
