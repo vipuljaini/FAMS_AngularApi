@@ -31,7 +31,7 @@ namespace FAMS_AngularApi.Models.LinkSetup
         {
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[sp_linksetup]").With<BindAllTabs>().Execute("@QueryType",  "BindAllTabs"));       
+                var results = Common.Getdata(context.MultipleResults("[dbo].[sp_linksetup]").With<BindAllTabs>().Execute("@QueryType", "@UserType" ,"BindAllTabs",Data.UserId));       
                 return results;
                // , Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))  "@UserId",
             }
