@@ -36,11 +36,11 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.Search(Data);
         }
-        [HttpGet]
-        [Route("api/PMSEmployees/BindCustomers/{PMSEmpId}")]
-        public Dictionary<string, object> BindCustomersApi(string PMSEmpId)
+        [HttpPost]
+        [Route("api/PMSEmployees/BindCustomers")]
+        public Dictionary<string, object> BindCustomersApi(Fields Data)
         {
-            return ObjDAL.BindCustomers(PMSEmpId);
+            return ObjDAL.BindCustomers(Data);
         }
 
     }
