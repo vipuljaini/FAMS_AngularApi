@@ -54,7 +54,7 @@
     </Reference>
     <Reference Include="EntityDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Rock\Downloads\EntityDAL.dll</HintPath>
+      <HintPath>C:\Users\Rock\Downloads\New folder\EntityDAL.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -203,6 +203,7 @@
     <Compile Include="Controllers\TrailBalanceController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SecurityDetailsController.cs" />
+    <Compile Include="Controllers\TransactionStatementController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -280,6 +281,9 @@
     <Compile Include="Models\Security\Security.cs" />
     <Compile Include="Models\Security\SecurityDataAccessLayer.cs" />
     <Compile Include="Models\Security\SecurityDetails.cs" />
+    <Compile Include="Models\TransactionStatement\BindMainGrid.cs" />
+    <Compile Include="Models\TransactionStatement\DataAccessLayer.cs" />
+    <Compile Include="Models\TransactionStatement\JsonFields.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

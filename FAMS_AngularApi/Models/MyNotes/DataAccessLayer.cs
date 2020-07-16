@@ -16,7 +16,7 @@ namespace FAMS_AngularApi.Models.MyNotes
         {
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_MyNotes]").With<BindAllFields>().Execute("@QueryType", "@UserId", "BindGrid", Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_MyNotes]").With<BindAllFields>().Execute("@QueryType", "@UserId", "BindGrid", Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
                 return results;
             }
             catch (Exception ex)
@@ -28,7 +28,7 @@ namespace FAMS_AngularApi.Models.MyNotes
         //{
         //    try
         //    {
-        //        var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_MyNotes]").With<CommonFields>().Execute("@QueryType", "@NMId" , "@UserId", "ReadMessage",Convert.ToString( Data.Result), Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+        //        var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_MyNotes]").With<CommonFields>().Execute("@QueryType", "@NMId" , "@UserId", "ReadMessage",Convert.ToString( Data.Result), Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
         //        return results;
         //    }
         //    catch (Exception ex)
