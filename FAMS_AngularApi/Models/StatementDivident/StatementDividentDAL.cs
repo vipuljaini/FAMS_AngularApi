@@ -17,6 +17,7 @@ namespace FAMS_AngularApi.Models.StatementDivident
         {
             try
             {
+
                 //var UserId = Dbsecurity.Decypt(Data.UserId);
                 //var CustomerAccountNo = Dbsecurity.Decypt(Data.CustomerAccountNo);
                 // string base64 = "";
