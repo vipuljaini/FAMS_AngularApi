@@ -54,7 +54,7 @@
     </Reference>
     <Reference Include="EntityDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Rock\Downloads\New folder\EntityDAL.dll</HintPath>
+      <HintPath>..\EntityDAL\bin\Debug\EntityDAL.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -186,6 +186,7 @@
     <Compile Include="Controllers\AllCustomerController.cs" />
     <Compile Include="Controllers\BankBookController.cs" />
     <Compile Include="Controllers\BrokerMasterController.cs" />
+    <Compile Include="Controllers\CurrentPortfolioController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyNotesController.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="Controllers\PMSEmployeesController.cs" />
     <Compile Include="Controllers\SectorController.cs" />
     <Compile Include="Controllers\StateController.cs" />
+    <Compile Include="Controllers\StatementOfExpensesController.cs" />
     <Compile Include="Controllers\SummaryReportsController.cs" />
     <Compile Include="Controllers\TBStructureController.cs" />
     <Compile Include="Controllers\TrailBalanceController.cs" />
@@ -226,6 +228,10 @@
     <Compile Include="Models\City\CityDataAccessLayer.cs" />
     <Compile Include="Models\Country\Country.cs" />
     <Compile Include="Models\Country\CountryDataAccessLayer.cs" />
+    <Compile Include="Models\CurrentPortfolio\DataAccessLayer.cs" />
+    <Compile Include="Models\CurrentPortfolio\GridFieldData.cs" />
+    <Compile Include="Models\CurrentPortfolio\GridTotalFieldData.cs" />
+    <Compile Include="Models\CurrentPortfolio\JsonFields.cs" />
     <Compile Include="Models\Custodian\Country.cs" />
     <Compile Include="Models\Custodian\Custodian.cs" />
     <Compile Include="Models\Custodian\CustodianDataAccessLayer.cs" />
@@ -262,6 +268,8 @@
     <Compile Include="Models\Sector\SectorDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\SearchFields.cs" />
     <Compile Include="Models\Security\SecurityCodeDetails.cs" />
+    <Compile Include="Models\StateOfExpenses\StatementOfExpenses.cs" />
+    <Compile Include="Models\StateOfExpenses\StateOfExpenses.cs" />
     <Compile Include="Models\State\State.cs" />
     <Compile Include="Models\State\StateDataAccessLayer.cs" />
     <Compile Include="Models\SummaryReports\BindCustomerAllFields.cs" />
@@ -352,6 +360,7 @@
     <Folder Include="Views\Designation\" />
     <Folder Include="Views\PMSCustomerList\" />
     <Folder Include="Views\Sector\" />
+    <Folder Include="Views\StatementOfExpenses\" />
     <Folder Include="Views\State\" />
     <Folder Include="Views\TBStructure\" />
   </ItemGroup>
