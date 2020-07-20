@@ -38,6 +38,8 @@ namespace FAMS_AngularApi.Models.StatementDivident
         public string fromdate { get; set; }
         public string PageCount { get; set; }
         public string todate { get; set; }
+        public string UserId { get; set; }//UserId
+        public string CustomerAccountNo { get; set; }
 
     }
 

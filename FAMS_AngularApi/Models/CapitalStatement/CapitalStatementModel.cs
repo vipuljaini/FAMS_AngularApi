@@ -60,8 +60,9 @@ namespace FAMS_AngularApi.Models.CapitalStatement
     {
         public string fromdate { get; set; }
         public string PageCount { get; set; }
-        public string todate { get; set; }
-
+        public string todate { get; set; } //UserId
+        public string UserId { get; set; } //
+        public string CustomerAccountNo { get; set; }
     }
 
     public class pagination
