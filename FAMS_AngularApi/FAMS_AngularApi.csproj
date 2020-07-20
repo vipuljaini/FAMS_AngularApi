@@ -184,6 +184,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AllCustomerController.cs" />
+    <Compile Include="Controllers\BankBookController.cs" />
     <Compile Include="Controllers\BrokerMasterController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -213,6 +214,10 @@
     <Compile Include="Models\AllCustomer\DataAccessLayer.cs" />
     <Compile Include="Models\AllCustomer\JsonCustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\JsonUserDetails.cs" />
+    <Compile Include="Models\BankBook\BindGrid.cs" />
+    <Compile Include="Models\BankBook\DataAccessLayer.cs" />
+    <Compile Include="Models\BankBook\JsonData.cs" />
+    <Compile Include="Models\BankBook\TotalSumGrid.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields2.cs" />
     <Compile Include="Models\BrokerMaster\BrokerMasterDataAccess.cs" />

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace FAMS_AngularApi.Models.TransactionStatement
+namespace FAMS_AngularApi.Models.BankBook
 {
-    public class JsonFields
+    public class JsonData
     {
         public string UserId { get; set; }
         public string FromDate { get; set; }
