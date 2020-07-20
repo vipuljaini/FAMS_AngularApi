@@ -16,7 +16,7 @@ namespace FAMS_AngularApi.Models.NotesMaster
         {
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<NoteMasterDetails>().Execute("@QueryType", "@UserId", "BindGrid", Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<NoteMasterDetails>().Execute("@QueryType", "@UserId", "BindGrid", Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
                 return results;
             }
             catch (Exception ex)
@@ -29,12 +29,12 @@ namespace FAMS_AngularApi.Models.NotesMaster
             try
             {
                 if (Data.NMId=="") {
-                    var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<CommonFields>().Execute("@QueryType", "@Subject", "@Note", "@Attachment", "@UserId", "SaveData", Data.Subject, Data.Note, Data.Attachment, Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                    var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<CommonFields>().Execute("@QueryType", "@Subject", "@Note", "@Attachment", "@UserId", "SaveData", Data.Subject, Data.Note, Data.Attachment, Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
                     return results;
                 }
                 else
                 {
-                    var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<CommonFields>().Execute("@QueryType", "@Subject", "@Note", "@Attachment", "@NMId", "@UserId", "Update", Data.Subject, Data.Note, Data.Attachment, Data.NMId,Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                    var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_NotesMaster]").With<CommonFields>().Execute("@QueryType", "@Subject", "@Note", "@Attachment", "@NMId", "@UserId", "Update", Data.Subject, Data.Note, Data.Attachment, Data.NMId,Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
                     return results;
                 }
             }
@@ -52,8 +52,8 @@ namespace FAMS_AngularApi.Models.NotesMaster
         //    {
         //        string Password = string.Empty;
         //        List<CustomerResponse> dataList = new List<CustomerResponse>();
-        //        Password = Dbsecurity.Encrypt(Dbsecurity.Decypt(Data.CustomerEmail).ToString().Split('@').ElementAtOrDefault(0));
-        //        var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<CustomerResponse>().Execute("@QueryType", "@UserId", "BindUser", Dbsecurity.Decypt(Data.UserId).ToString()));
+        //        Password = Dbsecurity.Encrypt(Dbsecurity.Decrypt(Data.CustomerEmail).ToString().Split('@').ElementAtOrDefault(0));
+        //        var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<CustomerResponse>().Execute("@QueryType", "@UserId", "BindUser", Dbsecurity.Decrypt(Data.UserId).ToString()));
         //        dataList = results.Cast<CustomerResponse>().ToList();
                
         //        return results;

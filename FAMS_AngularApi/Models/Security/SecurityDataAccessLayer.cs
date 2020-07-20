@@ -116,7 +116,7 @@ namespace FAMS_AngularApi.Models.Security
             try
             {
                 string isActive = (securityDetails.Active == "true" ? "1" : "0");
-                var Result = context.MultipleResults("[dbo].[FAMS_SecurityDetails]").With<SecurityDetails>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@ListCode", "@Name", "@SecurityCode", "@SecurityName", "@SectorCode", "@Active", "@UserId", "SaveSecurityDetails", securityDetails.CountryCode, securityDetails.CustodianCode, securityDetails.ListCode, securityDetails.ListName,  securityDetails.SecurityCode, securityDetails.SecurityName, securityDetails.SectorCode,isActive, Dbsecurity.Decypt(UserId));
+                var Result = context.MultipleResults("[dbo].[FAMS_SecurityDetails]").With<SecurityDetails>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@ListCode", "@Name", "@SecurityCode", "@SecurityName", "@SectorCode", "@Active", "@UserId", "SaveSecurityDetails", securityDetails.CountryCode, securityDetails.CustodianCode, securityDetails.ListCode, securityDetails.ListName,  securityDetails.SecurityCode, securityDetails.SecurityName, securityDetails.SectorCode,isActive, Dbsecurity.Decrypt(UserId));
                 foreach (var _securityDetails in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -138,7 +138,7 @@ namespace FAMS_AngularApi.Models.Security
             {
 
                 string isActive = (securityDetails.Active == "true" ? "1" : "0");
-                var Result = context.MultipleResults("[dbo].[FAMS_SecurityDetails]").With<SecurityDetails>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@ListCode", "@Name", "@SecurityCode", "@SecurityName", "@SectorCode", "@Active", "@UserId", "@SecurityDetailId", "UpdateSecurityDetails", securityDetails.CountryCode, securityDetails.CustodianCode, securityDetails.ListCode, securityDetails.ListName, securityDetails.SecurityCode, securityDetails.SecurityName, securityDetails.SectorCode, isActive, Dbsecurity.Decypt(UserId),SecurityDetailId);
+                var Result = context.MultipleResults("[dbo].[FAMS_SecurityDetails]").With<SecurityDetails>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@ListCode", "@Name", "@SecurityCode", "@SecurityName", "@SectorCode", "@Active", "@UserId", "@SecurityDetailId", "UpdateSecurityDetails", securityDetails.CountryCode, securityDetails.CustodianCode, securityDetails.ListCode, securityDetails.ListName, securityDetails.SecurityCode, securityDetails.SecurityName, securityDetails.SectorCode, isActive, Dbsecurity.Decrypt(UserId),SecurityDetailId);
                 foreach (var _securityDetails in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();

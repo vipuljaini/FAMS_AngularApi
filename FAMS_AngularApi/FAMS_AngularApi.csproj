@@ -184,6 +184,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AllCustomerController.cs" />
+    <Compile Include="Controllers\BankBookController.cs" />
     <Compile Include="Controllers\BrokerMasterController.cs" />
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Controllers\TrailBalanceController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SecurityDetailsController.cs" />
+    <Compile Include="Controllers\TransactionStatementController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,6 +216,10 @@
     <Compile Include="Models\AllCustomer\DataAccessLayer.cs" />
     <Compile Include="Models\AllCustomer\JsonCustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\JsonUserDetails.cs" />
+    <Compile Include="Models\BankBook\BindGrid.cs" />
+    <Compile Include="Models\BankBook\DataAccessLayer.cs" />
+    <Compile Include="Models\BankBook\JsonData.cs" />
+    <Compile Include="Models\BankBook\TotalSumGrid.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields2.cs" />
     <Compile Include="Models\BrokerMaster\BrokerMasterDataAccess.cs" />
@@ -288,6 +294,9 @@
     <Compile Include="Models\Security\Security.cs" />
     <Compile Include="Models\Security\SecurityDataAccessLayer.cs" />
     <Compile Include="Models\Security\SecurityDetails.cs" />
+    <Compile Include="Models\TransactionStatement\BindMainGrid.cs" />
+    <Compile Include="Models\TransactionStatement\DataAccessLayer.cs" />
+    <Compile Include="Models\TransactionStatement\JsonFields.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

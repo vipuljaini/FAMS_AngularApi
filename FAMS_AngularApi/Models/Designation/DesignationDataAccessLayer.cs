@@ -34,7 +34,7 @@ namespace FAMS_AngularApi.Models.Designation
             {
 
 
-                var Result = context.MultipleResults("[dbo].[FAMS_Designation]").With<Designation>().Execute("@QueryType", "@DesignationCode", "@DesignationName","@UserId", "SaveDesignation", Designation.DesignationCode, Designation.DesignationName, Dbsecurity.Decypt(UserId));
+                var Result = context.MultipleResults("[dbo].[FAMS_Designation]").With<Designation>().Execute("@QueryType", "@DesignationCode", "@DesignationName","@UserId", "SaveDesignation", Designation.DesignationCode, Designation.DesignationName, Dbsecurity.Decrypt(UserId));
                 foreach (var _state in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -55,7 +55,7 @@ namespace FAMS_AngularApi.Models.Designation
             {
 
 
-                var Result = context.MultipleResults("[dbo].[FAMS_Designation]").With<Designation>().Execute("@QueryType", "@DesignationCode", "@DesignationName", "@UserId", "@DesignationId", "UpdateDesignation", Designation.DesignationCode, Designation.DesignationName, Dbsecurity.Decypt(UserId), DesignationId);
+                var Result = context.MultipleResults("[dbo].[FAMS_Designation]").With<Designation>().Execute("@QueryType", "@DesignationCode", "@DesignationName", "@UserId", "@DesignationId", "UpdateDesignation", Designation.DesignationCode, Designation.DesignationName, Dbsecurity.Decrypt(UserId), DesignationId);
                 foreach (var _state in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();

@@ -86,7 +86,7 @@ namespace FAMS_AngularApi.Models.TBStructure
             try
             {
                 string isActive = (TBStructure.Active == "true" ? "1" : "0");
-                var Result = context.MultipleResults("[dbo].[FAMS_TBStructure]").With<TBStructure>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@ListCode", "@Name", "@TBHeadCode", "@TBHeadName", "@ParentCode", "@Active", "@UserId", "SaveTBStructure", TBStructure.CountryCode, TBStructure.CustodianCode, TBStructure.ListCode, TBStructure.ListName, TBStructure.TBHeadCode, TBStructure.TBHeadName, TBStructure.ParentCode, isActive, Dbsecurity.Decypt(UserId));
+                var Result = context.MultipleResults("[dbo].[FAMS_TBStructure]").With<TBStructure>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@ListCode", "@Name", "@TBHeadCode", "@TBHeadName", "@ParentCode", "@Active", "@UserId", "SaveTBStructure", TBStructure.CountryCode, TBStructure.CustodianCode, TBStructure.ListCode, TBStructure.ListName, TBStructure.TBHeadCode, TBStructure.TBHeadName, TBStructure.ParentCode, isActive, Dbsecurity.Decrypt(UserId));
                 foreach (var _TBStructure in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -108,7 +108,7 @@ namespace FAMS_AngularApi.Models.TBStructure
             {
 
                 string isActive = (TBStructure.Active == "true" ? "1" : "0");
-                var Result = context.MultipleResults("[dbo].[FAMS_TBStructure]").With<TBStructure>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@ListCode", "@Name", "@TBHeadCode", "@TBHeadName", "@ParentCode", "@Active", "@UserId", "@TBStructureId", "UpdateTBStructure", TBStructure.CountryCode, TBStructure.CustodianCode, TBStructure.ListCode, TBStructure.ListName, TBStructure.TBHeadCode, TBStructure.TBHeadName, TBStructure.ParentCode, isActive, Dbsecurity.Decypt(UserId), TBStructureId);
+                var Result = context.MultipleResults("[dbo].[FAMS_TBStructure]").With<TBStructure>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@ListCode", "@Name", "@TBHeadCode", "@TBHeadName", "@ParentCode", "@Active", "@UserId", "@TBStructureId", "UpdateTBStructure", TBStructure.CountryCode, TBStructure.CustodianCode, TBStructure.ListCode, TBStructure.ListName, TBStructure.TBHeadCode, TBStructure.TBHeadName, TBStructure.ParentCode, isActive, Dbsecurity.Decrypt(UserId), TBStructureId);
                 foreach (var _TBStructure in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
