@@ -21,7 +21,7 @@ namespace FAMS_AngularApi.Models.AllCustomer
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<CustomerDetails>().Execute("@QueryType","@UserId", "BindUser",Dbsecurity.Decypt(UserId).ToString()));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<CustomerDetails>().Execute("@QueryType","@UserId", "BindUser",Dbsecurity.Decrypt(UserId).ToString()));
                 return results;
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace FAMS_AngularApi.Models.AllCustomer
                 string Password = string.Empty;
                 List<CustomerResponse> dataList = new List<CustomerResponse>();
                 Password = Dbsecurity.Encrypt(Data.CustomerEmailID.Split('@').ElementAtOrDefault(0));
-                var results = context.MultipleResults("[dbo].[Sp_user]").With<CustomerResponse>().Execute("@QueryType", "@UserId", "@UserName", "@AccountNo", "@EmailId", "@Password", "SaveData", Dbsecurity.Decypt(UserId).ToString(),Data.CustomerUsername.ToString(),Data.CustomerAccount.ToString(), Data.CustomerEmailID.ToString(), Password.ToString());
+                var results = context.MultipleResults("[dbo].[Sp_user]").With<CustomerResponse>().Execute("@QueryType", "@UserId", "@UserName", "@AccountNo", "@EmailId", "@Password", "SaveData", Dbsecurity.Decrypt(UserId).ToString(),Data.CustomerUsername.ToString(),Data.CustomerAccount.ToString(), Data.CustomerEmailID.ToString(), Password.ToString());
                 //results.tab
                 dataList = results.FirstOrDefault().Cast<CustomerResponse>().ToList();
                 if (dataList.Cast<CustomerResponse>().ToList().Select(x => x.value).First().ToString() == "1")
@@ -56,7 +56,7 @@ namespace FAMS_AngularApi.Models.AllCustomer
                             string SMTPPort = ConfigurationManager.AppSettings["SMTPPort"].ToString();
                             string SMTPEnableSsl = ConfigurationManager.AppSettings["SMTPEnableSsl"].ToString();
                             sb.Append("Dear " + (Data.CustomerUsername).ToString() + ",<br> <br>");
-                            sb.Append("Please find your new Password is --   " + Dbsecurity.Decypt(Password).ToString() + " <br> <br>");
+                            sb.Append("Please find your new Password is --   " + Dbsecurity.Decrypt(Password).ToString() + " <br> <br>");
 
                             SmtpClient smtpClient = new SmtpClient();
                             MailMessage mailmsg = new MailMessage();
@@ -95,7 +95,7 @@ namespace FAMS_AngularApi.Models.AllCustomer
                 string Password = string.Empty;
                 List<CustomerResponse> dataList = new List<CustomerResponse>();
                 Password = Dbsecurity.Encrypt(Data.CustomerEmailID.Split('@').ElementAtOrDefault(0));
-                var results = context.MultipleResults("[dbo].[Sp_user]").With<CustomerResponse>().Execute("@QueryType", "@UserId", "@UserName", "@AccountNo", "@EmailId", "@Password", "@UserIdNew", "UpdateData", Dbsecurity.Decypt(UserId).ToString(), Data.CustomerUsername.ToString(), Data.CustomerAccount.ToString(), Data.CustomerEmailID.ToString(), Password.ToString(), CustomerId);
+                var results = context.MultipleResults("[dbo].[Sp_user]").With<CustomerResponse>().Execute("@QueryType", "@UserId", "@UserName", "@AccountNo", "@EmailId", "@Password", "@UserIdNew", "UpdateData", Dbsecurity.Decrypt(UserId).ToString(), Data.CustomerUsername.ToString(), Data.CustomerAccount.ToString(), Data.CustomerEmailID.ToString(), Password.ToString(), CustomerId);
                 //results.tab
                 dataList = results.FirstOrDefault().Cast<CustomerResponse>().ToList();
                 if (dataList.Cast<CustomerResponse>().ToList().Select(x => x.value).First().ToString() == "1")
@@ -112,7 +112,7 @@ namespace FAMS_AngularApi.Models.AllCustomer
                             string SMTPPort = ConfigurationManager.AppSettings["SMTPPort"].ToString();
                             string SMTPEnableSsl = ConfigurationManager.AppSettings["SMTPEnableSsl"].ToString();
                             sb.Append("Dear " + (Data.CustomerUsername).ToString() + ",<br> <br>");
-                            sb.Append("Please find your new Password is --   " + Dbsecurity.Decypt(Password).ToString() + " <br> <br>");
+                            sb.Append("Please find your new Password is --   " + Dbsecurity.Decrypt(Password).ToString() + " <br> <br>");
 
                             SmtpClient smtpClient = new SmtpClient();
                             MailMessage mailmsg = new MailMessage();

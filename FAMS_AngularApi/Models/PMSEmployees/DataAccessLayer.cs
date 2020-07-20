@@ -20,7 +20,7 @@ namespace FAMS_AngularApi.Models.PMSEmployees
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_PMSEmployees]").With<CommonFields>()
                           .Execute("@Querytype", "@EmployeeCode", "@EmployeeName", "@Gender", "@About", "@Custodian", "@CustomerCode", "@CustomerName", "@EmpLinkingDate", "@Qualification", "@InceptionDate", "@PMSEmpId", "@Active", "@UserId", "SaveEmployee", Data.EmployeeCode, Data.EmployeeName, Data.Gender,
-                          Data.About, Data.Custodian, Data.CustomerCode, Data.CustomerName , Data.EmpLinkingDate , Data.Qualification , Data.InceptionDate , Data.PMSEmpId , Active ,  Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));  
+                          Data.About, Data.Custodian, Data.CustomerCode, Data.CustomerName , Data.EmpLinkingDate , Data.Qualification , Data.InceptionDate , Data.PMSEmpId , Active ,  Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));  
                 return results;
 
             }
@@ -35,7 +35,7 @@ namespace FAMS_AngularApi.Models.PMSEmployees
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_PMSEmployees]").With<BindAllFields>()
-                          .Execute("@Querytype", "@UserId", "BindGrid", Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%"))))); 
+                          .Execute("@Querytype", "@UserId", "BindGrid", Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%"))))); 
                 return results;
 
             }
@@ -50,7 +50,7 @@ namespace FAMS_AngularApi.Models.PMSEmployees
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_PMSEmployees]").With<BindAllFields>()
-                          .Execute("@Querytype", "@SearchData" ,"@UserId", "SearchData", Data.Result ,Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                          .Execute("@Querytype", "@SearchData" ,"@UserId", "SearchData", Data.Result ,Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
                 return results;
 
             }
@@ -66,7 +66,7 @@ namespace FAMS_AngularApi.Models.PMSEmployees
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_PMSEmployees]").With<BindCustodianFields>()
-                          .Execute("@Querytype", "@UserId", "BindCustodian", Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));  
+                          .Execute("@Querytype", "@UserId", "BindCustodian", Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));  
                 return results;
 
             }
@@ -81,7 +81,7 @@ namespace FAMS_AngularApi.Models.PMSEmployees
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_PMSEmployees]").With<BindAllCustomersFields>()
-                          .Execute("@Querytype", "@PMSEmpId", "@UserId", "BindCustomers", Data.PAMSEmpId, Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%"))))); 
+                          .Execute("@Querytype", "@PMSEmpId", "@UserId", "BindCustomers", Data.PAMSEmpId, Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%"))))); 
                 return results;
             }
             catch (Exception ex)
