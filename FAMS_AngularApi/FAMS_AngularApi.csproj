@@ -185,6 +185,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AllCustomerController.cs" />
     <Compile Include="Controllers\BrokerMasterController.cs" />
+    <Compile Include="Controllers\CurrentPortfolioController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyNotesController.cs" />
@@ -221,6 +222,10 @@
     <Compile Include="Models\City\CityDataAccessLayer.cs" />
     <Compile Include="Models\Country\Country.cs" />
     <Compile Include="Models\Country\CountryDataAccessLayer.cs" />
+    <Compile Include="Models\CurrentPortfolio\DataAccessLayer.cs" />
+    <Compile Include="Models\CurrentPortfolio\GridFieldData.cs" />
+    <Compile Include="Models\CurrentPortfolio\GridTotalFieldData.cs" />
+    <Compile Include="Models\CurrentPortfolio\JsonFields.cs" />
     <Compile Include="Models\Custodian\Country.cs" />
     <Compile Include="Models\Custodian\Custodian.cs" />
     <Compile Include="Models\Custodian\CustodianDataAccessLayer.cs" />
