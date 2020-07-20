@@ -48,8 +48,8 @@ namespace FAMS_AngularApi.Models.Login
                             }
                         else
                         {
-                            string strDbPassword = Dbsecurity.Decypt(Convert.ToString(Logindata.Cast<Logindetails>().ToList().Select(x => x.Password).First().ToString()));
-                            if (strDbPassword.Trim() != Dbsecurity.Decypt(Login.Password))
+                            string strDbPassword = Dbsecurity.Decrypt(Convert.ToString(Logindata.Cast<Logindetails>().ToList().Select(x => x.Password).First().ToString()));
+                            if (strDbPassword.Trim() != Dbsecurity.Decrypt(Login.Password))
                             {
                                 Flag.Flag = "0";
                                 Flag.FlagValue = "Wrong  Password!!";
@@ -219,7 +219,7 @@ namespace FAMS_AngularApi.Models.Login
             {
                 List<Forgotflag> dataList = new List<Forgotflag>();
                 var Result = dbcontext.MultipleResults("[dbo].[Sp_UserLogin]").With<Forgotflag>().Execute("@QueryType", "@ChangePassword",
-                           "@UserId", "UpdatePassword", changepassword.password, Dbsecurity.Decypt(changepassword.Userid));
+                           "@UserId", "UpdatePassword", changepassword.password, Dbsecurity.Decrypt(changepassword.Userid));
                 dataList = Result.FirstOrDefault().Cast<Forgotflag>().ToList();
                 if (dataList.Count > 0)
                 {
@@ -244,7 +244,7 @@ namespace FAMS_AngularApi.Models.Login
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[sp_UserLogin]").With<CommonFields>().Execute("@Querytype", "@OldPassword", "@ChangePassword", "@UserId", "ChangePassWordNewUser", Data.OldPassword, Data.NewPassword, Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[sp_UserLogin]").With<CommonFields>().Execute("@Querytype", "@OldPassword", "@ChangePassword", "@UserId", "ChangePassWordNewUser", Data.OldPassword, Data.NewPassword, Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
                 return results;
             }
             catch (Exception ex)

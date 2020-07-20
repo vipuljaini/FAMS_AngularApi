@@ -88,7 +88,7 @@ namespace FAMS_AngularApi.Models.Custodian
             {
 
                 string isActive = (custodian.Active == true ? "1" : "0");
-                var Result = context.MultipleResults("[dbo].[FAMS_Custodian]").With<Custodian>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@CustodianName", "@PMSCode", "@PMSName", "@PMSAccountNumber", "@Active", "@UserId", "SaveCustodian",custodian.CountryCode,custodian.CustodianCode,custodian.CustodianName,custodian.PMSCode,custodian.PMSName,custodian.PMSAccountNumber, isActive, Dbsecurity.Decypt(UserId));
+                var Result = context.MultipleResults("[dbo].[FAMS_Custodian]").With<Custodian>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@CustodianName", "@PMSCode", "@PMSName", "@PMSAccountNumber", "@Active", "@UserId", "SaveCustodian",custodian.CountryCode,custodian.CustodianCode,custodian.CustodianName,custodian.PMSCode,custodian.PMSName,custodian.PMSAccountNumber, isActive, Dbsecurity.Decrypt(UserId));
                 foreach (var _custodian in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -109,7 +109,7 @@ namespace FAMS_AngularApi.Models.Custodian
             {
 
                 string isActive = (custodian.Active == true ? "1" : "0");
-                var Result = context.MultipleResults("[dbo].[FAMS_Custodian]").With<Custodian>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@CustodianName", "@PMSCode", "@PMSName", "@PMSAccountNumber", "@Active", "@UserId", "@CustodianId", "UpdateCustodian", custodian.CountryCode, custodian.CustodianCode, custodian.CustodianName, custodian.PMSCode, custodian.PMSName, custodian.PMSAccountNumber, isActive, Dbsecurity.Decypt(UserId),CustodianId);
+                var Result = context.MultipleResults("[dbo].[FAMS_Custodian]").With<Custodian>().Execute("@QueryType", "@CountryCode", "@CustodianCode", "@CustodianName", "@PMSCode", "@PMSName", "@PMSAccountNumber", "@Active", "@UserId", "@CustodianId", "UpdateCustodian", custodian.CountryCode, custodian.CustodianCode, custodian.CustodianName, custodian.PMSCode, custodian.PMSName, custodian.PMSAccountNumber, isActive, Dbsecurity.Decrypt(UserId),CustodianId);
                 foreach (var _custodian in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();

@@ -34,7 +34,7 @@ namespace FAMS_AngularApi.Models.Sector
             {
 
 
-                var Result = context.MultipleResults("[dbo].[FAMS_Sector]").With<Sector>().Execute("@QueryType", "@SectorCode", "@SectorName", "@CountryCode", "@UserId", "SaveSector", Sector.SectorCode, Sector.SectorName, Convert.ToString(Sector.CountryCode), Dbsecurity.Decypt(UserId));
+                var Result = context.MultipleResults("[dbo].[FAMS_Sector]").With<Sector>().Execute("@QueryType", "@SectorCode", "@SectorName", "@CountryCode", "@UserId", "SaveSector", Sector.SectorCode, Sector.SectorName, Convert.ToString(Sector.CountryCode), Dbsecurity.Decrypt(UserId));
                 foreach (var _state in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -55,7 +55,7 @@ namespace FAMS_AngularApi.Models.Sector
             {
 
 
-                var Result = context.MultipleResults("[dbo].[FAMS_Sector]").With<Sector>().Execute("@QueryType", "@SectorCode", "@SectorName", "@CountryCode", "@UserId", "@SectorId", "UpdateSector", Sector.SectorCode, Sector.SectorName, Convert.ToString(Sector.CountryCode), Dbsecurity.Decypt(UserId), SectorId);
+                var Result = context.MultipleResults("[dbo].[FAMS_Sector]").With<Sector>().Execute("@QueryType", "@SectorCode", "@SectorName", "@CountryCode", "@UserId", "@SectorId", "UpdateSector", Sector.SectorCode, Sector.SectorName, Convert.ToString(Sector.CountryCode), Dbsecurity.Decrypt(UserId), SectorId);
                 foreach (var _state in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();

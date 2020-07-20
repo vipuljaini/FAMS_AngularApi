@@ -98,7 +98,7 @@ namespace FAMS_AngularApi.Models.PMSCustomerList
             try
             {
                 string ISEnable = (pMSCustomerList.Enable == true ? "1" : "0");
-                var Result = context.MultipleResults("[dbo].[FAMS_PMSCustomerList]").With<PMSCustomerList>().Execute("@QueryType", "@CustodianCode", "@ListCode", "@Enable", "@CustomerAccount", "@CustomerName", "@PortfolioCode", "@InceptionDate", "@PMSEmployeeCode", "@UserId", "SaveCustomerLists", pMSCustomerList.CustodianCode, pMSCustomerList.ListCode, ISEnable, pMSCustomerList.CustomerAccount, pMSCustomerList.CustomerName, pMSCustomerList.PortfolioCode, pMSCustomerList.InceptionDate,pMSCustomerList.EmployeeCode, Dbsecurity.Decypt(UserId));
+                var Result = context.MultipleResults("[dbo].[FAMS_PMSCustomerList]").With<PMSCustomerList>().Execute("@QueryType", "@CustodianCode", "@ListCode", "@Enable", "@CustomerAccount", "@CustomerName", "@PortfolioCode", "@InceptionDate", "@PMSEmployeeCode", "@UserId", "SaveCustomerLists", pMSCustomerList.CustodianCode, pMSCustomerList.ListCode, ISEnable, pMSCustomerList.CustomerAccount, pMSCustomerList.CustomerName, pMSCustomerList.PortfolioCode, pMSCustomerList.InceptionDate,pMSCustomerList.EmployeeCode, Dbsecurity.Decrypt(UserId));
                 foreach (var _pMSCustomerList in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -120,7 +120,7 @@ namespace FAMS_AngularApi.Models.PMSCustomerList
             {
 
                 string ISEnable = (pMSCustomerList.Enable == true ? "1" : "0");
-                var Result = context.MultipleResults("[dbo].[FAMS_PMSCustomerList]").With<PMSCustomerList>().Execute("@QueryType", "@CustodianCode", "@ListCode", "@Enable", "@CustomerAccount", "@CustomerName", "@PortfolioCode", "@InceptionDate", "@PMSEmployeeCode", "@CustomerListId", "@UserId", "UpdateCustomerLists", pMSCustomerList.CustodianCode, pMSCustomerList.ListCode, ISEnable, pMSCustomerList.CustomerAccount, pMSCustomerList.CustomerName, pMSCustomerList.PortfolioCode, pMSCustomerList.InceptionDate, pMSCustomerList.EmployeeCode, CustomerListId, Dbsecurity.Decypt(UserId));
+                var Result = context.MultipleResults("[dbo].[FAMS_PMSCustomerList]").With<PMSCustomerList>().Execute("@QueryType", "@CustodianCode", "@ListCode", "@Enable", "@CustomerAccount", "@CustomerName", "@PortfolioCode", "@InceptionDate", "@PMSEmployeeCode", "@CustomerListId", "@UserId", "UpdateCustomerLists", pMSCustomerList.CustodianCode, pMSCustomerList.ListCode, ISEnable, pMSCustomerList.CustomerAccount, pMSCustomerList.CustomerName, pMSCustomerList.PortfolioCode, pMSCustomerList.InceptionDate, pMSCustomerList.EmployeeCode, CustomerListId, Dbsecurity.Decrypt(UserId));
                 foreach (var _pMSCustomerList in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();

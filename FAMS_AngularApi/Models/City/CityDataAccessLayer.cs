@@ -47,7 +47,7 @@ namespace FAMS_AngularApi.Models.City
             {
 
 
-                var Result = context.MultipleResults("[dbo].[FAMS_City]").With<City>().Execute("@QueryType", "@CityCode", "@CityName", "@CountryCode", "@StateCode", "@UserId", "SaveCity", City.CityCode, City.CityName, Convert.ToString(City.CountryCode), Convert.ToString(City.StateCode), Dbsecurity.Decypt(UserId));
+                var Result = context.MultipleResults("[dbo].[FAMS_City]").With<City>().Execute("@QueryType", "@CityCode", "@CityName", "@CountryCode", "@StateCode", "@UserId", "SaveCity", City.CityCode, City.CityName, Convert.ToString(City.CountryCode), Convert.ToString(City.StateCode), Dbsecurity.Decrypt(UserId));
                 foreach (var _city in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -68,7 +68,7 @@ namespace FAMS_AngularApi.Models.City
             {
 
 
-                var Result = context.MultipleResults("[dbo].[FAMS_City]").With<City>().Execute("@QueryType", "@CityCode", "@CityName", "@CountryCode", "@StateCode", "@UserId", "@CityId", "UpdateCity", City.CityCode, City.CityName, Convert.ToString(City.CountryCode), Convert.ToString(City.StateCode), Dbsecurity.Decypt(UserId),CityId);
+                var Result = context.MultipleResults("[dbo].[FAMS_City]").With<City>().Execute("@QueryType", "@CityCode", "@CityName", "@CountryCode", "@StateCode", "@UserId", "@CityId", "UpdateCity", City.CityCode, City.CityName, Convert.ToString(City.CountryCode), Convert.ToString(City.StateCode), Dbsecurity.Decrypt(UserId),CityId);
                 foreach (var _city in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();

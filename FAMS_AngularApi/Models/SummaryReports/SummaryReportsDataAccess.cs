@@ -32,7 +32,7 @@ namespace FAMS_AngularApi.Models.SummaryReports
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<BindCustomerAllFields>()
-                          .Execute("@Querytype", "GetCustomer"));       //,  Dbsecurity.Decypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%")))
+                          .Execute("@Querytype", "GetCustomer"));       //,  Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId.Replace("_", "%")))
                 return results;
 
             }
