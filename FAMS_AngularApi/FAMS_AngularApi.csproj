@@ -46,21 +46,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BusinessLibrary">
-      <HintPath>C:\Users\Rock\Downloads\BusinessLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Encryptions">
-      <HintPath>C:\Users\Rock\Downloads\Encryptions.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\EntityDAL\bin\Debug\EntityDAL.dll</HintPath>
+      <HintPath>..\..\Encryptions.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
@@ -184,8 +178,17 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AllCustomerController.cs" />
+    <Compile Include="Controllers\BankBookController.cs" />
     <Compile Include="Controllers\BrokerMasterController.cs" />
+
     <Compile Include="Controllers\DataAnalysisController.cs" />
+
+
+    <Compile Include="Controllers\CapitalStatementController.cs" />
+
+    <Compile Include="Controllers\CurrentPortfolioController.cs" />
+
+
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyNotesController.cs" />
@@ -199,12 +202,17 @@
     <Compile Include="Controllers\PMSEmployeesController.cs" />
     <Compile Include="Controllers\SectorController.cs" />
     <Compile Include="Controllers\StateController.cs" />
+
+    <Compile Include="Controllers\StatementDividendController.cs" />
+
     <Compile Include="Controllers\StatementOfExpensesController.cs" />
+
     <Compile Include="Controllers\SummaryReportsController.cs" />
     <Compile Include="Controllers\TBStructureController.cs" />
     <Compile Include="Controllers\TrailBalanceController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SecurityDetailsController.cs" />
+    <Compile Include="Controllers\TransactionStatementController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,14 +222,24 @@
     <Compile Include="Models\AllCustomer\DataAccessLayer.cs" />
     <Compile Include="Models\AllCustomer\JsonCustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\JsonUserDetails.cs" />
+    <Compile Include="Models\BankBook\BindGrid.cs" />
+    <Compile Include="Models\BankBook\DataAccessLayer.cs" />
+    <Compile Include="Models\BankBook\JsonData.cs" />
+    <Compile Include="Models\BankBook\TotalSumGrid.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields2.cs" />
     <Compile Include="Models\BrokerMaster\BrokerMasterDataAccess.cs" />
     <Compile Include="Models\BrokerMaster\JsonData.cs" />
+    <Compile Include="Models\CapitalStatement\CapitalStatementDAL.cs" />
+    <Compile Include="Models\CapitalStatement\CapitalStatementModel.cs" />
     <Compile Include="Models\City\City.cs" />
     <Compile Include="Models\City\CityDataAccessLayer.cs" />
     <Compile Include="Models\Country\Country.cs" />
     <Compile Include="Models\Country\CountryDataAccessLayer.cs" />
+    <Compile Include="Models\CurrentPortfolio\DataAccessLayer.cs" />
+    <Compile Include="Models\CurrentPortfolio\GridFieldData.cs" />
+    <Compile Include="Models\CurrentPortfolio\GridTotalFieldData.cs" />
+    <Compile Include="Models\CurrentPortfolio\JsonFields.cs" />
     <Compile Include="Models\Custodian\Country.cs" />
     <Compile Include="Models\Custodian\Custodian.cs" />
     <Compile Include="Models\Custodian\CustodianDataAccessLayer.cs" />
@@ -260,8 +278,13 @@
     <Compile Include="Models\Sector\SectorDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\SearchFields.cs" />
     <Compile Include="Models\Security\SecurityCodeDetails.cs" />
+
+    <Compile Include="Models\StatementDivident\StatementDividentDAL.cs" />
+    <Compile Include="Models\StatementDivident\StatementDividentModel.cs" />
+
     <Compile Include="Models\StateOfExpenses\StatementOfExpenses.cs" />
     <Compile Include="Models\StateOfExpenses\StateOfExpenses.cs" />
+
     <Compile Include="Models\State\State.cs" />
     <Compile Include="Models\State\StateDataAccessLayer.cs" />
     <Compile Include="Models\SummaryReports\BindCustomerAllFields.cs" />
@@ -286,6 +309,9 @@
     <Compile Include="Models\Security\Security.cs" />
     <Compile Include="Models\Security\SecurityDataAccessLayer.cs" />
     <Compile Include="Models\Security\SecurityDetails.cs" />
+    <Compile Include="Models\TransactionStatement\BindMainGrid.cs" />
+    <Compile Include="Models\TransactionStatement\DataAccessLayer.cs" />
+    <Compile Include="Models\TransactionStatement\JsonFields.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -384,8 +410,16 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLibrary\BusinessLibrary.csproj">
+      <Project>{82e12120-2ba7-4313-ab7f-f845f69980bb}</Project>
+      <Name>BusinessLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntityDAL\EntityDAL.csproj">
       <Project>{CF4643A5-80C9-40B9-AE92-F71B78B5EFD0}</Project>
+      <Name>EntityDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityDAL\EntityDAL.csproj">
+      <Project>{cf4643a5-80c9-40b9-ae92-f71b78b5efd0}</Project>
       <Name>EntityDAL</Name>
     </ProjectReference>
   </ItemGroup>

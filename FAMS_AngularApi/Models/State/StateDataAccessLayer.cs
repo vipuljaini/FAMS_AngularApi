@@ -34,7 +34,7 @@ namespace FAMS_AngularApi.Models.State
             {
 
 
-                var Result = context.MultipleResults("[dbo].[FAMS_State]").With<State>().Execute("@QueryType", "@StateCode", "@StateName", "@CountryCode", "@UserId", "SaveState", State.StateCode, State.StateName, Convert.ToString(State.CountryCode), Dbsecurity.Decypt(UserId));
+                var Result = context.MultipleResults("[dbo].[FAMS_State]").With<State>().Execute("@QueryType", "@StateCode", "@StateName", "@CountryCode", "@UserId", "SaveState", State.StateCode, State.StateName, Convert.ToString(State.CountryCode), Dbsecurity.Decrypt(UserId));
                 foreach (var _state in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -55,7 +55,7 @@ namespace FAMS_AngularApi.Models.State
             {
 
 
-                var Result = context.MultipleResults("[dbo].[FAMS_State]").With<State>().Execute("@QueryType", "@StateCode", "@StateName", "@CountryCode", "@UserId", "@StateId", "UpdateState", State.StateCode, State.StateName, Convert.ToString(State.CountryCode), Dbsecurity.Decypt(UserId), StateId);
+                var Result = context.MultipleResults("[dbo].[FAMS_State]").With<State>().Execute("@QueryType", "@StateCode", "@StateName", "@CountryCode", "@UserId", "@StateId", "UpdateState", State.StateCode, State.StateName, Convert.ToString(State.CountryCode), Dbsecurity.Decrypt(UserId), StateId);
                 foreach (var _state in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();

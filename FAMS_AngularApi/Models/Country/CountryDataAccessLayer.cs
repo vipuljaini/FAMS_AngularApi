@@ -34,7 +34,7 @@ namespace FAMS_AngularApi.Models.Country
             {
 
                 
-                var Result = context.MultipleResults("[dbo].[FAMS_Country]").With<Country>().Execute("@QueryType", "@CountryCode", "@CountryName", "@UserId", "SaveCountry", country.CountryCode, country.CountryName,Dbsecurity.Decypt(UserId));
+                var Result = context.MultipleResults("[dbo].[FAMS_Country]").With<Country>().Execute("@QueryType", "@CountryCode", "@CountryName", "@UserId", "SaveCountry", country.CountryCode, country.CountryName,Dbsecurity.Decrypt(UserId));
                 foreach (var _country in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
@@ -55,7 +55,7 @@ namespace FAMS_AngularApi.Models.Country
             {
 
                 
-                var Result = context.MultipleResults("[dbo].[FAMS_Country]").With<Country>().Execute("@QueryType", "@CountryCode", "@CountryName", "@UserId", "@CountryID", "UpdateCountry", country.CountryCode, country.CountryName, Dbsecurity.Decypt(UserId), CountryID);
+                var Result = context.MultipleResults("[dbo].[FAMS_Country]").With<Country>().Execute("@QueryType", "@CountryCode", "@CountryName", "@UserId", "@CountryID", "UpdateCountry", country.CountryCode, country.CountryName, Dbsecurity.Decrypt(UserId), CountryID);
                 foreach (var _country in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();
