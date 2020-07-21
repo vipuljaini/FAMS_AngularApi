@@ -13,10 +13,10 @@ namespace FAMS_AngularApi.Controllers
         DataAccessLayer ObjDAL = new DataAccessLayer();
 
         [HttpGet]
-        [Route("api/StatementOfExpenses/BindGridAllFields/{FromDate}/{ToDate}")]
-        public Dictionary<string, object> BindGridApi(string FromDate, string ToDate)
+        [Route("api/StatementOfExpenses/BindGridAllFields/{CustomerAccount}/{FromDate}/{ToDate}")]
+        public Dictionary<string, object> BindGridApi(string CustomerAccount, string FromDate, string ToDate)
         {
-            return ObjDAL.BindGrid(FromDate, ToDate);
+            return ObjDAL.BindGrid(CustomerAccount,FromDate, ToDate);
         }
     }
 }
