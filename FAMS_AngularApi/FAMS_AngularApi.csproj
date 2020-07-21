@@ -185,6 +185,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AllCustomerController.cs" />
     <Compile Include="Controllers\BrokerMasterController.cs" />
+    <Compile Include="Controllers\DataAnalysisController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyNotesController.cs" />
@@ -226,6 +227,8 @@
     <Compile Include="Models\Custodian\CustodianDataAccessLayer.cs" />
     <Compile Include="Models\Custodian\PMS.cs" />
     <Compile Include="Models\CommonFields.cs" />
+    <Compile Include="Models\DataAnalysis\DataAccessLayer.cs" />
+    <Compile Include="Models\DataAnalysis\DataAnalysisClasses.cs" />
     <Compile Include="Models\Designation\Designation.cs" />
     <Compile Include="Models\Designation\DesignationDataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\Customer.cs" />
@@ -343,6 +346,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\City\" />
     <Folder Include="Views\Country\" />
+    <Folder Include="Views\DataAnalysis\" />
     <Folder Include="Views\Designation\" />
     <Folder Include="Views\PMSCustomerList\" />
     <Folder Include="Views\Sector\" />
