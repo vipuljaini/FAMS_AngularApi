@@ -12,7 +12,7 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
         public string TranRef { get; set; }
         public string Detail { get; set; }
         public string DescNotes { get; set; }
-        public decimal Amount { get; set; }
+        public Nullable<decimal> Amount { get; set; }
     }
     public class StatementOfExpenses1
     {
@@ -21,7 +21,7 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
         public string TranRef { get; set; }
         public string Detail { get; set; }
         public string DescNotes { get; set; }
-        public decimal Amount { get; set; }
+        public Nullable<decimal> Amount { get; set; }
     }
     public class StatementOfExpenses2
     {
