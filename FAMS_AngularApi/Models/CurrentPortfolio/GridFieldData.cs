@@ -8,7 +8,7 @@ namespace FAMS_AngularApi.Models.CurrentPortfolio
     public class GridFieldData
     {
         public string Security { get; set; }
-        public decimal Price { get; set; }
+        public string Price { get; set; }
         public decimal Quantity { get; set; }
         public decimal UnitCost { get; set; }
         public decimal TotalCost { get; set; }

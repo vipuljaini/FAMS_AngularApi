@@ -48,7 +48,7 @@
   <ItemGroup>
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Encryptions.dll</HintPath>
+      <HintPath>C:\Users\Java_Dev\Desktop\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\..\EntityFramework.dll</HintPath>
@@ -181,13 +181,13 @@
     <Compile Include="Controllers\BankBookController.cs" />
     <Compile Include="Controllers\BrokerMasterController.cs" />
 
+
     <Compile Include="Controllers\DataAnalysisController.cs" />
 
 
+
     <Compile Include="Controllers\CapitalStatementController.cs" />
-
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
-
 
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -202,11 +202,8 @@
     <Compile Include="Controllers\PMSEmployeesController.cs" />
     <Compile Include="Controllers\SectorController.cs" />
     <Compile Include="Controllers\StateController.cs" />
-
     <Compile Include="Controllers\StatementDividendController.cs" />
-
     <Compile Include="Controllers\StatementOfExpensesController.cs" />
-
     <Compile Include="Controllers\SummaryReportsController.cs" />
     <Compile Include="Controllers\TBStructureController.cs" />
     <Compile Include="Controllers\TrailBalanceController.cs" />
@@ -278,13 +275,10 @@
     <Compile Include="Models\Sector\SectorDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\SearchFields.cs" />
     <Compile Include="Models\Security\SecurityCodeDetails.cs" />
-
     <Compile Include="Models\StatementDivident\StatementDividentDAL.cs" />
     <Compile Include="Models\StatementDivident\StatementDividentModel.cs" />
-
     <Compile Include="Models\StateOfExpenses\StatementOfExpenses.cs" />
     <Compile Include="Models\StateOfExpenses\StateOfExpenses.cs" />
-
     <Compile Include="Models\State\State.cs" />
     <Compile Include="Models\State\StateDataAccessLayer.cs" />
     <Compile Include="Models\SummaryReports\BindCustomerAllFields.cs" />
