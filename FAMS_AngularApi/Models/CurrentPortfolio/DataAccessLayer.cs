@@ -19,7 +19,7 @@ namespace FAMS_AngularApi.Models.CurrentPortfolio
                 var CustomerAccountNo = Dbsecurity.Decrypt(Data.CustomerAccountNo);
                     
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldData>().With<GridTotalFieldData>().With<GridTotalFieldData>()
-                           .Execute("@Querytype", "@Fromdate", "@Todate", "BindGrid", Data.FromDate, Data.ToDate));
+                           .Execute("@Querytype", "@Fromdate", "@Todate", "@CustomerAccount", "BindGrid", Data.FromDate, Data.ToDate, CustomerAccountNo));
                 return results;
 
             }

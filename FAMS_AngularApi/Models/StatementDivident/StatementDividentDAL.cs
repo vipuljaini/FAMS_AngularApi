@@ -19,10 +19,10 @@ namespace FAMS_AngularApi.Models.StatementDivident
             {
 
                 //var UserId = Dbsecurity.Decypt(Data.UserId);
-                //var CustomerAccountNo = Dbsecurity.Decypt(Data.CustomerAccountNo);
+                var CustomerAccountNo = Dbsecurity.Decrypt(Data.CustomerAccountNo);
                 // string base64 = "";
                 // var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CapitalStatement]").With<CapitalStatementModel>().Execute("@QueryType", "@Fromdate", "@Todate", "BindMainGrid",fromdate,todate));
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_StatementDividend]").With<StatementDividentModel>().With<DividendModel>().With<SDSum>().With<SumDividend>().Execute("@QueryType", "@PageCount", "@Fromdate", "@Todate", "@CustomerAccount", "BindMainGrid", Data.PageCount, Data.fromdate, Data.todate, Data.CustomerAccountNo));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_StatementDividend]").With<StatementDividentModel>().With<DividendModel>().With<SDSum>().With<SumDividend>().Execute("@QueryType", "@PageCount", "@Fromdate", "@Todate", "@CustomerAccount", "BindMainGrid", Data.PageCount, Data.fromdate, Data.todate, CustomerAccountNo));
 
                // MemoryStream MyMemoryStream = new MemoryStream();
 
