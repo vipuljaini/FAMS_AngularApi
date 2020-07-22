@@ -16,7 +16,7 @@ namespace FAMS_AngularApi.Models.BankBook
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_BankBook]").With<BindGrid>().With<TotalSumGrid>()
-                           .Execute("@Querytype", "@FromDate", "@ToDate", "@UserId", "@CustomerAccount", "BindGrid", Data.FromDate, Data.ToDate, Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%"))),Data.CustomerAccount));
+                           .Execute("@Querytype", "@FromDate", "@ToDate", "@CustomerAccount", "BindGrid", Data.FromDate, Data.ToDate,Data.CustomerAccount));
                 return results;
 
             }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using EntityDAL;
 using BusinessLibrary;
+using Encryptions;
 
 
 namespace FAMS_AngularApi.Models.CurrentPortfolio
@@ -16,7 +17,7 @@ namespace FAMS_AngularApi.Models.CurrentPortfolio
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldData>().With<GridTotalFieldData>().With<GridTotalFieldData>()
-                           .Execute("@Querytype", "@Fromdate", "@Todate", "BindGrid", Data.FromDate, Data.ToDate));
+                           .Execute("@Querytype", "@Fromdate", "@Todate", "@CustomerAccount", "BindGrid", Data.FromDate, Data.ToDate,Dbsecurity.Decrypt(Data.CustomerAccountNo)));
                 return results;
 
             }
