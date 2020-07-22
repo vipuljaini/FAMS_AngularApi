@@ -16,7 +16,7 @@ namespace FAMS_AngularApi.Controllers
         [Route("api/StatementOfExpenses/BindGridAllFields/{CustomerAccount}/{FromDate}/{ToDate}")]
         public Dictionary<string, object> BindGridApi(string CustomerAccount, string FromDate, string ToDate)
         {
-            return ObjDAL.BindGrid(CustomerAccount, FromDate, ToDate);
+            return ObjDAL.BindGrid(CustomerAccount,FromDate, ToDate);
         }
     }
 }

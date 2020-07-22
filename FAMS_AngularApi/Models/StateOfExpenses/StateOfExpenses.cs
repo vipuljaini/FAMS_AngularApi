@@ -10,13 +10,13 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
 {
     public class DataAccessLayer
     {
-        public Dictionary<string, object> BindGrid(string CustomerAccount, string FromDate, string ToDate)
+        public Dictionary<string, object> BindGrid(string CustomerAccount,string FromDate, string ToDate)
         {
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<StatementOfExpenses>().With<StatementOfExpenses1>().With<StatementOfExpenses2>()
-                            .Execute("@Querytype", "@CustomerAccount", "@FromDate", "@ToDate", "GetStatementOfExpenses", CustomerAccount, FromDate, ToDate));
+              var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<StatementOfExpenses>().With<StatementOfExpenses1>().With<StatementOfExpenses2>()
+                          .Execute("@Querytype", "@CustomerAccount", "@FromDate", "@ToDate", "GetStatementOfExpenses", CustomerAccount, FromDate, ToDate));
                 return results;
             }
             catch (Exception ex)
