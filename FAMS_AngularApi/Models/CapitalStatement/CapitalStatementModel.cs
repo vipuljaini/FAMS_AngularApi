@@ -22,7 +22,8 @@ namespace FAMS_AngularApi.Models.CapitalStatement
         public Nullable<decimal> ST { get; set; }
         public Nullable<decimal> LT { get; set; }
         public Nullable<decimal> AfterIndex_LT { get; set; }
-       
+        
+
     }
 
     public class CSSum
@@ -33,8 +34,13 @@ namespace FAMS_AngularApi.Models.CapitalStatement
         public Nullable<decimal> SumST { get; set; }
         public Nullable<decimal> SumLT { get; set; }
         public Nullable<decimal> SumAfterIndex_LT { get; set; }
+        
     }
 
+    public class HDATE
+    {
+        public string Date { get; set; }
+    }
     public class CapitalStatementDownloadModel
     {
         //public Nullable<Int64> TCSID { get; set; }

@@ -17,10 +17,10 @@ namespace FAMS_AngularApi.Models.CapitalStatement
             try
             {
 
-                //var UserId = Dbsecurity.Decypt(Data.UserId);
+                //var UserId = Dbsecurity.Decypt(Data.UserId); HDATE
                 var CustomerAccountNo = Dbsecurity.Decrypt(Data.CustomerAccountNo);
                 // var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CapitalStatement]").With<CapitalStatementModel>().Execute("@QueryType", "@Fromdate", "@Todate", "BindMainGrid",fromdate,todate));
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CapitalStatement]").With<CapitalStatementModel>().With<CSSum>().Execute("@QueryType", "@PageCount", "@Fromdate", "@Todate", "@CustomerAccount", "BindMainGrid",Data.PageCount,Data.fromdate,Data.todate, CustomerAccountNo));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CapitalStatement]").With<CapitalStatementModel>().With<CSSum>().With<HDATE>().Execute("@QueryType", "@PageCount", "@Fromdate", "@Todate", "@CustomerAccount", "BindMainGrid",Data.PageCount,Data.fromdate,Data.todate, CustomerAccountNo));
                 return results;  //
             }
             catch (Exception ex)

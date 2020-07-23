@@ -39,7 +39,7 @@ namespace FAMS_AngularApi.Models.AllCustomer
                 string Password = string.Empty;
                 List<CustomerResponse> dataList = new List<CustomerResponse>();
                 Password = Dbsecurity.Encrypt(Data.CustomerEmailID.Split('@').ElementAtOrDefault(0));
-                var results = context.MultipleResults("[dbo].[Sp_user]").With<CustomerResponse>().Execute("@QueryType", "@UserId", "@UserName", "@AccountNo", "@EmailId", "@Password", "SaveData", Dbsecurity.Decrypt(UserId).ToString(),Data.CustomerUsername.ToString(),Data.CustomerAccount.ToString(), Data.CustomerEmailID.ToString(), Password.ToString());
+                var results = context.MultipleResults("[dbo].[Sp_user]").With<CustomerResponse>().Execute("@QueryType", "@UserId", "@UserName", "@AccountNo", "@EmailId", "@Password", "@pmsempid", "SaveData", Dbsecurity.Decrypt(UserId).ToString(),Data.CustomerUsername.ToString(),Data.CustomerAccount.ToString(), Data.CustomerEmailID.ToString(), Password.ToString(), Data.EmployeeCode.ToString());
                 //results.tab
                 dataList = results.FirstOrDefault().Cast<CustomerResponse>().ToList();
                 if (dataList.Cast<CustomerResponse>().ToList().Select(x => x.value).First().ToString() == "1")

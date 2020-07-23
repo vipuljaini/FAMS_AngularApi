@@ -19,7 +19,8 @@ namespace FAMS_AngularApi.Models.StatementDivident
         public Nullable<decimal> TDSAmount { get; set; }
         public Nullable<decimal> NetAmount { get; set; }
         public Nullable<decimal> BalanceAmount { get; set; }
-       
+        public string Date { get; set; }
+
     }
 
     public class SDSum
