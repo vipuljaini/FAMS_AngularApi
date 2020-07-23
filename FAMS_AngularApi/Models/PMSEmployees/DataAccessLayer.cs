@@ -18,6 +18,7 @@ namespace FAMS_AngularApi.Models.PMSEmployees
             FAMSEntities context = new FAMSEntities();
             try
             {
+
                 string Password = string.Empty;
                 Password = Dbsecurity.Encrypt(Data.Emailid.Split('@').ElementAtOrDefault(0));
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_PMSEmployees]").With<CommonFields>()
