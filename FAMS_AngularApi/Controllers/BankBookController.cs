@@ -17,5 +17,12 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.BindGrid(Data);
         }
+
+        [HttpPost]
+        [Route("api/BankBook/BindEmployees")]
+        public Dictionary<string, object> BindEmployeesApi(JsonData Data)
+        {
+            return ObjDAL.BindEmployees(Data);
+        }
     }
 }

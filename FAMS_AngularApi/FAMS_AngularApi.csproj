@@ -48,7 +48,7 @@
   <ItemGroup>
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Java_Dev\Desktop\Encryptions.dll</HintPath>
+      <HintPath>C:\Users\Rock\Downloads\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\..\EntityFramework.dll</HintPath>
@@ -180,15 +180,9 @@
     <Compile Include="Controllers\AllCustomerController.cs" />
     <Compile Include="Controllers\BankBookController.cs" />
     <Compile Include="Controllers\BrokerMasterController.cs" />
-
-
     <Compile Include="Controllers\DataAnalysisController.cs" />
-
-
-
     <Compile Include="Controllers\CapitalStatementController.cs" />
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
-
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyNotesController.cs" />
@@ -219,8 +213,10 @@
     <Compile Include="Models\AllCustomer\DataAccessLayer.cs" />
     <Compile Include="Models\AllCustomer\JsonCustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\JsonUserDetails.cs" />
+    <Compile Include="Models\BankBook\BindEmployees.cs" />
     <Compile Include="Models\BankBook\BindGrid.cs" />
     <Compile Include="Models\BankBook\DataAccessLayer.cs" />
+    <Compile Include="Models\BankBook\HeaderData.cs" />
     <Compile Include="Models\BankBook\JsonData.cs" />
     <Compile Include="Models\BankBook\TotalSumGrid.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields.cs" />
