@@ -240,6 +240,9 @@
     <Compile Include="Models\DataAnalysis\DataAnalysisClasses.cs" />
     <Compile Include="Models\Designation\Designation.cs" />
     <Compile Include="Models\Designation\DesignationDataAccessLayer.cs" />
+    <Compile Include="Models\GraphBind\Customer.cs" />
+    <Compile Include="Models\GraphBind\Employee.cs" />
+    <Compile Include="Models\GraphBind\ReportLink.cs" />
     <Compile Include="Models\HoldingReports\Customer.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />

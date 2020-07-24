@@ -33,5 +33,11 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.UpdateCustomer(Data, UserId, CustomerId);
         }
+        [HttpGet]
+        [Route("api/AllCustomer/BindGraphGrid")]
+        public Dictionary<string, object> BindGGridApi()
+        {
+            return ObjDAL.BindGGrid();
+        }
     }
 }
