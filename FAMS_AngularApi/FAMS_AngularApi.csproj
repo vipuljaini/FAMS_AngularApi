@@ -48,7 +48,9 @@
   <ItemGroup>
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\YoekiSoft\Desktop\Encryptions.dll</HintPath>
+
+      <HintPath>C:\Users\YoekiDev\Downloads\Encryption dll from vipul\Encryptions.dll</HintPath>
+
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.dll</HintPath>
