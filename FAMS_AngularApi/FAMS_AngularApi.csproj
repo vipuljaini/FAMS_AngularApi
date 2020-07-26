@@ -247,8 +247,14 @@
     <Compile Include="Models\DataAnalysis\DataAnalysisClasses.cs" />
     <Compile Include="Models\Designation\Designation.cs" />
     <Compile Include="Models\Designation\DesignationDataAccessLayer.cs" />
+
+    <Compile Include="Models\GraphBind\Customer.cs" />
+    <Compile Include="Models\GraphBind\Employee.cs" />
+    <Compile Include="Models\GraphBind\ReportLink.cs" />
+
     <Compile Include="Models\FileUpload\DataAccessLayer.cs" />
     <Compile Include="Models\FileUpload\ResponseClass.cs" />
+
     <Compile Include="Models\HoldingReports\Customer.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />
@@ -262,10 +268,15 @@
     <Compile Include="Models\Login\Forgotflag.cs" />
     <Compile Include="Models\MyNotes\BindAllFields.cs" />
     <Compile Include="Models\MyNotes\DataAccessLayer.cs" />
+    <Compile Include="Models\NotesMaster\AllEmail.cs" />
+    <Compile Include="Models\NotesMaster\AllNotification.cs" />
     <Compile Include="Models\NotesMaster\DataAccessLayer.cs" />
+    <Compile Include="Models\NotesMaster\EmailWise.cs" />
     <Compile Include="Models\NotesMaster\JsonNotesDetails.cs" />
     <Compile Include="Models\NotesMaster\JsonUserDetails.cs" />
+    <Compile Include="Models\NotesMaster\Notedata.cs" />
     <Compile Include="Models\NotesMaster\NoteMasterDetails.cs" />
+    <Compile Include="Models\NotesMaster\Totalcount.cs" />
     <Compile Include="Models\PMSCustomerList\PMSCustomerList.cs" />
     <Compile Include="Models\PMSCustomerList\PMSCustomerListDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\BindAllCustomersFields.cs" />
@@ -367,6 +378,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Notificationattachments\" />
     <Folder Include="Views\City\" />
     <Folder Include="Views\Country\" />
     <Folder Include="Views\DataAnalysis\" />

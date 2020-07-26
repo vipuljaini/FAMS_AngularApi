@@ -5,10 +5,9 @@ using System.Web;
 
 namespace FAMS_AngularApi.Models.NotesMaster
 {
-    public class JsonUserDetails
+    public class AllEmail
     {
-        public string UserId { get; set; }
         public string EmailId { get; set; }
-        public string Searchvalue { get; set; }
+        public string Username { get; set; }
     }
 }
