@@ -59,7 +59,6 @@ namespace FAMS_AngularApi.Controllers
                     }
                     file.SaveAs(FilePath);
 
-
                     if (FileName.Contains("BANK BOOK") == true)
                     {
                         DataAccessLayer Obj = new DataAccessLayer();
