@@ -806,5 +806,287 @@ namespace FAMS_AngularApi.Models.FileUpload
             }
         }
 
+
+
+        public Dictionary<string, object> ReadAndInsertPerformanceAppraisal(string FilePath)
+        {
+            DataTable dt; SplitCsv csv = new SplitCsv();
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                dt = new DataTable(); string @XmlBankBook = ""; string @XmlPortfolioSummary = ""; string @XmlPortfolioAllocation = ""; string @XmlPortfolioPerformance = "";
+                dt.Clear(); dt.Columns.Clear(); dt.Columns.Add("Col1", typeof(String)); dt.Columns.Add("Col2", typeof(String)); dt.Columns.Add("Col3", typeof(String)); dt.Columns.Add("Col4", typeof(String)); dt.Columns.Add("Col5", typeof(String)); dt.Columns.Add("Col6", typeof(String)); dt.Columns.Add("Col7", typeof(String)); dt.Columns.Add("Col8", typeof(String)); dt.Columns.Add("Col9", typeof(String));
+                dt.Columns.Add("Col10", typeof(String)); dt.Columns.Add("Col11", typeof(String)); dt.Columns.Add("Col12", typeof(String)); dt.Columns.Add("Col13", typeof(String)); dt.Columns.Add("Col14", typeof(String));
+                if (dt != null)
+                {
+                    if (dt.Columns.Count > 0)
+                    {
+                        using (StreamReader sr = new StreamReader(FilePath))
+                        {
+                            while (!sr.EndOfStream)
+                            {
+                                DataRow dr = dt.NewRow();
+                                string line = sr.ReadLine();
+                                string[] rows = SplitCsv.Split(line);
+                                //FAMSEntities dbcontext = new FAMSEntities();
+                                for (int i = 0; i < rows.Length; i++)
+                                {
+                                    dr[i] = rows[i];
+                                }
+                                dt.Rows.Add(dr);
+                            }
+                            int Row = 1;
+                            string PMSProvider = "";
+                            string FromDate = ""; string ToDate = "";
+                            string Column1 = ""; string Column2 = ""; string Column3 = ""; string Column4 = ""; string Column5 = ""; string Column6 = ""; string Column7 = ""; string Column8 = ""; string Column9 = "";
+                            string Column10 = ""; string Column11 = ""; string Column12 = ""; string Column13 = ""; string Column14 = "";
+                            Boolean XMLFlag = false; int FromdateCount = 1; string CustomerAccount = ""; string CustomerName = "";
+                            string AccountCode = ""; 
+                            @XmlPortfolioAllocation = "<dtXml>";
+                            @XmlPortfolioSummary = "<dtXml>";
+                            XmlPortfolioPerformance = "<dtXml>";
+                            @XmlBankBook = "<dtXml>";
+                            Row = 1;
+                            foreach (DataRow dr in dt.Rows)
+                            {
+
+                                if (Convert.ToString(dr["Col3"]).Trim() == PMSProvider)
+                                {
+                                    FromdateCount = 1;
+                                }
+                               
+
+                                if (Row == 1)
+                                {
+                                    PMSProvider = Convert.ToString(dr["Col3"]);
+                                    FromdateCount = 1;
+                                }
+                                if (FromdateCount == 6)
+                                {
+                                    string DateRange = Convert.ToString(dr["Col1"]);
+                                    string[] parts = DateRange.Split("Of".ToCharArray());
+                                    string[] FromDate1 = parts[2].Split("/".ToCharArray());
+                                    FromDate = FromDate1[2].Trim() + '-' + FromDate1[1].Trim() + '-' + FromDate1[0].Trim();
+                                }
+                                if (FromdateCount == 7)
+                                {
+                                    string CustomerDetails = Convert.ToString(dr["Col1"]);
+                                    string[] parts = CustomerDetails.Split(":".ToCharArray());
+                                    string[] parts2 = parts[1].Split("  ".ToCharArray());
+                                    CustomerAccount = parts2[1];
+                                    CustomerName = parts2[6] + " " + parts2[7];
+                                    AccountCode = parts2[11];
+                                }
+
+                                if (Convert.ToString(dr["Col4"]) != "Portfolio Allocation" && Convert.ToString(dr["Col4"]) != "" && Convert.ToString(dr["Col4"]) != "Description" && Convert.ToString(dr["Col4"]) != "Total")
+                                {
+                                    XmlPortfolioAllocation += "<dtXml ";
+                                    XmlPortfolioAllocation += " PMSProvider=" + @"""" + PMSProvider + @"""";
+                                    XmlPortfolioAllocation += " FromDate=" + @"""" + Convert.ToString(FromDate).Trim() + @"""";
+                                    XmlPortfolioAllocation += " CustomerAccount=" + @"""" + Convert.ToString(CustomerAccount).Trim() + @"""";
+                                    XmlPortfolioAllocation += " CustomerName=" + @"""" + Convert.ToString(CustomerName).Trim() + @"""";
+                                    XmlPortfolioAllocation += " AccountCode=" + @"""" + Convert.ToString(AccountCode).Trim() + @"""";
+                                    XmlPortfolioAllocation += " Description=" + @"""" + Convert.ToString(dr["Col4"]) + @""""; 
+                                    XmlPortfolioAllocation += " MarketValue=" + @"""" + Regex.Replace(Convert.ToString(dr["Col7"]).Replace("(", "-").Replace(")", ""), ",", "") + @"""";
+                                    XmlPortfolioAllocation += " PerAsstes=" + @"""" + Regex.Replace(Convert.ToString(dr["Col9"]), " %", "") + @"""";
+                                    //@XmlBankBook += " " + Column3 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col3"]), ",", "") + @"""";
+                                    XmlPortfolioAllocation += " />";
+                                }
+                                if (Convert.ToString(dr["Col5"]) != "Portfolio Performance" && Convert.ToString(dr["Col5"]) != "" && Convert.ToString(dr["Col5"]) != "Period" && Convert.ToString(dr["Col5"]) != "Returns over 1 year period are annualized.")
+                                {
+                                    @XmlPortfolioPerformance += "<dtXml ";
+                                    @XmlPortfolioPerformance += " PMSProvider=" + @"""" + PMSProvider + @"""";
+                                    @XmlPortfolioPerformance += " FromDate=" + @"""" + Convert.ToString(FromDate).Trim() + @"""";
+                                    @XmlPortfolioPerformance += " CustomerAccount=" + @"""" + Convert.ToString(CustomerAccount).Trim() + @"""";
+                                    @XmlPortfolioPerformance += " CustomerName=" + @"""" + Convert.ToString(CustomerName).Trim() + @"""";
+                                    @XmlPortfolioPerformance += " AccountCode=" + @"""" + Convert.ToString(AccountCode).Trim() + @"""";
+                                    @XmlPortfolioPerformance += " Period=" + @"""" + Convert.ToString(dr["Col5"]) + @"""";
+                                    @XmlPortfolioPerformance += " Portfolio= " + @"""" + Regex.Replace(Regex.Replace(Convert.ToString(dr["Col10"]), "%", ""), @"\s+", "") + @"""";
+                                    @XmlPortfolioPerformance += " NIFTY= " + @"""" + Regex.Replace(Regex.Replace(Convert.ToString(dr["Col11"]), "%", ""), @"\s+", "") + @"""";
+                                    @XmlPortfolioPerformance += " BSE500= " + @"""" + Regex.Replace(Regex.Replace(Convert.ToString(dr["Col13"]), "%", ""), @"\s+", "") + @"""";
+                                    //@XmlBankBook += " " + Column3 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col3"]), ",", "") + @"""";
+                                    @XmlPortfolioPerformance += " />";
+                                }
+
+                                if (Convert.ToString(dr["Col12"]) != "Portfolio Summary" && Convert.ToString(dr["Col12"]) != "")
+                                {
+                                    @XmlPortfolioSummary += "<dtXml ";
+                                    @XmlPortfolioSummary += " PMSProvider=" + @"""" + PMSProvider + @"""";
+                                    @XmlPortfolioSummary += " FromDate=" + @"""" + Convert.ToString(FromDate).Trim() + @"""";
+                                    @XmlPortfolioSummary += " CustomerAccount=" + @"""" + Convert.ToString(CustomerAccount).Trim() + @"""";
+                                    @XmlPortfolioSummary += " CustomerName=" + @"""" + Convert.ToString(CustomerName).Trim() + @"""";
+                                    @XmlPortfolioSummary += " AccountCode=" + @"""" + Convert.ToString(AccountCode).Trim() + @"""";
+                                    @XmlPortfolioSummary += " Heading=" + @"""" + Convert.ToString(dr["Col12"]) + @"""";
+                                    @XmlPortfolioSummary += " Data=" + @"""" + Regex.Replace(Convert.ToString(dr["Col14"]), ",", "") + @"""";
+                                    @XmlPortfolioSummary += " />";
+                                    }
+            
+                                Row = Row + 1;
+                                FromdateCount = FromdateCount + 1;
+                            }
+                           // @XmlBankBook += "</dtXml>";
+                            XmlPortfolioAllocation += "</dtXml>";
+                            @XmlPortfolioPerformance += "</dtXml>";
+                            @XmlPortfolioSummary += "</dtXml>";
+
+
+                            }
+
+                    }
+                }
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_InsertReportsData]").With<ResponseClass>()
+                                               .Execute("@Querytype", "@XmlPortfolioAllocation", "@XmlPortfolioPerformance", "@XmlPortfolioSummary", "InsertPerformanceAppraisal", XmlPortfolioAllocation, @XmlPortfolioPerformance, @XmlPortfolioSummary));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public Dictionary<string, object> ReadAndInsertPortfolioFactSheet(string FilePath)
+        {
+            DataTable dt; SplitCsv csv = new SplitCsv();
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                dt = new DataTable(); string @XmlPortfolioSummary = ""; string @XmlSectorAllocation = ""; string @XmlPortfolioHolding = "";
+                dt.Clear(); dt.Columns.Clear(); dt.Columns.Add("Col1", typeof(String)); dt.Columns.Add("Col2", typeof(String)); dt.Columns.Add("Col3", typeof(String)); dt.Columns.Add("Col4", typeof(String)); dt.Columns.Add("Col5", typeof(String)); dt.Columns.Add("Col6", typeof(String)); dt.Columns.Add("Col7", typeof(String)); dt.Columns.Add("Col8", typeof(String)); dt.Columns.Add("Col9", typeof(String));
+                dt.Columns.Add("Col10", typeof(String)); dt.Columns.Add("Col11", typeof(String)); dt.Columns.Add("Col12", typeof(String)); dt.Columns.Add("Col13", typeof(String)); dt.Columns.Add("Col14", typeof(String));
+                if (dt != null)
+                {
+                    if (dt.Columns.Count > 0)
+                    {
+                        using (StreamReader sr = new StreamReader(FilePath))
+                        {
+                            while (!sr.EndOfStream)
+                            {
+                                DataRow dr = dt.NewRow();
+                                string line = sr.ReadLine();
+                                string[] rows = SplitCsv.Split(line);
+                                //FAMSEntities dbcontext = new FAMSEntities();
+                                for (int i = 0; i < rows.Length; i++)
+                                {
+                                    dr[i] = rows[i];
+                                }
+                                dt.Rows.Add(dr);
+                            }
+                            int Row = 1;
+
+                            string PMSProvider = "";
+                            string FromDate = ""; string ToDate = "";
+                            string Column1 = ""; string Column2 = ""; string Column3 = ""; string Column4 = ""; string Column5 = ""; string Column6 = ""; string Column7 = ""; string Column8 = ""; string Column9 = "";
+                            string Column10 = ""; string Column11 = ""; string Column12 = ""; string Column13 = ""; string Column14 = "";
+                            Boolean XMLFlag = false; int FromdateCount = 1; string CustomerAccount = ""; string CustomerName = "";
+                            string AccountCode = "";
+                            @XmlPortfolioHolding = "<dtXml>";
+                            @XmlSectorAllocation = "<dtXml>";
+                            @XmlPortfolioSummary = "<dtXml>";
+                            Row = 1;
+                            foreach (DataRow dr in dt.Rows)
+                            {
+
+                                if (Convert.ToString(dr["Col1"]).Trim() == PMSProvider)
+                                {
+                                    FromdateCount = 1;
+                                }
+
+
+                                if (Row == 1)
+                                {
+                                    PMSProvider = Convert.ToString(dr["Col1"]);
+                                    FromdateCount = 1;
+                                }
+                                if (FromdateCount == 7)
+                                {
+                                    string DateRange = Convert.ToString(dr["Col1"]);
+                                    string[] parts = DateRange.Split(":".ToCharArray());
+                                    string[] FromDate1 = parts[1].Split("/".ToCharArray());
+                                    FromDate = FromDate1[2].Trim() + '-' + FromDate1[1].Trim() + '-' + FromDate1[0].Trim();
+                                }
+                                if (FromdateCount == 6)
+                                {
+                                    string CustomerDetails = Convert.ToString(dr["Col1"]);
+                                    string[] parts = CustomerDetails.Split(":".ToCharArray());
+                                    string[] parts2 = parts[1].Split("  ".ToCharArray());
+                                    CustomerAccount = parts2[2];
+                                    CustomerName = parts2[4] + " " + parts2[5];
+                                    AccountCode = parts2[9];
+                                }
+
+                                if (Convert.ToString(dr["Col4"]) != "Sector" && Convert.ToString(dr["Col4"]) != "")
+                                {
+                                    @XmlSectorAllocation += "<dtXml ";
+                                    @XmlSectorAllocation += " PMSProvider=" + @"""" + PMSProvider + @"""";
+                                    @XmlSectorAllocation += " FromDate=" + @"""" + Convert.ToString(FromDate).Trim() + @"""";
+                                    @XmlSectorAllocation += " CustomerAccount=" + @"""" + Convert.ToString(CustomerAccount).Trim() + @"""";
+                                    @XmlSectorAllocation += " CustomerName=" + @"""" + Convert.ToString(CustomerName).Trim() + @"""";
+                                    @XmlSectorAllocation += " AccountCode=" + @"""" + Convert.ToString(AccountCode).Trim() + @"""";
+                                    @XmlSectorAllocation += " Sector=" + @"""" + Convert.ToString(dr["Col4"]) + @"""";
+                                    @XmlSectorAllocation += " Asstes=" + @"""" + Regex.Replace(Regex.Replace(Convert.ToString(dr["Col8"]), "%", ""), ",", "") + @"""";
+                                    //@XmlBankBook += " " + Column3 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col3"]), ",", "") + @"""";
+                                    @XmlSectorAllocation += " />";
+                                }
+                                if (Convert.ToString(dr["Col11"]) != "Security" && Convert.ToString(dr["Col11"]) != "")
+                                {
+                                    @XmlPortfolioHolding += "<dtXml ";
+                                    @XmlPortfolioHolding += " PMSProvider=" + @"""" + PMSProvider + @"""";
+                                    @XmlPortfolioHolding += " FromDate=" + @"""" + Convert.ToString(FromDate).Trim() + @"""";
+                                    @XmlPortfolioHolding += " CustomerAccount=" + @"""" + Convert.ToString(CustomerAccount).Trim() + @"""";
+                                    @XmlPortfolioHolding += " CustomerName=" + @"""" + Convert.ToString(CustomerName).Trim() + @"""";
+                                    @XmlPortfolioHolding += " AccountCode=" + @"""" + Convert.ToString(AccountCode).Trim() + @"""";
+                                    @XmlPortfolioHolding += " Security=" + @"""" + Convert.ToString(dr["Col11"]) + @"""";
+                                    @XmlPortfolioHolding += " Sector= " + @"""" + Regex.Replace(Regex.Replace(Convert.ToString(dr["Col12"]), "%", ""), @"\s+", "") + @"""";
+                                    @XmlPortfolioHolding += " MktValue= " + @"""" + Regex.Replace(Regex.Replace(Convert.ToString(dr["Col13"]), ",", ""), @"\s+", "") + @"""";
+                                    @XmlPortfolioHolding += " PerAssets= " + @"""" + Regex.Replace(Regex.Replace(Convert.ToString(dr["Col14"]), "%", ""), @",", "") + @"""";
+                                    //@XmlBankBook += " " + Column3 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col3"]), ",", "") + @"""";
+                                    @XmlPortfolioHolding += " />";
+                                }
+
+                               
+                                if (Convert.ToString(dr["Col1"]) == "Performance(TWRR)")
+                                {
+                                    XMLFlag = false;
+                                }
+                                    if (XMLFlag==true && Convert.ToString(dr["Col1"]) != "")
+                                { 
+                                    @XmlPortfolioSummary += "<dtXml ";
+                                    @XmlPortfolioSummary += " PMSProvider=" + @"""" + PMSProvider + @"""";
+                                    @XmlPortfolioSummary += " FromDate=" + @"""" + Convert.ToString(FromDate).Trim() + @"""";
+                                    @XmlPortfolioSummary += " CustomerAccount=" + @"""" + Convert.ToString(CustomerAccount).Trim() + @"""";
+                                    @XmlPortfolioSummary += " CustomerName=" + @"""" + Convert.ToString(CustomerName).Trim() + @"""";
+                                    @XmlPortfolioSummary += " AccountCode=" + @"""" + Convert.ToString(AccountCode).Trim() + @"""";
+                                    @XmlPortfolioSummary += " Heading=" + @"""" + Convert.ToString(dr["Col1"]) + @"""";
+                                    @XmlPortfolioSummary += " Data=" + @"""" + Regex.Replace(Convert.ToString(dr["Col6"]), ",", "") + @"""";
+                                    @XmlPortfolioSummary += " />";
+                                }
+                                if (Convert.ToString(dr["Col1"]) == "Portfolio Summary" && Convert.ToString(dr["Col1"]) != "")
+                                {
+                                    XMLFlag = true;
+                                }
+
+                                Row = Row + 1;
+                                FromdateCount = FromdateCount + 1;
+                            }
+                            @XmlSectorAllocation += "</dtXml>";
+                            @XmlPortfolioHolding += "</dtXml>";
+                            @XmlPortfolioSummary += "</dtXml>";
+
+
+                        }
+
+                    }
+                }
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_InsertReportsData]").With<ResponseClass>()
+                                               .Execute("@Querytype", "@XmlPortfolioSummary", "@XmlSectorAllocation", "@XmlPortfolioHolding", "InsertPortfolioFactSheet", @XmlPortfolioSummary, @XmlSectorAllocation, @XmlPortfolioHolding));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
