@@ -48,7 +48,11 @@
   <ItemGroup>
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\YoekiSoft\Desktop\Encryptions.dll</HintPath>
+
+      <HintPath>bin\Encryptions.dll</HintPath>
+
+
+      
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.dll</HintPath>
@@ -183,6 +187,9 @@
     <Compile Include="Controllers\DataAnalysisController.cs" />
     <Compile Include="Controllers\CapitalStatementController.cs" />
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
+
+    <Compile Include="Controllers\FileUploadController.cs" />
+
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyNotesController.cs" />
@@ -240,9 +247,14 @@
     <Compile Include="Models\DataAnalysis\DataAnalysisClasses.cs" />
     <Compile Include="Models\Designation\Designation.cs" />
     <Compile Include="Models\Designation\DesignationDataAccessLayer.cs" />
+
     <Compile Include="Models\GraphBind\Customer.cs" />
     <Compile Include="Models\GraphBind\Employee.cs" />
     <Compile Include="Models\GraphBind\ReportLink.cs" />
+
+    <Compile Include="Models\FileUpload\DataAccessLayer.cs" />
+    <Compile Include="Models\FileUpload\ResponseClass.cs" />
+
     <Compile Include="Models\HoldingReports\Customer.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />
