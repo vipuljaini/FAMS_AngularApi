@@ -21,8 +21,9 @@ namespace FAMS_AngularApi.Controllers
         [Route("api/FileUpload/ReadCSV")]
         public Dictionary<string, object> ReadCSV()
         {
-            
 
+            string aa = "(193692.16)";
+          
             FAMSEntities context = new FAMSEntities();
             try
             {
@@ -89,7 +90,21 @@ namespace FAMS_AngularApi.Controllers
                         DataAccessLayer Obj = new DataAccessLayer();
                         return Obj.ReadAndInsertCurrentPortfolio(FilePath);
                     }
-
+                    if (FileName.Contains("Performance Appraisal") == true)
+                    {
+                        DataAccessLayer Obj = new DataAccessLayer();
+                        return Obj.ReadAndInsertPerformanceAppraisal(FilePath);
+                    }
+                    if (FileName.Contains("Performance Appraisal") == true)
+                    {
+                        DataAccessLayer Obj = new DataAccessLayer();
+                        return Obj.ReadAndInsertPerformanceAppraisal(FilePath);
+                    }
+                    if (FileName.Contains("Portfolio Fact Sheet") == true)
+                    {
+                        DataAccessLayer Obj = new DataAccessLayer();
+                        return Obj.ReadAndInsertPortfolioFactSheet(FilePath);
+                    }
                 }
                 return ClsJson.JsonMethods.ToJson(dt);
             }
