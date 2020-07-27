@@ -5,9 +5,9 @@ using System.Web;
 
 namespace FAMS_AngularApi.Models.BankBook
 {
-    public class HeaderData
+    public class DefaultJson
     {
-        public Nullable<Int32> ID { get; set; }
-        public string Date { get; set; }
+        public string UserId { get; set; }
+        public string CustomerAccount { get; set; }
     }
 }
