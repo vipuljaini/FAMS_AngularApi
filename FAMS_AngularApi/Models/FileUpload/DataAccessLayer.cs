@@ -1033,7 +1033,7 @@ namespace FAMS_AngularApi.Models.FileUpload
 
                                     XmlPortfolioAllocation += " Gain_LossPer=" + @"""" + Regex.Replace(Convert.ToString(dr["Col8"]), "%", "") + @"""";
                                     XmlPortfolioAllocation += " PerAsstes=" + @"""" + Regex.Replace(Convert.ToString(dr["Col9"]), "%", "") + @"""";
-                                    XmlPortfolioAllocation += " IsFuture=" + @"""" +0+ @"""";
+                                    XmlPortfolioAllocation += " IsFutuure=" + @"""" +0+ @"""";
                                     //@XmlBankBook += " " + Column3 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col3"]), ",", "") + @"""";
                                     XmlPortfolioAllocation += " />";
                                 }
@@ -1055,9 +1055,24 @@ namespace FAMS_AngularApi.Models.FileUpload
                                     XmlPortfolioAllocation += " MarketValue= " + @"""" + Regex.Replace(Convert.ToString(dr["Col6"]), ",", "") + @"""";
                                     XmlPortfolioAllocation += " Gain_Loss= " + @"""" + Regex.Replace(Convert.ToString(dr["Col7"]), ",", "") + @"""";
 
+                                    if(dr["Col8"]=="")
+                                        {
+                                        XmlPortfolioAllocation += " Gain_LossPer=" + @"""" + 0 + @"""";
 
-                                    XmlPortfolioAllocation += " Gain_LossPer=" + @"""" + Regex.Replace(Convert.ToString(dr["Col8"]), "%", "") + @"""";
-                                    XmlPortfolioAllocation += " PerAsstes=" + @"""" + Regex.Replace(Convert.ToString(dr["Col9"]), "%", "") + @"""";
+                                    }
+                                    else
+                                    {
+                                        XmlPortfolioAllocation += " Gain_LossPer=" + @"""" + Regex.Replace(Convert.ToString(dr["Col8"]), "%", "") + @"""";
+
+                                    }
+                                    if (dr["Col9"] == "")
+                                    {
+                                        XmlPortfolioAllocation += " PerAsstes=" + @"""" + 0 + @"""";
+                                    }
+                                    else
+                                    {
+                                        XmlPortfolioAllocation += " PerAsstes=" + @"""" + Regex.Replace(Convert.ToString(dr["Col9"]), "%", "") + @"""";
+                                    }
                                     XmlPortfolioAllocation += " IsFutuure=" + @"""" + 1 + @"""";
                                     //@XmlBankBook += " " + Column3 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col3"]), ",", "") + @"""";
                                     XmlPortfolioAllocation += " />";
@@ -1079,7 +1094,7 @@ namespace FAMS_AngularApi.Models.FileUpload
                     }
                 }
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_InsertReportsData]").With<ResponseClass>()
-                                               .Execute("@Querytype", "@XmlPortfolioAllocation", "@XmlPortfolioPerformance", "@XmlPortfolioSummary", "InsertPerformanceAppraisal", XmlPortfolioAllocation, @XmlPortfolioPerformance, @XmlPortfolioSummary));
+                                               .Execute("@Querytype", "@XmlData", "InsertPortfolioAppraisal", XmlPortfolioAllocation));
                 return results;
             }
             catch (Exception ex)
