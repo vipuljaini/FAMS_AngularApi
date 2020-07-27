@@ -49,10 +49,12 @@
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
 
+
       <HintPath>bin\Encryptions.dll</HintPath>
 
 
       
+
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.dll</HintPath>
@@ -188,7 +190,9 @@
     <Compile Include="Controllers\CapitalStatementController.cs" />
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
 
+
     <Compile Include="Controllers\FileUploadController.cs" />
+
 
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -220,9 +224,14 @@
     <Compile Include="Models\AllCustomer\DataAccessLayer.cs" />
     <Compile Include="Models\AllCustomer\JsonCustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\JsonUserDetails.cs" />
+    <Compile Include="Models\BankBook\BindCustomers.cs" />
+    <Compile Include="Models\BankBook\BindEmployees.cs" />
     <Compile Include="Models\BankBook\BindGrid.cs" />
     <Compile Include="Models\BankBook\DataAccessLayer.cs" />
+    <Compile Include="Models\BankBook\DefaultJson.cs" />
+    <Compile Include="Models\BankBook\HeaderData.cs" />
     <Compile Include="Models\BankBook\JsonData.cs" />
+    <Compile Include="Models\BankBook\PageLoadData.cs" />
     <Compile Include="Models\BankBook\TotalSumGrid.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields2.cs" />

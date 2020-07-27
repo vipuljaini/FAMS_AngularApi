@@ -12,5 +12,6 @@ namespace FAMS_AngularApi.Models.BankBook
         public Nullable<decimal> Expenses { get; set; }
         public Nullable<decimal> Dep_with { get; set; }
         public Nullable<decimal> Balance { get; set; }
+        public Nullable<Int32> Total { get; set; }
     }
 }
