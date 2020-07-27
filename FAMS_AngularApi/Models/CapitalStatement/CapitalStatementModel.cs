@@ -15,6 +15,7 @@ namespace FAMS_AngularApi.Models.CapitalStatement
         public Nullable<decimal> SaleAmount { get; set; }
         public string PurchaseDate { get; set; }
         public Nullable<decimal> PurchaseRate { get; set; }
+
         public string Price { get; set; }
         public Nullable<decimal> PurchaseAmount { get; set; }
         public Nullable<decimal> IndexedCost { get; set; }
@@ -22,7 +23,15 @@ namespace FAMS_AngularApi.Models.CapitalStatement
         public Nullable<decimal> ST { get; set; }
         public Nullable<decimal> LT { get; set; }
         public Nullable<decimal> AfterIndex_LT { get; set; }
-        
+
+
+
+        //public Nullable<Int64> Total { get; set; }
+        //public Nullable<decimal> Total { get; set; }
+
+
+        //@Total
+
 
     }
 
@@ -34,13 +43,34 @@ namespace FAMS_AngularApi.Models.CapitalStatement
         public Nullable<decimal> SumST { get; set; }
         public Nullable<decimal> SumLT { get; set; }
         public Nullable<decimal> SumAfterIndex_LT { get; set; }
-        
+        public Nullable<Int32> Total { get; set; }
+
+
+
     }
 
     public class HDATE
     {
-        public string Date { get; set; }
+        public string Data { get; set; }
     }
+
+    public class PageLoadData
+    {
+        public string CustomerCode { get; set; }
+        public string CustomerAccountNo { get; set; }
+        public string FromDate { get; set; }
+        public string ToDate { get; set; }
+        
+
+    }
+
+    public class BindEmployees
+    {
+        public Nullable<Int64> PMSEmpId { get; set; }
+        public string EmployeeName { get; set; }
+
+    }
+
     public class CapitalStatementDownloadModel
     {
         //public Nullable<Int64> TCSID { get; set; }
@@ -59,6 +89,12 @@ namespace FAMS_AngularApi.Models.CapitalStatement
         public Nullable<decimal> LT { get; set; }
         public Nullable<decimal> AfterIndex_LT { get; set; }
 
+    }
+
+    public class BindCustomer
+    {
+        public string CustomerAccountNo { get; set; }
+        public string UserName { get; set; }
     }
 
 
