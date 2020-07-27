@@ -48,13 +48,19 @@
   <ItemGroup>
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Rock\Downloads\Encryptions.dll</HintPath>
+
+
+      <HintPath>bin\Encryptions.dll</HintPath>
+
+
+      
+
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>..\..\EntityFramework.dll</HintPath>
+      <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
@@ -116,7 +122,7 @@
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>C:\Users\YoekiSoft\Desktop\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -183,6 +189,11 @@
     <Compile Include="Controllers\DataAnalysisController.cs" />
     <Compile Include="Controllers\CapitalStatementController.cs" />
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
+
+
+    <Compile Include="Controllers\FileUploadController.cs" />
+
+
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyNotesController.cs" />
@@ -245,6 +256,14 @@
     <Compile Include="Models\DataAnalysis\DataAnalysisClasses.cs" />
     <Compile Include="Models\Designation\Designation.cs" />
     <Compile Include="Models\Designation\DesignationDataAccessLayer.cs" />
+
+    <Compile Include="Models\GraphBind\Customer.cs" />
+    <Compile Include="Models\GraphBind\Employee.cs" />
+    <Compile Include="Models\GraphBind\ReportLink.cs" />
+
+    <Compile Include="Models\FileUpload\DataAccessLayer.cs" />
+    <Compile Include="Models\FileUpload\ResponseClass.cs" />
+
     <Compile Include="Models\HoldingReports\Customer.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />
@@ -258,10 +277,15 @@
     <Compile Include="Models\Login\Forgotflag.cs" />
     <Compile Include="Models\MyNotes\BindAllFields.cs" />
     <Compile Include="Models\MyNotes\DataAccessLayer.cs" />
+    <Compile Include="Models\NotesMaster\AllEmail.cs" />
+    <Compile Include="Models\NotesMaster\AllNotification.cs" />
     <Compile Include="Models\NotesMaster\DataAccessLayer.cs" />
+    <Compile Include="Models\NotesMaster\EmailWise.cs" />
     <Compile Include="Models\NotesMaster\JsonNotesDetails.cs" />
     <Compile Include="Models\NotesMaster\JsonUserDetails.cs" />
+    <Compile Include="Models\NotesMaster\Notedata.cs" />
     <Compile Include="Models\NotesMaster\NoteMasterDetails.cs" />
+    <Compile Include="Models\NotesMaster\Totalcount.cs" />
     <Compile Include="Models\PMSCustomerList\PMSCustomerList.cs" />
     <Compile Include="Models\PMSCustomerList\PMSCustomerListDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\BindAllCustomersFields.cs" />
@@ -363,6 +387,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Notificationattachments\" />
     <Folder Include="Views\City\" />
     <Folder Include="Views\Country\" />
     <Folder Include="Views\DataAnalysis\" />
