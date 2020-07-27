@@ -19,6 +19,7 @@ namespace FAMS_AngularApi.Models.PMSEmployees
         public string InceptionDate { get; set; }
         public string EmpLinkingDate { get; set; }
         public Nullable<Boolean> Active { get; set; }
-        public string UserId { get; set; }
+        public string UserId { get; set; } //Emailid
+        public string Emailid { get; set; }
     }
 }
