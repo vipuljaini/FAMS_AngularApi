@@ -12,7 +12,6 @@ namespace FAMS_AngularApi.Controllers
     {
         DataAccessLayer ObjDAL = new DataAccessLayer();
 
-
         [HttpGet]
         [Route("api/StatementOfExpenses/BindCustomer/{EmployeeId}")]
         public Dictionary<string, object> BindCustomer(string EmployeeId)
