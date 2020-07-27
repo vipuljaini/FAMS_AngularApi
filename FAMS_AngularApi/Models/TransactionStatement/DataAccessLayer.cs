@@ -15,8 +15,12 @@ namespace FAMS_AngularApi.Models.TransactionStatement
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_TransactionStatement]").With<BindmaingridHeader>().With<BindmaingridDetails>().With<BindmaingridDetails_Summary>()
-                           .Execute("@Querytype", "@FromDate", "@ToDate", "@CustomerAccount", "@SeqNo", "@Summary_SeqNo", "BindMainGrid", Data.FromDate, Data.ToDate,Data.CustomerAccount,Data.SeqNo,Data.SummarySeqNo));
+                //var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_TransactionStatement]").With<BindmaingridHeader>().With<BindmaingridDetails>().With<BindmaingridDetails_Summary>()
+                //           .Execute("@Querytype", "@FromDate", "@ToDate", "@CustomerAccount", "@SeqNo", "@Summary_SeqNo", "BindMainGrid", Data.FromDate, Data.ToDate,Data.CustomerAccount,Data.SeqNo,Data.SummarySeqNo));
+                //return results;
+
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_TransactionStatement]").With<BindmaingridHeader>().With<BindmaingridDetails>()
+                          .Execute("@Querytype", "@FromDate", "@ToDate", "@CustomerAccount", "@SeqNo", "@Summary_SeqNo", "BindMainGrid", Data.FromDate, Data.ToDate, Data.CustomerAccount, Data.SeqNo, Data.SummarySeqNo));
                 return results;
 
             }
@@ -69,7 +73,20 @@ namespace FAMS_AngularApi.Models.TransactionStatement
                 throw ex;
             }
         }
-
+        public Dictionary<string, object> GetSummary(string CustomerAccount)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_TransactionStatement]").With<BindmaingridDetails_Summary>()
+                            .Execute("@Querytype", "@CustomerAccount", "Summary", CustomerAccount));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public Dictionary<string, object> BindDefaultData(string CustomerAccount, string GUserId)
         {
             FAMSEntities context = new FAMSEntities();

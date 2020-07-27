@@ -43,5 +43,8 @@ namespace FAMS_AngularApi.Models.TransactionStatement
         public string CustomerAccount { get; set; }
         public string FromDate { get; set; }
         public string ToDate { get; set; }
+
+        public string NoOfPage { get; set; }
+        public string SeqNo { get; set; }
     }
 }
