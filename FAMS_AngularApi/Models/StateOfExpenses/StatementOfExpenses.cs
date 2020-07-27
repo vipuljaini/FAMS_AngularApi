@@ -73,7 +73,7 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
 
     public class Customer
     {
-        public Int64 UserId { get; set; }
+        public string UserId { get; set; }
         public string UserName { get; set; }
     }
 

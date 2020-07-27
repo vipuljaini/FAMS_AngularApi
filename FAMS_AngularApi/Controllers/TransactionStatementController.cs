@@ -52,5 +52,12 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.BindDefaultData(CustomerAccount, GUserId);
         }
+
+        [HttpGet]
+        [Route("api/TransactionStatement/GetSummary/{CustomerAccount}")]
+        public Dictionary<string, object> GetSummary(string CustomerAccount)
+        {
+            return ObjDAL.GetSummary(CustomerAccount);
+        }
     }
 }
