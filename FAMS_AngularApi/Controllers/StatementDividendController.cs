@@ -19,5 +19,19 @@ namespace FAMS_AngularApi.Controllers
         {
             return Obj.BindGrid(Data);
         }
+
+        [HttpPost]
+        [Route("api/StatementDividend/BindDefaultData")]
+        public Dictionary<string, object> DefaultDataApi(GridFields Data)
+        {
+            return Obj.BindDefaultData(Data);
+        }
+
+        [HttpPost]
+        [Route("api/StatementDividend/BindNextData")]
+        public Dictionary<string, object> BindNextDataApi(GridFields Data)
+        {
+            return Obj.BindNextData(Data);
+        }
     }
 }
