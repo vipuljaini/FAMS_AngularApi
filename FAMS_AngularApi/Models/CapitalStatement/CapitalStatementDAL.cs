@@ -13,6 +13,7 @@ namespace FAMS_AngularApi.Models.CapitalStatement
 
         FAMSEntities context = new FAMSEntities();
         public Dictionary<string, object> BindGrid(GridFields Data)
+
         {
             try
             {
