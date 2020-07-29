@@ -703,17 +703,20 @@ namespace FAMS_AngularApi.Models.FileUpload
                             string Column1 = ""; string Column2 = ""; string Column3 = ""; string Column4 = ""; string Column5 = ""; string Column6 = ""; string Column7 = ""; string Column8 = ""; string Column9 = "";
                             string Column10 = ""; string Column11 = ""; string Column12 = ""; string Column13 = "";
                             Boolean XMLFlag = false; int FromdateCount = 1; string CustomerAccount = "";
-                            string CustomerName = "";
-                            string AccountCode = ""; Boolean IsSecurity = false; Boolean IsCash = false;
+                                string AsONDate = ""; Boolean IsFutureTotal = false;
+                            string CustomerName = ""; Boolean IsFuture = false;
+                            string AccountCode = ""; Boolean IsSecurity = false; Boolean IsCash = false; ; Boolean IsCashEqui = false;
                             @XmlBankBook = "<dtXml>";
                             Row = 1;
                             foreach (DataRow dr in dt.Rows)
                             {
-
+                                Boolean ISCashBank = false;
                                 if (Convert.ToString(dr["Col1"]).Trim() == PMSProvider)
                                 {
                                     FromdateCount = 1;
                                     IsCash = false;
+                                    IsFuture = false;
+                                    IsFutureTotal = false;
                                 }
                                 if (Convert.ToString(dr["Col1"]) == "Shares - Total")
                                 {
@@ -741,9 +744,18 @@ namespace FAMS_AngularApi.Models.FileUpload
                                     CustomerName = parts2[5] + " " + parts2[6];
                                     AccountCode = parts2[10];
                                 }
-                              
+                               
+                                //}
+                                if (Convert.ToString(dr["Col1"]) == "Cash and Equivalent - Total" && Convert.ToString(dr["Col1"]) != "")
+                                {
+                                    IsCashEqui = true;
+                                }
+                                if (Convert.ToString(dr["Col1"]) == "Security" )
+                                {
+                                    IsCashEqui = false;
+                                }
 
-                                    if (FromdateCount >= 16 && IsCash == false && Convert.ToString(dr["Col1"]) != "")
+                                if (Convert.ToString(dr["Col1"]) == "Cash" && Convert.ToString(dr["Col1"]) != "")
                                 {
                                     @XmlBankBook += "<dtXml ";
                                     @XmlBankBook += " PMSProvider=" + @"""" + PMSProvider + @"""";
@@ -765,6 +777,65 @@ namespace FAMS_AngularApi.Models.FileUpload
                                     @XmlBankBook += " PerG_L=" + @"""" + Regex.Replace(Convert.ToString(dr["Col11"]), ",", "") + @"""";
                                     @XmlBankBook += " IRRPer=" + @"""" + Regex.Replace(Convert.ToString(dr["Col12"]), ",", "") + @"""";
                                     @XmlBankBook += " PerAssets=" + @"""" + Regex.Replace(Convert.ToString(dr["Col13"]), ",", "") + @"""";
+                                    @XmlBankBook += " IsCashFuture=" + @"""" + 1 + @"""";
+
+
+                                    @XmlBankBook += " />";
+
+
+                                }
+
+
+                                //if (Convert.ToString(dr["Col1"]) == "Futures" && IsCashEqui == false && Convert.ToString(dr["Col1"]) == "")
+                                //{
+                                //    @XmlBankBook += "<dtXml ";
+                                //    @XmlBankBook += " PMSProvider=" + @"""" + PMSProvider + @"""";
+                                //    @XmlBankBook += " FromDate=" + @"""" + Convert.ToString(FromDate).Trim() + @"""";
+                                //    @XmlBankBook += " ToDate=" + @"""" + Convert.ToString(ToDate).Trim() + @"""";
+                                //    @XmlBankBook += " CustomerAccount=" + @"""" + Convert.ToString(CustomerAccount).Trim() + @"""";
+                                //    @XmlBankBook += " CustomerName=" + @"""" + Convert.ToString(CustomerName).Trim() + @"""";
+                                //    @XmlBankBook += " AccountCode=" + @"""" + Convert.ToString(AccountCode).Trim() + @"""";
+                                //    @XmlBankBook += " " + Column1 + " =" + @"""" + Convert.ToString(dr["Col1"]) + @"""";
+                                //    @XmlBankBook += " " + Column2 + " =" + AsONDate + @"""";
+                                //    //@XmlBankBook += " " + Column3 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col3"]), ",", "") + @"""";
+                                //    @XmlBankBook += " " + Column4 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col4"]), ",", "") + @"""";
+                                //    @XmlBankBook += " " + Column5 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col5"]), ",", "") + @"""";
+                                //    @XmlBankBook += " " + Column6 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col6"]), ",", "") + @"""";
+                                //    @XmlBankBook += " " + Column7 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col7"]), ",", "") + @"""";
+                                //    @XmlBankBook += " " + Column8 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col8"]), ",", "") + @"""";
+                                //    @XmlBankBook += " " + Column9 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col9"]), ",", "") + @"""";
+                                //    @XmlBankBook += " TotalG_L=" + @"""" + Regex.Replace(Convert.ToString(dr["Col10"]), ",", "") + @"""";
+                                //    @XmlBankBook += " PerG_L=" + @"""" + Regex.Replace(Convert.ToString(dr["Col11"]), ",", "") + @"""";
+                                //    @XmlBankBook += " IRRPer=" + @"""" + Regex.Replace(Convert.ToString(dr["Col12"]), ",", "") + @"""";
+                                //    @XmlBankBook += " PerAssets=" + @"""" + Regex.Replace(Convert.ToString(dr["Col13"]), ",", "") + @"""";
+                                //    @XmlBankBook += " />";
+
+
+                                //}
+                                if (FromdateCount >= 16 && IsCash == false && Convert.ToString(dr["Col1"]) != "")
+                                {
+                                    @XmlBankBook += "<dtXml ";
+                                    @XmlBankBook += " PMSProvider=" + @"""" + PMSProvider + @"""";
+                                    @XmlBankBook += " FromDate=" + @"""" + Convert.ToString(FromDate).Trim() + @"""";
+                                    @XmlBankBook += " ToDate=" + @"""" + Convert.ToString(ToDate).Trim() + @"""";
+                                    @XmlBankBook += " CustomerAccount=" + @"""" + Convert.ToString(CustomerAccount).Trim() + @"""";
+                                    @XmlBankBook += " CustomerName=" + @"""" + Convert.ToString(CustomerName).Trim() + @"""";
+                                    @XmlBankBook += " AccountCode=" + @"""" + Convert.ToString(AccountCode).Trim() + @"""";
+                                    @XmlBankBook += " " + Column1 + " =" + @"""" + Convert.ToString(dr["Col1"]) + @"""";
+                                    @XmlBankBook += " " + Column2 + " =" + @"""" + Convert.ToString(dr["Col2"]) + @"""";
+                                    //@XmlBankBook += " " + Column3 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col3"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column4 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col4"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column5 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col5"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column6 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col6"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column7 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col7"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column8 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col8"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column9 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col9"]), ",", "") + @"""";
+                                    @XmlBankBook += " TotalG_L=" + @"""" + Regex.Replace(Convert.ToString(dr["Col10"]), ",", "") + @"""";
+                                    @XmlBankBook += " PerG_L=" + @"""" + Regex.Replace(Convert.ToString(dr["Col11"]), ",", "") + @"""";
+                                    @XmlBankBook += " IRRPer=" + @"""" + Regex.Replace(Convert.ToString(dr["Col12"]), ",", "") + @"""";
+                                    @XmlBankBook += " PerAssets=" + @"""" + Regex.Replace(Convert.ToString(dr["Col13"]), ",", "") + @"""";
+                                    @XmlBankBook += " IsCashFuture=" + @"""" + 0 + @"""";
+
 
 
                                     @XmlBankBook += " />";
@@ -785,10 +856,51 @@ namespace FAMS_AngularApi.Models.FileUpload
                                     Column12 = Regex.Replace(Convert.ToString(dr["Col12"]), @"\s+", "");
                                     Column13 = Regex.Replace(Convert.ToString(dr["Col13"]), @"\s+", "");
 
-
+                                    IsCash = false;
                                     XMLFlag = true;
                                 }
-                                Row = Row + 1;
+                                if (Convert.ToString(dr["Col1"]) == "Futures - Total")
+                                {
+                                    IsFutureTotal = true;
+                                }
+                                if (IsFuture == true && IsFutureTotal == false && Convert.ToString(dr["Col1"])!= "Security"&& Convert.ToString(dr["Col1"]) != "Futures")
+                                {
+                                    @XmlBankBook += "<dtXml ";
+                                    @XmlBankBook += " PMSProvider=" + @"""" + PMSProvider + @"""";
+                                    @XmlBankBook += " FromDate=" + @"""" + Convert.ToString(FromDate).Trim() + @"""";
+                                    @XmlBankBook += " ToDate=" + @"""" + Convert.ToString(ToDate).Trim() + @"""";
+                                    @XmlBankBook += " CustomerAccount=" + @"""" + Convert.ToString(CustomerAccount).Trim() + @"""";
+                                    @XmlBankBook += " CustomerName=" + @"""" + Convert.ToString(CustomerName).Trim() + @"""";
+                                    @XmlBankBook += " AccountCode=" + @"""" + Convert.ToString(AccountCode).Trim() + @"""";
+                                    @XmlBankBook += " " + Column1 + " =" + @"""" + Convert.ToString(dr["Col1"]) + @"""";
+                                    @XmlBankBook += " " + Column2 + " =" + @"""" + Convert.ToString(dr["Col2"]) + @"""";
+                                    //@XmlBankBook += " " + Column3 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col3"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column4 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col4"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column5 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col5"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column6 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col6"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column7 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col7"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column8 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col8"]), ",", "") + @"""";
+                                    @XmlBankBook += " " + Column9 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col9"]), ",", "") + @"""";
+                                    @XmlBankBook += " TotalG_L=" + @"""" + Regex.Replace(Convert.ToString(dr["Col10"]), ",", "") + @"""";
+                                    @XmlBankBook += " PerG_L=" + @"""" + Regex.Replace(Convert.ToString(dr["Col11"]), ",", "") + @"""";
+                                    @XmlBankBook += " IRRPer=" + @"""" + Regex.Replace(Convert.ToString(dr["Col12"]), ",", "") + @"""";
+                                    @XmlBankBook += " PerAssets=" + @"""" + Regex.Replace(Convert.ToString(dr["Col13"]), ",", "") + @"""";
+                                    @XmlBankBook += " IsCashFuture=" + @"""" + 2 + @"""";
+
+                                    @XmlBankBook += " />";
+                                  
+                                }
+                             
+                                if (Convert.ToString(dr["Col1"]) == "Security" && IsCash == true)
+                                {
+                                    IsSecurity = true;
+                                }
+                                if(Convert.ToString(dr["Col1"]) == "Futures" && IsSecurity == true)
+                                {
+
+                                    IsFuture = true;
+                                }
+                                    Row = Row + 1;
                                 FromdateCount = FromdateCount + 1;
                             }
                             @XmlBankBook += "</dtXml>";
@@ -1110,7 +1222,7 @@ namespace FAMS_AngularApi.Models.FileUpload
             FAMSEntities context = new FAMSEntities();
             try
             {
-                dt = new DataTable(); string @XmlPortfolioSummary = ""; string @XmlSectorAllocation = ""; string @XmlPortfolioHolding = "";
+                dt = new DataTable(); string @XmlPortfolioSummary = ""; string @XmlSectorAllocation = ""; string @XmlPortfolioHolding = ""; string @XmlPerformance = "";
                 dt.Clear(); dt.Columns.Clear(); dt.Columns.Add("Col1", typeof(String)); dt.Columns.Add("Col2", typeof(String)); dt.Columns.Add("Col3", typeof(String)); dt.Columns.Add("Col4", typeof(String)); dt.Columns.Add("Col5", typeof(String)); dt.Columns.Add("Col6", typeof(String)); dt.Columns.Add("Col7", typeof(String)); dt.Columns.Add("Col8", typeof(String)); dt.Columns.Add("Col9", typeof(String));
                 dt.Columns.Add("Col10", typeof(String)); dt.Columns.Add("Col11", typeof(String)); dt.Columns.Add("Col12", typeof(String)); dt.Columns.Add("Col13", typeof(String)); dt.Columns.Add("Col14", typeof(String));
                 if (dt != null)
@@ -1138,10 +1250,12 @@ namespace FAMS_AngularApi.Models.FileUpload
                             string Column1 = ""; string Column2 = ""; string Column3 = ""; string Column4 = ""; string Column5 = ""; string Column6 = ""; string Column7 = ""; string Column8 = ""; string Column9 = "";
                             string Column10 = ""; string Column11 = ""; string Column12 = ""; string Column13 = ""; string Column14 = "";
                             Boolean XMLFlag = false; int FromdateCount = 1; string CustomerAccount = ""; string CustomerName = "";
+                            Boolean IsPerformance = false;
                             string AccountCode = "";
                             @XmlPortfolioHolding = "<dtXml>";
                             @XmlSectorAllocation = "<dtXml>";
                             @XmlPortfolioSummary = "<dtXml>";
+                            @XmlPerformance = "<dtXml>";
                             Row = 1;
                             foreach (DataRow dr in dt.Rows)
                             {
@@ -1149,6 +1263,7 @@ namespace FAMS_AngularApi.Models.FileUpload
                                 if (Convert.ToString(dr["Col1"]).Trim() == PMSProvider)
                                 {
                                     FromdateCount = 1;
+                                    IsPerformance = false;
                                 }
 
 
@@ -1202,11 +1317,26 @@ namespace FAMS_AngularApi.Models.FileUpload
                                     //@XmlBankBook += " " + Column3 + " =" + @"""" + Regex.Replace(Convert.ToString(dr["Col3"]), ",", "") + @"""";
                                     @XmlPortfolioHolding += " />";
                                 }
-
-                               
+                             
+                                if (IsPerformance == true && Convert.ToString(dr["Col9"])!="")
+                                {
+                                    @XmlPerformance += "<dtXml ";
+                                    @XmlPerformance += " PMSProvider=" + @"""" + PMSProvider + @"""";
+                                    @XmlPerformance += " FromDate=" + @"""" + Convert.ToString(FromDate).Trim() + @"""";
+                                    @XmlPerformance += " CustomerAccount=" + @"""" + Convert.ToString(CustomerAccount).Trim() + @"""";
+                                    @XmlPerformance += " CustomerName=" + @"""" + Convert.ToString(CustomerName).Trim() + @"""";
+                                    @XmlPerformance += " AccountCode=" + @"""" + Convert.ToString(AccountCode).Trim() + @"""";
+                                    @XmlPerformance += " Heading=" + @"""" + Convert.ToString(dr["Col3"]) + @"""";
+                                    @XmlPerformance += " Data1=" + @"""" + Regex.Replace(Convert.ToString(dr["Col5"]), "%", "") + @"""";
+                                    @XmlPerformance += " Data2=" + @"""" + Regex.Replace(Convert.ToString(dr["Col6"]), "%", "") + @"""";
+                                    @XmlPerformance += " Data3=" + @"""" + Regex.Replace(Convert.ToString(dr["Col7"]), "%", "") + @"""";
+                                    @XmlPerformance += " Data4=" + @"""" + Regex.Replace(Convert.ToString(dr["Col9"]), "%", "") + @"""";
+                                    @XmlPerformance += " />";
+                                }
                                 if (Convert.ToString(dr["Col1"]) == "Performance(TWRR)")
                                 {
                                     XMLFlag = false;
+                                    IsPerformance = true;
                                 }
                                     if (XMLFlag==true && Convert.ToString(dr["Col1"]) != "")
                                 { 
@@ -1231,6 +1361,7 @@ namespace FAMS_AngularApi.Models.FileUpload
                             @XmlSectorAllocation += "</dtXml>";
                             @XmlPortfolioHolding += "</dtXml>";
                             @XmlPortfolioSummary += "</dtXml>";
+                            @XmlPerformance += "</dtXml>";
 
 
                         }
@@ -1238,7 +1369,7 @@ namespace FAMS_AngularApi.Models.FileUpload
                     }
                 }
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_InsertReportsData]").With<ResponseClass>()
-                                               .Execute("@Querytype", "@XmlPortfolioSummary", "@XmlSectorAllocation", "@XmlPortfolioHolding", "InsertPortfolioFactSheet", @XmlPortfolioSummary, @XmlSectorAllocation, @XmlPortfolioHolding));
+                                               .Execute("@Querytype", "@XmlPortfolioSummary", "@XmlSectorAllocation", "@XmlPortfolioHolding", "@XmlPortfolioPerformance", "InsertPortfolioFactSheet", @XmlPortfolioSummary, @XmlSectorAllocation, @XmlPortfolioHolding, @XmlPerformance));
                 return results;
             }
             catch (Exception ex)
