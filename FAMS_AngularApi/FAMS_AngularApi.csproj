@@ -49,14 +49,11 @@
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
 
-      
-
-
-
       <HintPath>bin\Encryptions.dll</HintPath>
 
 
       
+
 
 
     </Reference>
@@ -194,9 +191,8 @@
     <Compile Include="Controllers\CapitalStatementController.cs" />
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
 
-
-
     <Compile Include="Controllers\FileUploadController.cs" />
+
 
 
 
@@ -255,9 +251,13 @@
     <Compile Include="Models\Country\Country.cs" />
     <Compile Include="Models\Country\CountryDataAccessLayer.cs" />
     <Compile Include="Models\CurrentPortfolio\DataAccessLayer.cs" />
+    <Compile Include="Models\CurrentPortfolio\DefaultJson.cs" />
     <Compile Include="Models\CurrentPortfolio\GridFieldData.cs" />
     <Compile Include="Models\CurrentPortfolio\GridTotalFieldData.cs" />
+    <Compile Include="Models\CurrentPortfolio\Header.cs" />
+    <Compile Include="Models\CurrentPortfolio\JsonData.cs" />
     <Compile Include="Models\CurrentPortfolio\JsonFields.cs" />
+    <Compile Include="Models\CurrentPortfolio\PageLoadData.cs" />
     <Compile Include="Models\Custodian\Country.cs" />
     <Compile Include="Models\Custodian\Custodian.cs" />
     <Compile Include="Models\Custodian\CustodianDataAccessLayer.cs" />
@@ -267,14 +267,11 @@
     <Compile Include="Models\DataAnalysis\DataAnalysisClasses.cs" />
     <Compile Include="Models\Designation\Designation.cs" />
     <Compile Include="Models\Designation\DesignationDataAccessLayer.cs" />
-
     <Compile Include="Models\GraphBind\Customer.cs" />
     <Compile Include="Models\GraphBind\Employee.cs" />
     <Compile Include="Models\GraphBind\ReportLink.cs" />
-
     <Compile Include="Models\FileUpload\DataAccessLayer.cs" />
     <Compile Include="Models\FileUpload\ResponseClass.cs" />
-
     <Compile Include="Models\HoldingReports\Customer.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />

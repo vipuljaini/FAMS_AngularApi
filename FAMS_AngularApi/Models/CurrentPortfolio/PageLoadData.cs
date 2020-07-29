@@ -5,13 +5,9 @@ using System.Web;
 
 namespace FAMS_AngularApi.Models.CurrentPortfolio
 {
-    public class JsonFields
+    public class PageLoadData
     {
         public string CustomerAccountNo { get; set; }
-        public string UserId { get; set; }
-        public string FromDate { get; set; }
-        public string ToDate { get; set; }
         public string ReportDate { get; set; }
-        public string PageCount { get; set; }
     }
 }
