@@ -23,6 +23,16 @@ namespace FAMS_AngularApi.Models.StatementDivident
 
     }
 
+    public class PageLoadData
+    {
+        public string CustomerCode { get; set; }
+        public string CustomerAccountNo { get; set; }
+        public string FromDate { get; set; }
+        public string ToDate { get; set; }
+
+
+    }
+
     public class SDSum
     {
         public Nullable<decimal> SumReceivableAmount { get; set; }
@@ -30,8 +40,15 @@ namespace FAMS_AngularApi.Models.StatementDivident
         public Nullable<decimal> SumTDSAmount { get; set; }
         public Nullable<decimal> SumNetAmount { get; set; }
         public Nullable<decimal> SumBalanceAmount { get; set; }//SumBalanceAmount
+        public Nullable<Int32> Total { get; set; }
 
 
+    }
+
+
+    public class HDATE
+    {
+        public string Data { get; set; }
     }
 
     public class GridFields
@@ -53,7 +70,7 @@ namespace FAMS_AngularApi.Models.StatementDivident
 
 
 
-   public class DividendModel
+    public class DividendModel
     {
         public string Trans_desc { get; set; }
         public Nullable<decimal> Total_Dividend_Received { get; set; }
