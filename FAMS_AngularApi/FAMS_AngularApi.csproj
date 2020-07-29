@@ -180,15 +180,9 @@
     <Compile Include="Controllers\AllCustomerController.cs" />
     <Compile Include="Controllers\BankBookController.cs" />
     <Compile Include="Controllers\BrokerMasterController.cs" />
-
-
     <Compile Include="Controllers\DataAnalysisController.cs" />
-
-
-
     <Compile Include="Controllers\CapitalStatementController.cs" />
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
-
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyNotesController.cs" />
@@ -200,6 +194,7 @@
     <Compile Include="Controllers\CustodianController.cs" />
     <Compile Include="Controllers\PMSCustomerListController.cs" />
     <Compile Include="Controllers\PMSEmployeesController.cs" />
+    <Compile Include="Controllers\PortfolioFactController.cs" />
     <Compile Include="Controllers\SectorController.cs" />
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\StatementDividendController.cs" />
@@ -271,6 +266,8 @@
     <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\Fields.cs" />
     <Compile Include="Models\PMSEmployees\JsonAllFields.cs" />
+    <Compile Include="Models\PortfolioFact\PortfolioFactDAL.cs" />
+    <Compile Include="Models\PortfolioFact\PortfolioFactModel.cs" />
     <Compile Include="Models\Sector\Sector.cs" />
     <Compile Include="Models\Sector\SectorDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\SearchFields.cs" />
