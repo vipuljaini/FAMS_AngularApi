@@ -17,5 +17,47 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.BindGrid(Data);
         }
+
+
+        //[HttpGet]
+        //[Route("api/TransactionStatement/BindCustomer/{EmployeeId}")]
+        //public Dictionary<string, object> BindCustomer(string EmployeeId)
+        //{
+        //    return ObjDAL.BindCustomer(EmployeeId);
+        //}
+
+        //[HttpPost]
+        //[Route("api/TransactionStatement/BindEmployees/{UserId}")]
+        //public Dictionary<string, object> BindEmployeesApi(string UserId)
+        //{
+        //    return ObjDAL.BindEmployees(UserId);
+        //}
+        [HttpGet]
+        [Route("api/TransactionStatement/NextRecordBind/{CustomerAccount}/{FromDate}/{ToDate}/{SeqNo}")]
+        public Dictionary<string, object> NextRecordBind(string CustomerAccount, string FromDate, string ToDate, string SeqNo)
+        {
+            return ObjDAL.NextRecordBind(CustomerAccount, FromDate, ToDate, SeqNo);
+        }
+
+        //[HttpGet]
+        //[Route("api/StatementOfExpenses/BindGridAllFields/{CustomerAccount}/{FromDate}/{ToDate}/{SeqNo}")]
+        //public Dictionary<string, object> BindGridApi(string CustomerAccount, string FromDate, string ToDate, string SeqNo)
+        //{
+        //    return ObjDAL.BindGrid(CustomerAccount, FromDate, ToDate, SeqNo);
+        //}
+
+        [HttpGet]
+        [Route("api/TransactionStatement/BindDefaultData/{CustomerAccount}/{GUserId}")]
+        public Dictionary<string, object> BindDefaultData(string CustomerAccount, string GUserId)
+        {
+            return ObjDAL.BindDefaultData(CustomerAccount, GUserId);
+        }
+
+        [HttpGet]
+        [Route("api/TransactionStatement/GetSummary/{CustomerAccount}")]
+        public Dictionary<string, object> GetSummary(string CustomerAccount)
+        {
+            return ObjDAL.GetSummary(CustomerAccount);
+        }
     }
 }

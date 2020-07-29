@@ -48,13 +48,23 @@
   <ItemGroup>
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Java_Dev\Desktop\Encryptions.dll</HintPath>
+
+      
+
+
+
+      <HintPath>bin\Encryptions.dll</HintPath>
+
+
+      
+
+
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>..\..\EntityFramework.dll</HintPath>
+      <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
@@ -116,7 +126,7 @@
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>C:\Users\YoekiSoft\Desktop\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -183,6 +193,13 @@
     <Compile Include="Controllers\DataAnalysisController.cs" />
     <Compile Include="Controllers\CapitalStatementController.cs" />
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
+
+
+
+    <Compile Include="Controllers\FileUploadController.cs" />
+
+
+
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyNotesController.cs" />
@@ -194,7 +211,11 @@
     <Compile Include="Controllers\CustodianController.cs" />
     <Compile Include="Controllers\PMSCustomerListController.cs" />
     <Compile Include="Controllers\PMSEmployeesController.cs" />
+
     <Compile Include="Controllers\PortfolioFactController.cs" />
+
+    <Compile Include="Controllers\PortfolioSummaryController.cs" />
+
     <Compile Include="Controllers\SectorController.cs" />
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\StatementDividendController.cs" />
@@ -214,9 +235,14 @@
     <Compile Include="Models\AllCustomer\DataAccessLayer.cs" />
     <Compile Include="Models\AllCustomer\JsonCustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\JsonUserDetails.cs" />
+    <Compile Include="Models\BankBook\BindCustomers.cs" />
+    <Compile Include="Models\BankBook\BindEmployees.cs" />
     <Compile Include="Models\BankBook\BindGrid.cs" />
     <Compile Include="Models\BankBook\DataAccessLayer.cs" />
+    <Compile Include="Models\BankBook\DefaultJson.cs" />
+    <Compile Include="Models\BankBook\HeaderData.cs" />
     <Compile Include="Models\BankBook\JsonData.cs" />
+    <Compile Include="Models\BankBook\PageLoadData.cs" />
     <Compile Include="Models\BankBook\TotalSumGrid.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields.cs" />
     <Compile Include="Models\BrokerMaster\BindAllFields2.cs" />
@@ -241,6 +267,14 @@
     <Compile Include="Models\DataAnalysis\DataAnalysisClasses.cs" />
     <Compile Include="Models\Designation\Designation.cs" />
     <Compile Include="Models\Designation\DesignationDataAccessLayer.cs" />
+
+    <Compile Include="Models\GraphBind\Customer.cs" />
+    <Compile Include="Models\GraphBind\Employee.cs" />
+    <Compile Include="Models\GraphBind\ReportLink.cs" />
+
+    <Compile Include="Models\FileUpload\DataAccessLayer.cs" />
+    <Compile Include="Models\FileUpload\ResponseClass.cs" />
+
     <Compile Include="Models\HoldingReports\Customer.cs" />
     <Compile Include="Models\HoldingReports\DataAccessLayer.cs" />
     <Compile Include="Models\HoldingReports\GridAllFields.cs" />
@@ -254,10 +288,15 @@
     <Compile Include="Models\Login\Forgotflag.cs" />
     <Compile Include="Models\MyNotes\BindAllFields.cs" />
     <Compile Include="Models\MyNotes\DataAccessLayer.cs" />
+    <Compile Include="Models\NotesMaster\AllEmail.cs" />
+    <Compile Include="Models\NotesMaster\AllNotification.cs" />
     <Compile Include="Models\NotesMaster\DataAccessLayer.cs" />
+    <Compile Include="Models\NotesMaster\EmailWise.cs" />
     <Compile Include="Models\NotesMaster\JsonNotesDetails.cs" />
     <Compile Include="Models\NotesMaster\JsonUserDetails.cs" />
+    <Compile Include="Models\NotesMaster\Notedata.cs" />
     <Compile Include="Models\NotesMaster\NoteMasterDetails.cs" />
+    <Compile Include="Models\NotesMaster\Totalcount.cs" />
     <Compile Include="Models\PMSCustomerList\PMSCustomerList.cs" />
     <Compile Include="Models\PMSCustomerList\PMSCustomerListDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\BindAllCustomersFields.cs" />
@@ -266,8 +305,14 @@
     <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\Fields.cs" />
     <Compile Include="Models\PMSEmployees\JsonAllFields.cs" />
+
     <Compile Include="Models\PortfolioFact\PortfolioFactDAL.cs" />
     <Compile Include="Models\PortfolioFact\PortfolioFactModel.cs" />
+
+    <Compile Include="Models\PortfolioSummary\BindMainGrid.cs" />
+    <Compile Include="Models\PortfolioSummary\DataAccessLayer.cs" />
+    <Compile Include="Models\PortfolioSummary\JsonFields.cs" />
+
     <Compile Include="Models\Sector\Sector.cs" />
     <Compile Include="Models\Sector\SectorDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\SearchFields.cs" />
@@ -361,11 +406,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Notificationattachments\" />
     <Folder Include="Views\City\" />
     <Folder Include="Views\Country\" />
     <Folder Include="Views\DataAnalysis\" />
     <Folder Include="Views\Designation\" />
     <Folder Include="Views\PMSCustomerList\" />
+    <Folder Include="Views\PortfolioSummary\" />
     <Folder Include="Views\Sector\" />
     <Folder Include="Views\StatementOfExpenses\" />
     <Folder Include="Views\State\" />

@@ -5,6 +5,7 @@ using System.Web;
 using BusinessLibrary;
 using EntityDAL;
 using FAMS_AngularApi.Models.AllCustomer;
+using FAMS_AngularApi.Models.GraphBind;
 using Encryptions;
 using System.IO;
 using System.Web.UI;
@@ -16,6 +17,20 @@ namespace FAMS_AngularApi.Models.AllCustomer
 {
     public class DataAccessLayer
     {
+
+        public Dictionary<string, object> BindGGrid()
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<Employee>().With<Customer>().With<ReportLink>().Execute("@QueryType", "BindGraphUser"));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public Dictionary<string, object> BindGrid(string UserId)
         {
             FAMSEntities context = new FAMSEntities();
