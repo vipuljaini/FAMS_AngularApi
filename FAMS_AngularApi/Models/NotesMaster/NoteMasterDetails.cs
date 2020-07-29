@@ -16,6 +16,8 @@ namespace FAMS_AngularApi.Models.NotesMaster
         public string dateofsubmission { get; set; }
         public string Note { get; set; }
         public string FontSize { get; set; }
+        public  Int32 EmailType { get; set; }
+        
 
 
     }
