@@ -40,7 +40,7 @@ namespace FAMS_AngularApi.Models.CapitalStatement
             {
                 var UserId = Dbsecurity.Decrypt(Data.UserId);
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CapitalStatement]").With<PageLoadData>()
-                            .Execute("@Querytype", "@UserId", "GetDefault_StatemenetOfExpenses", UserId));
+                            .Execute("@Querytype", "@UserId", "@CustomerAccount", "GetDefault_StatemenetOfExpenses", UserId, Data.CustomerAccountNo));
                 return results;
             }
             catch (Exception ex)
@@ -76,7 +76,7 @@ namespace FAMS_AngularApi.Models.CapitalStatement
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CapitalStatement]").With<BindCustomer>()
-                           .Execute("@Querytype", "@UserId", "BindCustomers", Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId))));
+                           .Execute("@Querytype", "@UserId" , "BindCustomers", Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(UserId))));
                 return results;
 
             }
