@@ -256,7 +256,8 @@ namespace FAMS_AngularApi.Models.Login
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[sp_UserLogin]").With<CommonFields>().Execute("@Querytype", "@OldPassword", "@ChangePassword", "@UserId", "ChangePassWordNewUser", Data.OldPassword, Data.NewPassword, Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                //var results = Common.Getdata(context.MultipleResults("[dbo].[sp_UserLogin]").With<CommonFields>().Execute("@Querytype", "@OldPassword", "@ChangePassword", "@UserId", "ChangePassWordNewUser", Data.OldPassword, Data.NewPassword, Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[sp_UserLogin]").With<CommonFields>().Execute("@Querytype", "@OldPassword", "@ChangePassword", "@UserId", "ChangePassWordNewUser", Data.OldPassword, Data.NewPassword, Dbsecurity.Decrypt(Data.UserId)));
                 return results;
             }
             catch (Exception ex)

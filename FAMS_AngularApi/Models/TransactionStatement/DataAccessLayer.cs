@@ -93,7 +93,7 @@ namespace FAMS_AngularApi.Models.TransactionStatement
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_TransactionStatement]").With<TransactionStatement_Default>()
-                            .Execute("@Querytype", "@CustomerAccount", "@GUserId", "GetDefault_TransactionStatemenet", CustomerAccount, Dbsecurity.Decrypt(GUserId)));
+                            .Execute("@Querytype", "@CustomerAccount", "@GUserId", "GetDefault_TransactionStatemenet", CustomerAccount, Dbsecurity.Decrypt(GUserId.Replace(" ", "+"))));
                 return results;
             }
             catch (Exception ex)
