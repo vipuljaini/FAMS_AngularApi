@@ -31,7 +31,7 @@ namespace FAMS_AngularApi.Models.PortfolioSummary
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_PerformanceAppraisal]").With<PortfolioSummary_Default>()
-                            .Execute("@Querytype", "@CustomerAccount", "@GUserId", "GetDefault_PerformanceAppraisal", CustomerAccount, Dbsecurity.Decrypt(GUserId)));
+                            .Execute("@Querytype", "@CustomerAccount", "@GUserId", "GetDefault_PerformanceAppraisal", CustomerAccount, Dbsecurity.Decrypt(GUserId.Replace(" ", "+"))));
                 return results;
             }
             catch (Exception ex)

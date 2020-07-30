@@ -61,7 +61,7 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<StatementOfExpenses_Default>()
-                            .Execute("@Querytype", "@CustomerAccount", "@GUserId", "GetDefault_StatemenetOfExpenses", CustomerAccount, Dbsecurity.Decrypt(GUserId)));
+                            .Execute("@Querytype", "@CustomerAccount", "@GUserId", "GetDefault_StatemenetOfExpenses", CustomerAccount, Dbsecurity.Decrypt(GUserId.Replace(" ","+"))));
                 return results;
             }
             catch (Exception ex)
