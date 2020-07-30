@@ -19,7 +19,8 @@ namespace FAMS_AngularApi.Models.StatementDivident
             {
 
                 //var UserId = Dbsecurity.Decypt(Data.UserId);
-                var CustomerAccountNo = Dbsecurity.Decrypt(Data.CustomerAccountNo);
+                //var CustomerAccountNo = Dbsecurity.Decrypt(Data.CustomerAccountNo);
+                var CustomerAccountNo =(Data.CustomerAccountNo);
                 // string base64 = "";
                 // var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CapitalStatement]").With<CapitalStatementModel>().Execute("@QueryType", "@Fromdate", "@Todate", "BindMainGrid",fromdate,todate));
                 //var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_StatementDividend]").With<StatementDividentModel>().With<DividendModel>().With<SDSum>().With<SumDividend>().With<HDATE>().Execute("@QueryType", "@PageCount", "@Fromdate", "@Todate", "@CustomerAccount", "BindMainGrid", Data.PageCount, Data.fromdate, Data.todate, CustomerAccountNo));
@@ -36,6 +37,7 @@ namespace FAMS_AngularApi.Models.StatementDivident
                 //RT.ViewPDF(report, "HelloWorld.pdf");
 
                 // base64 = Convert.ToBase64String(MyMemoryStream.ToArray());
+
 
 
                 return results;  //

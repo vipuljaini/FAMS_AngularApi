@@ -20,7 +20,8 @@ namespace FAMS_AngularApi.Models.PortfolioFact
             {
 
                 //var UserId = Dbsecurity.Decypt(Data.UserId);
-                var CustomerAccountNo = Dbsecurity.Decrypt(Data.CustomerAccountNo);
+                //var CustomerAccountNo = Dbsecurity.Decrypt(Data.CustomerAccountNo);
+                var CustomerAccountNo = (Data.CustomerAccountNo);
 
 
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_Portfolio_Fact]").With<SectorAllocation>().With<SUMSectorAllocation>().With<PortfolioHolding>().With<SUMPortfolioHolding>().With<portfolioSummary>().With<PortfolioPerformance>().With<HDATE>().Execute("@QueryType", "@PageCount", "@Fromdate", "@Todate", "@CustomerAccount", "BindMainGrid", Data.PageCount, Data.fromdate, Data.todate, CustomerAccountNo));
