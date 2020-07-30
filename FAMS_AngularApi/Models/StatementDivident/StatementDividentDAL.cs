@@ -57,7 +57,7 @@ namespace FAMS_AngularApi.Models.StatementDivident
             {
                 var UserId = Dbsecurity.Decrypt(Data.UserId);
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_StatementDividend]").With<PageLoadData>()
-                            .Execute("@Querytype", "@UserId", "GetDefault_StatemenetOfExpenses", UserId));
+                            .Execute("@Querytype", "@UserId", "@CustomerAccount", "GetDefault_StatemenetOfExpenses", UserId,Data.CustomerAccountNo));
                 return results;
             }
             catch (Exception ex)

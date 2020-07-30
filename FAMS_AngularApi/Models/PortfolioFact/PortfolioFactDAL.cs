@@ -39,14 +39,35 @@ namespace FAMS_AngularApi.Models.PortfolioFact
 
 
 
+        //public Dictionary<string, object> BindDefaultData(GridFields Data)
+        //{
+        //    FAMSEntities context = new FAMSEntities();
+        //    try
+        //    {
+        //        var UserId = Dbsecurity.Decrypt(Data.UserId);
+        //        var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_Portfolio_Fact]").With<PageLoadData>()
+        //                    .Execute("@Querytype", "@UserId", "GetDefault_StatemenetOfExpenses", UserId));
+        //        return results;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+
+
+
         public Dictionary<string, object> BindDefaultData(GridFields Data)
         {
             FAMSEntities context = new FAMSEntities();
             try
             {
                 var UserId = Dbsecurity.Decrypt(Data.UserId);
+                // var CustomerAccountNo = Dbsecurity.Decrypt(Data.CustomerAccountNo);
+                var CustomerAccountNo = (Data.CustomerAccountNo);
+
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_Portfolio_Fact]").With<PageLoadData>()
-                            .Execute("@Querytype", "@UserId", "GetDefault_StatemenetOfExpenses", UserId));
+                            .Execute("@Querytype", "@UserId", "@CustomerAccount", "GetDefault_Factportfolio2", UserId, CustomerAccountNo));
                 return results;
             }
             catch (Exception ex)
@@ -54,6 +75,7 @@ namespace FAMS_AngularApi.Models.PortfolioFact
                 throw ex;
             }
         }
+
 
 
         public Dictionary<string, object> BindNextData(GridFields Data)
