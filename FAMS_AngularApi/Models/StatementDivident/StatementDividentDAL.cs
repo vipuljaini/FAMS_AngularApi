@@ -39,6 +39,7 @@ namespace FAMS_AngularApi.Models.StatementDivident
                 // base64 = Convert.ToBase64String(MyMemoryStream.ToArray());
 
 
+
                 return results;  //
             }
             catch (Exception ex)
