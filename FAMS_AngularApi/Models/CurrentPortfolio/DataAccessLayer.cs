@@ -22,7 +22,7 @@ namespace FAMS_AngularApi.Models.CurrentPortfolio
                 //var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldData>().With<GridTotalFieldData>().With<GridTotalFieldData>().With<GridFieldData>()
                 //           .Execute("@Querytype", "@Fromdate", "@Todate", "@CustomerAccount", "BindGrid", Data.FromDate, Data.ToDate, CustomerAccountNo));
                 //return results;
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldData>().With<Header>().With<GridTotalFieldData>()
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldData>().With<Header>().With<GridTotalFieldData>().With<NextGrid>()
                           .Execute("@Querytype", "@ReportDate", "@CustomerAccount", "@PageCount", "BindGrid", Data.ReportDate, Data.CustomerAccountNo , Data.PageCount));
                 return results;
 
