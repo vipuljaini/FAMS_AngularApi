@@ -48,11 +48,7 @@
   <ItemGroup>
     <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-
       <HintPath>bin\Encryptions.dll</HintPath>
-
-
-      
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.dll</HintPath>
@@ -187,9 +183,7 @@
     <Compile Include="Controllers\DataAnalysisController.cs" />
     <Compile Include="Controllers\CapitalStatementController.cs" />
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
-
     <Compile Include="Controllers\FileUploadController.cs" />
-
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyNotesController.cs" />
@@ -201,6 +195,8 @@
     <Compile Include="Controllers\CustodianController.cs" />
     <Compile Include="Controllers\PMSCustomerListController.cs" />
     <Compile Include="Controllers\PMSEmployeesController.cs" />
+    <Compile Include="Controllers\PortfolioAppraisalController.cs" />
+    <Compile Include="Controllers\PortfolioAppraisalsController.cs" />
     <Compile Include="Controllers\SectorController.cs" />
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\StatementDividendController.cs" />
@@ -274,6 +270,10 @@
     <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\Fields.cs" />
     <Compile Include="Models\PMSEmployees\JsonAllFields.cs" />
+    <Compile Include="Models\PortfolioAppraisals\DataAccessLayer.cs" />
+    <Compile Include="Models\PortfolioAppraisals\PortfolioAppraisal.cs" />
+    <Compile Include="Models\portfolioappraisal\PortfolioAppraisalDAL.cs" />
+    <Compile Include="Models\portfolioappraisal\PortfolioappraisalModel.cs" />
     <Compile Include="Models\Sector\Sector.cs" />
     <Compile Include="Models\Sector\SectorDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\SearchFields.cs" />
