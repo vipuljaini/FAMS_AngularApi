@@ -25,6 +25,39 @@ namespace FAMS_AngularApi.Controllers
             return Obj.DownloadExcel();
         }
 
+        [HttpPost]
+        [Route("api/CapitalStatement/BindDefaultData")]
+        public Dictionary<string, object> DefaultDataApi(GridFields Data)
+        {
+            return Obj.BindDefaultData(Data);
+        }
+
+        [HttpPost]
+        [Route("api/CapitalStatement/BindEmployees")]
+        public Dictionary<string, object> BindEmployeesApi(GridFields Data)
+        {
+            return Obj.BindEmployees(Data);
+        }
+
+
+        [HttpGet]
+        [Route("api/CapitalStatement/BindCustomers/{UserId}")]
+        public Dictionary<string, object> BindCustomers(string UserId)
+        {
+            return Obj.BindCustomers(UserId);
+        }
+
+
+        [HttpPost]
+        [Route("api/CapitalStatement/BindNextData")]
+        public Dictionary<string, object> BindNextDataApi(GridFields Data)
+        {
+            return Obj.BindNextData(Data);
+        }
+
+
+
+
 
     }
 }

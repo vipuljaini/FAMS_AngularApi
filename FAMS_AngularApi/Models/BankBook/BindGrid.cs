@@ -7,7 +7,9 @@ namespace FAMS_AngularApi.Models.BankBook
 {
     public class BindGrid
     {
-       public string Code { get; set; }
+       public Nullable<Int32> FinalSecNo { get; set; }
+        public Nullable<Int32> NoOfPage { get; set; }
+        public string Code { get; set; }
        public string Name { get; set; }
        public string BankAcc { get; set; }
        public string BankName { get; set; }

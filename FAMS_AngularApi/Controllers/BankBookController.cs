@@ -1,4 +1,5 @@
-﻿using FAMS_AngularApi.Models.BankBook;
+﻿using FAMS_AngularApi.Models;
+using FAMS_AngularApi.Models.BankBook;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,34 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.BindGrid(Data);
         }
+
+        [HttpPost]
+        [Route("api/BankBook/BindEmployees")]
+        public Dictionary<string, object> BindEmployeesApi(JsonData Data)
+        {
+            return ObjDAL.BindEmployees(Data);
+        }
+
+        [HttpPost]
+        [Route("api/BankBook/BindDefaultData")]
+        public Dictionary<string, object> DefaultDataApi(DefaultJson Data)
+        {
+            return ObjDAL.BindDefaultData(Data);
+        }
+
+        [HttpPost]
+        [Route("api/BankBook/BindCustomers")]
+        public Dictionary<string, object> BindCustomersApi(JsonData Data)
+        {
+            return ObjDAL.BindCustomers(Data);
+        }
+
+        [HttpPost]
+        [Route("api/BankBook/BindNextData")]
+        public Dictionary<string, object> BindNextDataApi(JsonData Data)
+        {
+            return ObjDAL.BindNextData(Data);
+        }
+
     }
 }

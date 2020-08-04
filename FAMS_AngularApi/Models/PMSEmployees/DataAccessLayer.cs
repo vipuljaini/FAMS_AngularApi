@@ -18,9 +18,12 @@ namespace FAMS_AngularApi.Models.PMSEmployees
             FAMSEntities context = new FAMSEntities();
             try
             {
+
+                string Password = string.Empty;
+                Password = Dbsecurity.Encrypt(Data.Emailid.Split('@').ElementAtOrDefault(0));
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_PMSEmployees]").With<CommonFields>()
-                          .Execute("@Querytype", "@EmployeeCode", "@EmployeeName", "@Gender", "@About", "@Custodian", "@CustomerCode", "@CustomerName", "@EmpLinkingDate", "@Qualification", "@InceptionDate", "@PMSEmpId", "@Active", "@UserId", "SaveEmployee", Data.EmployeeCode, Data.EmployeeName, Data.Gender,
-                          Data.About, Data.Custodian, Data.CustomerCode, Data.CustomerName , Data.EmpLinkingDate , Data.Qualification , Data.InceptionDate , Data.PMSEmpId , Active ,  Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%")))));  
+                          .Execute("@Querytype", "@EmployeeCode", "@EmployeeName", "@Gender", "@About", "@Custodian", "@CustomerCode", "@CustomerName", "@EmpLinkingDate", "@Qualification", "@InceptionDate", "@PMSEmpId", "@Active", "@UserId", "@EmailId", "@Password", "SaveEmployee", Data.EmployeeCode, Data.EmployeeName, Data.Gender,
+                          Data.About, Data.Custodian, Data.CustomerCode, Data.CustomerName , Data.EmpLinkingDate , Data.Qualification , Data.InceptionDate , Data.PMSEmpId , Active ,  Dbsecurity.Decrypt(HttpContext.Current.Server.UrlDecode(Data.UserId.Replace("_", "%"))),Data.Emailid, Password));  
                 return results;
 
             }
