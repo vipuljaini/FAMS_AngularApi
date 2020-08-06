@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using FAMS_AngularApi.Models.PortfolioAppraisals;
 using FAMS_AngularApi.Models.StateOfExpenses;
 
 
@@ -11,7 +12,7 @@ namespace FAMS_AngularApi.Controllers
 {
     public class PortfolioAppraisalsController : ApiController
     {
-        DataAccessLayer ObjDAL = new DataAccessLayer();
+        PortfolioAppraisalsDAL1 ObjDAL = new PortfolioAppraisalsDAL1();
 
 
         [HttpGet]
@@ -34,18 +35,32 @@ namespace FAMS_AngularApi.Controllers
             return ObjDAL.NextRecordBind(CustomerAccount, FromDate, ToDate, SeqNo);
         }
 
-        [HttpGet]
-        [Route("api/PortfolioAppraisals/BindGridAllFields/{CustomerAccount}/{FromDate}/{ToDate}/{SeqNo}")]
-        public Dictionary<string, object> BindGridApi(string CustomerAccount, string FromDate, string ToDate, string SeqNo)
+        //[HttpGet]
+        //[Route("api/PortfolioAppraisals/BindGridAllFields/{CustomerAccount}/{FromDate}/{ToDate}/{SeqNo}")]
+        //public Dictionary<string, object> BindGridApi(string CustomerAccount, string FromDate, string ToDate, string SeqNo)
+        //{
+        //    return ObjDAL.BindGrid(CustomerAccount, FromDate, ToDate, SeqNo);
+        //}
+
+        [HttpPost]
+        [Route("api/PortfolioAppraisals/BindGrid/")]
+        public Dictionary<string, object> BindGrid(GridFields Data)
         {
-            return ObjDAL.BindGrid(CustomerAccount, FromDate, ToDate, SeqNo);
+            return ObjDAL.BindGrid(Data);
         }
 
-        [HttpGet]
-        [Route("api/PortfolioAppraisals/BindDefaultData/{CustomerAccount}/{GUserId}")]
-        public Dictionary<string, object> BindDefaultData(string CustomerAccount, string GUserId)
+        [HttpPost]
+        [Route("api/PortfolioAppraisals/BindDefaultData/")]
+        public Dictionary<string, object> BindDefaultData(GridFields Data)
         {
-            return ObjDAL.BindDefaultData(CustomerAccount, GUserId);
+            return ObjDAL.BindDefaultData(Data);
         }
+
+        //[HttpGet]
+        //[Route("api/PortfolioAppraisals/BindDefaultData/{CustomerAccount}/{GUserId}")]
+        //public Dictionary<string, object> BindDefaultData(string CustomerAccount, string GUserId)
+        //{
+        //    return ObjDAL.BindDefaultData(CustomerAccount, GUserId);
+        //}
     }
 }

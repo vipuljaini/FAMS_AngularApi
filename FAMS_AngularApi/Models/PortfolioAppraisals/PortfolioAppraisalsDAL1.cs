@@ -10,15 +10,15 @@ using FAMS_AngularApi.Models.PortfolioAppraisals;
 
 namespace FAMS_AngularApi.Models.PortfolioAppraisals
 {
-    public class DataAccessLayer
+    public class PortfolioAppraisalsDAL1
     {
         public Dictionary<string, object> BindCustomer(string EmployeeId)
         {
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<Customer>()
-                          .Execute("@Querytype", "@EmployeeId", "GetCustomerForStatementOfExp", EmployeeId));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[SP_PortfolioAppraisal]").With<Customer>()
+                          .Execute("@Querytype", "@EmployeeId", "GetCustomer", EmployeeId));
                 return results;
             }
             catch (Exception ex)
@@ -46,8 +46,8 @@ namespace FAMS_AngularApi.Models.PortfolioAppraisals
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<StatementOfExpenses_Default>()
-                            .Execute("@Querytype", "@CustomerAccount", "@FromDate", "@ToDate", "@SeqNo", "NextRecordBind", CustomerAccount, FromDate, ToDate, SeqNo));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[SP_PortfolioAppraisal]").With<PageLoadData>()
+                            .Execute("@Querytype", "@CustomerAccount", "@FromDate", "@SeqNo", "NextRecordBind", CustomerAccount, FromDate, SeqNo));
                 return results;
             }
             catch (Exception ex)
@@ -56,13 +56,13 @@ namespace FAMS_AngularApi.Models.PortfolioAppraisals
             }
         }
 
-        public Dictionary<string, object> BindDefaultData(string CustomerAccount, string GUserId)
+        public Dictionary<string, object> BindDefaultData(GridFields Data)
         {
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<StatementOfExpenses_Default>()
-                            .Execute("@Querytype", "@CustomerAccount", "@GUserId", "GetDefault_StatemenetOfExpenses", CustomerAccount, Dbsecurity.Decrypt(GUserId)));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[SP_PortfolioAppraisal]").With<PageLoadData>()
+                            .Execute("@Querytype", "@CustomerAccount", "@GUserId", "GetDefault_PortfolioAppraisal", Data.CustomerAccountno, Dbsecurity.Decrypt(Data.UserID)));
                 return results;
             }
             catch (Exception ex)
@@ -88,5 +88,30 @@ namespace FAMS_AngularApi.Models.PortfolioAppraisals
                 throw ex;
             }
         }
+
+
+
+        public Dictionary<string, object> BindGrid(GridFields Data)
+        {
+            try
+            {
+                FAMSEntities context = new FAMSEntities();
+
+                // var CustomerAccountNo = Dbsecurity.Decrypt(Data.CustomerAccountNo);
+
+                // var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CapitalStatement]").With<CapitalStatementModel>().Execute("@QueryType", "@Fromdate", "@Todate", "BindMainGrid",fromdate,todate));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[SP_PortfolioAppraisal]").With<PortfolioappraisalModel>().With<SumPortfolioappraisalModel>().With<cashportfolio>().With<PortfolioappraisalModel>().With<HDATE>().Execute("@QueryType", "@SeqNo", "@Fromdate", "@CustomerAccount", "GetPortfolioAppraisal", Data.pagecount, Data.Fromdate, Data.CustomerAccountno));
+
+
+
+
+                return results;  //
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

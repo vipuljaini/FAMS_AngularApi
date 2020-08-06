@@ -57,6 +57,34 @@
       <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\FAMS\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\FAMS\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\FAMS\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.2.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\FAMS\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\FAMS\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\FAMS\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\FAMS\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -195,13 +223,10 @@
     <Compile Include="Controllers\CustodianController.cs" />
     <Compile Include="Controllers\PMSCustomerListController.cs" />
     <Compile Include="Controllers\PMSEmployeesController.cs" />
-
     <Compile Include="Controllers\PortfolioAppraisalController.cs" />
     <Compile Include="Controllers\PortfolioAppraisalsController.cs" />
-
     <Compile Include="Controllers\PortfolioFactController.cs" />
     <Compile Include="Controllers\PortfolioSummaryController.cs" />
-
     <Compile Include="Controllers\SectorController.cs" />
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\StatementDividendController.cs" />
@@ -293,18 +318,15 @@
     <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\Fields.cs" />
     <Compile Include="Models\PMSEmployees\JsonAllFields.cs" />
-
-    <Compile Include="Models\PortfolioAppraisals\DataAccessLayer.cs" />
+    <Compile Include="Models\PortfolioAppraisals\PortfolioAppraisalsDAL1.cs" />
     <Compile Include="Models\PortfolioAppraisals\PortfolioAppraisal.cs" />
     <Compile Include="Models\portfolioappraisal\PortfolioAppraisalDAL.cs" />
     <Compile Include="Models\portfolioappraisal\PortfolioappraisalModel.cs" />
-
     <Compile Include="Models\PortfolioFact\PortfolioFactDAL.cs" />
     <Compile Include="Models\PortfolioFact\PortfolioFactModel.cs" />
     <Compile Include="Models\PortfolioSummary\BindMainGrid.cs" />
     <Compile Include="Models\PortfolioSummary\DataAccessLayer.cs" />
     <Compile Include="Models\PortfolioSummary\JsonFields.cs" />
-
     <Compile Include="Models\Sector\Sector.cs" />
     <Compile Include="Models\Sector\SectorDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\SearchFields.cs" />
