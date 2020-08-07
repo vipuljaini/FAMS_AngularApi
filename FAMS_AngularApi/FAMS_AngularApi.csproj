@@ -224,10 +224,12 @@
     <Compile Include="Controllers\CustodianController.cs" />
     <Compile Include="Controllers\PMSCustomerListController.cs" />
     <Compile Include="Controllers\PMSEmployeesController.cs" />
+    <Compile Include="Controllers\PMSMasterController.cs" />
     <Compile Include="Controllers\PortfolioAppraisalController.cs" />
     <Compile Include="Controllers\PortfolioAppraisalsController.cs" />
     <Compile Include="Controllers\PortfolioFactController.cs" />
     <Compile Include="Controllers\PortfolioSummaryController.cs" />
+    <Compile Include="Controllers\SchemaMasterController.cs" />
     <Compile Include="Controllers\SectorController.cs" />
     <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\StatementDividendController.cs" />
@@ -319,6 +321,8 @@
     <Compile Include="Models\PMSEmployees\DataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\Fields.cs" />
     <Compile Include="Models\PMSEmployees\JsonAllFields.cs" />
+    <Compile Include="Models\PMSMaster\PMSMaster.cs" />
+    <Compile Include="Models\PMSMaster\PMSMasterDataAccessLayer.cs" />
     <Compile Include="Models\PortfolioAppraisals\PortfolioAppraisalsDAL1.cs" />
     <Compile Include="Models\PortfolioAppraisals\PortfolioAppraisal.cs" />
     <Compile Include="Models\portfolioappraisal\PortfolioAppraisalDAL.cs" />
@@ -328,6 +332,8 @@
     <Compile Include="Models\PortfolioSummary\BindMainGrid.cs" />
     <Compile Include="Models\PortfolioSummary\DataAccessLayer.cs" />
     <Compile Include="Models\PortfolioSummary\JsonFields.cs" />
+    <Compile Include="Models\SchemaMaster\SchemaDataAccessLayer.cs" />
+    <Compile Include="Models\SchemaMaster\SchemaMaster.cs" />
     <Compile Include="Models\Sector\Sector.cs" />
     <Compile Include="Models\Sector\SectorDataAccessLayer.cs" />
     <Compile Include="Models\PMSEmployees\SearchFields.cs" />
@@ -443,7 +449,9 @@
     <Folder Include="Views\DataAnalysis\" />
     <Folder Include="Views\Designation\" />
     <Folder Include="Views\PMSCustomerList\" />
+    <Folder Include="Views\PMSMaster\" />
     <Folder Include="Views\PortfolioSummary\" />
+    <Folder Include="Views\SchemaMaster\" />
     <Folder Include="Views\Sector\" />
     <Folder Include="Views\StatementOfExpenses\" />
     <Folder Include="Views\State\" />
