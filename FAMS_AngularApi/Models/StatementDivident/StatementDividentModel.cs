@@ -95,4 +95,29 @@ namespace FAMS_AngularApi.Models.StatementDivident
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
 }
