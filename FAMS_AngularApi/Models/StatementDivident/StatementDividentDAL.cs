@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web;
 using BusinessLibrary;
 using Encryptions;
 using EntityDAL;
+using Microsoft.Reporting.WebForms;
+using Newtonsoft.Json;
 
 namespace FAMS_AngularApi.Models.StatementDivident
 {
@@ -49,6 +55,7 @@ namespace FAMS_AngularApi.Models.StatementDivident
         }
 
 
+      
 
         public Dictionary<string, object> BindDefaultData(GridFields Data)
         {
