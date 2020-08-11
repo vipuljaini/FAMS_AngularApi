@@ -15,7 +15,7 @@ namespace FAMS_AngularApi.Models.DataAnalysis
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<StatementOfExpenses_DataAnalysic>().With<StatementOfExpenses1_DataAnalysic>()
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<StatementOfExpenses_DataAnalysic>().With<StatementOfExpenses1_DataAnalysic>().With<StatementOfExpenses2_DataAnalysic>()
                             .Execute("@Querytype", "@FromDate", "@ToDate", "GetDataAnalysic_StatemenetOfExpenses", FromDate, ToDate));
                 return results;
             }

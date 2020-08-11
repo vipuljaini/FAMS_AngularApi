@@ -6,6 +6,7 @@ using BusinessLibrary;
 using FAMS_AngularApi.Models.SchemaMaster;
 using Encryptions;
 using EntityDAL;
+using FAMS_AngularApi.Models.StateOfExpenses;
 
 namespace FAMS_AngularApi.Models.SchemaMaster
 {
@@ -13,6 +14,34 @@ namespace FAMS_AngularApi.Models.SchemaMaster
     {
         FAMSEntities context = new FAMSEntities();
         List<SchemaMaster> dataList_SchemaMaster = new List<SchemaMaster>();
+
+        public Dictionary<string, object> BindAllCustomer()
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[FAMS_SchemeMaster]").With<Customer>()
+                          .Execute("@Querytype", "BindAllCustomer"));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public Dictionary<string, object> BindSchemaMasterDetails(string SchemaMasterId)
+        {
+            try
+            {
+                var Result = Common.Getdata(context.MultipleResults("[dbo].[FAMS_SchemeMaster]").With<SchemaMaster>().Execute("@QueryType", "@SchemaMasterId", "BindSchemeMasterDetails", SchemaMasterId));
+                return Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         public Dictionary<string, object> BindSchemaMaster()
         {
@@ -33,7 +62,7 @@ namespace FAMS_AngularApi.Models.SchemaMaster
             try
             {
                 //var Result = context.MultipleResults("[dbo].[FAMS_PMS]").With<SchemaMaster>().Execute("@QueryType", "@DesignationCode", "@DesignationName", "@UserId", "SavePMS", Designation.DesignationCode, Designation.DesignationName, Dbsecurity.Decrypt(UserId));
-                var Result = context.MultipleResults("[dbo].[FAMS_SchemeMaster]").With<SchemaMaster>().Execute("@QueryType", "@PMSCode", "@CustodianCode", "@SchemaNumber", "@UserId", "SaveSchemeMaster", SchemaMaster.PMSCode, SchemaMaster.CustodianCode, SchemaMaster.SchemaNumber, Dbsecurity.Decrypt(UserId));
+                var Result = context.MultipleResults("[dbo].[FAMS_SchemeMaster]").With<SchemaMaster>().Execute("@QueryType", "@PMSCode", "@CustodianCode", "@SchemaNumber", "@UserId", "@Cust_code", "SaveSchemeMaster", SchemaMaster.PMSCode, SchemaMaster.CustodianCode, SchemaMaster.SchemaNumber, Dbsecurity.Decrypt(UserId),SchemaMaster.Cust_code);
                 foreach (var _state in Result)
                 {
                     //Flag = employe.Cast<ResFlag>().ToList() .Select(x=>x.Responseflag).First().ToString();

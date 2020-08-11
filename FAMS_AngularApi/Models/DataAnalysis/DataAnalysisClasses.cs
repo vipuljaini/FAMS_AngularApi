@@ -22,4 +22,11 @@ namespace FAMS_AngularApi.Models.DataAnalysis
         public string label { get; set; }
       
     }
+
+    public class StatementOfExpenses2_DataAnalysic
+    {
+        public Int64 y { get; set; }
+        public string name { get; set; }
+
+    }
 }

@@ -23,5 +23,13 @@ namespace FAMS_AngularApi.Models.SchemaMaster
         public string CreatedOn { get; set; }
         public string UpdatedBy { get; set; }
         public string UpdatedOn { get; set; }
+
+
+        public string CustomerName { get; set; }
+        public string CustomerCode { get; set; }
+
+        public string Cust_code { get; set; }
+
+
     }
 }
