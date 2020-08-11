@@ -17,14 +17,30 @@ namespace FAMS_AngularApi.Controllers
         //{
         //    return View();
         //}
-
         SchemaDataAccessLayer objCountry = new SchemaDataAccessLayer();
+
+        [HttpGet]
+        [Route("api/SchemaMaster/BindAllCustomer")]
+        public Dictionary<string, object> BindAllCustomer()
+        {
+            return objCountry.BindAllCustomer();
+        }
+
+        
         [HttpGet]
         [Route("api/SchemaMaster/BindSchemaMaster")]
         public Dictionary<string, object> BindSchemaMaster()
         {
             return objCountry.BindSchemaMaster();
         }
+
+        [HttpGet]
+        [Route("api/SchemaMaster/BindSchemaMasterDetails/{SchemaMasterId}")]
+        public Dictionary<string, object> BindSchemaMasterDetails(string SchemaMasterId)
+        {
+            return objCountry.BindSchemaMasterDetails(SchemaMasterId);
+        }
+
 
         [HttpPost]
         [Route("api/SchemaMaster/AddSchemaMaster/{UserId}")]
