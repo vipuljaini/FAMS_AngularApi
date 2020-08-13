@@ -190,5 +190,12 @@ namespace FAMS_AngularApi.Controllers
             return dataTable;
         }
 
+        [HttpPost]
+        [Route("api/StatementDividend/BindViewGrid/")]
+        public Dictionary<string, object> BindViewGrid(GridFields Data)
+        {
+            return Obj.BindViewGrid(Data);
+        }
+
     }
 }

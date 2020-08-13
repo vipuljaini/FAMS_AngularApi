@@ -46,15 +46,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Encryptions.dll</HintPath>
+    <Reference Include="Encryptions">
+      <HintPath>C:\Users\Rock\Downloads\New folder\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.dll</HintPath>
+      <HintPath>..\..\NewFAMSWebApi\FAMS_AngularApi\bin\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\NewFAMSWebApi\FAMS_AngularApi\bin\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
