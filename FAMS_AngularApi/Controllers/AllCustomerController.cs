@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using FAMS_AngularApi.Models.AllCustomer;
+using FAMS_AngularApi.Models.GraphBind;
 
 
 namespace FAMS_AngularApi.Controllers
@@ -39,5 +40,35 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.BindGGrid();
         }
+
+        [HttpPost]
+        [Route("api/AllCustomer/BindGraphGrid1")]
+        public Dictionary<string, object> BindGraphGrid1(JsonUserDetails Data)
+        {
+            return ObjDAL.BindGrid1(Data);
+        }
+
+        [HttpPost]
+        [Route("api/AllCustomer/BindGraphGrid2")]
+        public Dictionary<string, object> BindGraphGrid2(JsonUserDetails Data)
+        {
+            return ObjDAL.BindGrid2(Data);
+        }
+
+        [HttpPost]
+        [Route("api/AllCustomer/BindGraphGrid3")]
+        public Dictionary<string, object> BindGraphGrid3(JsonUserDetails Data)
+        {
+            return ObjDAL.BindGrid3(Data);
+        }
+
+
+        [HttpPost]
+        [Route("api/AllCustomer/BindGraphGridPie")]
+        public Dictionary<string, object> BindGraphGridPie(GraphBind Data)
+        {
+            return ObjDAL.BindPiegrid(Data);
+        }
+
     }
 }

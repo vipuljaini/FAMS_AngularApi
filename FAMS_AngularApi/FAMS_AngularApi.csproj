@@ -244,9 +244,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AllCustomer\BindcolumnPieCapitalstatement.cs" />
+    <Compile Include="Models\AllCustomer\BindpieBankBook.cs" />
+    <Compile Include="Models\AllCustomer\BindpieCapitalStatement.cs" />
+    <Compile Include="Models\AllCustomer\BindpieStatementOfExpenses.cs" />
     <Compile Include="Models\AllCustomer\CustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\CustomerResponse.cs" />
     <Compile Include="Models\AllCustomer\DataAccessLayer.cs" />
+    <Compile Include="Models\AllCustomer\GraphBind.cs" />
     <Compile Include="Models\AllCustomer\JsonCustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\JsonUserDetails.cs" />
     <Compile Include="Models\BankBook\BindCustomers.cs" />
