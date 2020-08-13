@@ -58,6 +58,7 @@ namespace FAMS_AngularApi.Models.StatementDivident
         public string todate { get; set; }
         public string UserId { get; set; }//UserId
         public string CustomerAccountNo { get; set; }
+        public string PageType { get; set; }
 
     }
 
@@ -90,8 +91,18 @@ namespace FAMS_AngularApi.Models.StatementDivident
         public Nullable<decimal> SumOutstanding_Divident { get; set; }
         public Nullable<decimal> SumTotal_Amount { get; set; }
         public Nullable<decimal> SumTDS_Amount { get; set; }
+    }
 
-
+    public class BindViewGridAllFields
+    {
+        public Nullable<Int64> SrNo { get; set; }
+        public Nullable<Int16> ReportType { get; set; }
+        public string FromDate { get; set; }
+        public string ToDate { get; set; }
+        public string CustomerAccount { get; set; }
+        public string Scheme { get; set; }
+        public string DownloadLink { get; set; }
+        public string ReportName { get; set; }
     }
 
 
@@ -115,7 +126,7 @@ namespace FAMS_AngularApi.Models.StatementDivident
 
 
 
-    
+
 
 
 
