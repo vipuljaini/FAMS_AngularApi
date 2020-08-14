@@ -212,6 +212,7 @@
     <Compile Include="Controllers\DataAnalysisController.cs" />
     <Compile Include="Controllers\CapitalStatementController.cs" />
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
+    <Compile Include="Controllers\FetchLatestReportController.cs" />
     <Compile Include="Controllers\FileUploadController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -291,6 +292,8 @@
     <Compile Include="Models\DataAnalysis\DataAnalysisClasses.cs" />
     <Compile Include="Models\Designation\Designation.cs" />
     <Compile Include="Models\Designation\DesignationDataAccessLayer.cs" />
+    <Compile Include="Models\FetchLatestReport\FetchLatestDataAccessLayer.cs" />
+    <Compile Include="Models\FetchLatestReport\FetchLatestReport.cs" />
     <Compile Include="Models\GraphBind\Customer.cs" />
     <Compile Include="Models\GraphBind\Employee.cs" />
     <Compile Include="Models\GraphBind\ReportLink.cs" />
@@ -453,6 +456,7 @@
     <Folder Include="Views\Country\" />
     <Folder Include="Views\DataAnalysis\" />
     <Folder Include="Views\Designation\" />
+    <Folder Include="Views\FetchLatestReport\" />
     <Folder Include="Views\PMSCustomerList\" />
     <Folder Include="Views\PMSMaster\" />
     <Folder Include="Views\PortfolioSummary\" />

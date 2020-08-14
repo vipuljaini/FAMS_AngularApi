@@ -94,7 +94,7 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
         public string FromDate { get; set; }
         public string ToDate { get; set; }
         public string CustomerAccount { get; set; }
-        public string ReportName { get; set; }
+        public string ReportType { get; set; }
         
     }
 
