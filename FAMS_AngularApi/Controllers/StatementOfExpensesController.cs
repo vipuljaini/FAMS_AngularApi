@@ -53,5 +53,14 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.BindDefaultData(CustomerAccount, GUserId);
         }
+        //--Added By Vimal(13 Aug)---//
+        [HttpPost]
+        [Route("api/StatementOfExpenses/BindMainGridView")]
+        public Dictionary<string, object> BindMainGridView([FromBody] PrimaryDetails data)
+        {
+            return ObjDAL.BindMainGridView(data);
+        }
+
+        //--------End---//
     }
 }

@@ -103,5 +103,24 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
                 throw ex;
             }
         }
+
+        //------------Added By Vimal(13 Aug ) For View Purpose-//
+
+        public Dictionary<string, object> BindMainGridView(PrimaryDetails data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_TransactionStatement]").With<BindMainGridViewdata>()
+                           .Execute("@Querytype", "@CustomerAccount", "@GUserId", "@ReportType", "@Fromdate", "@Todate", "GetTransactionStatement_View", data.accountNumber.Trim(), Dbsecurity.Decrypt(data.UserId),data.ReportName,data.Fromdate,data.Todate));
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        //------------------nd---------------------//
     }
 }
