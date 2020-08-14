@@ -47,13 +47,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Encryptions">
-      <HintPath>C:\Users\YoekiDev\Downloads\Encryptions.dll</HintPath>
+      <HintPath>C:\Users\Rock\Downloads\New folder\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>C:\Users\YoekiDev\Downloads\EntityFramework.dll</HintPath>
+      <HintPath>..\..\NewFAMSWebApi\FAMS_AngularApi\bin\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>C:\Users\YoekiDev\Downloads\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\NewFAMSWebApi\FAMS_AngularApi\bin\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -211,6 +211,7 @@
     <Compile Include="Controllers\DataAnalysisController.cs" />
     <Compile Include="Controllers\CapitalStatementController.cs" />
     <Compile Include="Controllers\CurrentPortfolioController.cs" />
+    <Compile Include="Controllers\FetchLatestReportController.cs" />
     <Compile Include="Controllers\FileUploadController.cs" />
     <Compile Include="Controllers\HoldingReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -290,6 +291,8 @@
     <Compile Include="Models\DataAnalysis\DataAnalysisClasses.cs" />
     <Compile Include="Models\Designation\Designation.cs" />
     <Compile Include="Models\Designation\DesignationDataAccessLayer.cs" />
+    <Compile Include="Models\FetchLatestReport\FetchLatestDataAccessLayer.cs" />
+    <Compile Include="Models\FetchLatestReport\FetchLatestReport.cs" />
     <Compile Include="Models\GraphBind\Customer.cs" />
     <Compile Include="Models\GraphBind\Employee.cs" />
     <Compile Include="Models\GraphBind\ReportLink.cs" />
@@ -344,8 +347,6 @@
     <Compile Include="Models\Security\SecurityCodeDetails.cs" />
     <Compile Include="Models\StatementDivident\StatementDividentDAL.cs" />
     <Compile Include="Models\StatementDivident\StatementDividentModel.cs" />
-    <Compile Include="Models\StateOfExpenses\BindMainGridViewdata.cs" />
-    <Compile Include="Models\StateOfExpenses\PrimaryDetails.cs" />
     <Compile Include="Models\StateOfExpenses\StatementOfExpenses.cs" />
     <Compile Include="Models\StateOfExpenses\StateOfExpenses.cs" />
     <Compile Include="Models\State\State.cs" />
@@ -454,6 +455,7 @@
     <Folder Include="Views\Country\" />
     <Folder Include="Views\DataAnalysis\" />
     <Folder Include="Views\Designation\" />
+    <Folder Include="Views\FetchLatestReport\" />
     <Folder Include="Views\PMSCustomerList\" />
     <Folder Include="Views\PMSMaster\" />
     <Folder Include="Views\PortfolioSummary\" />

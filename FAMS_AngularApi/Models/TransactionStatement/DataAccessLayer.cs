@@ -10,6 +10,21 @@ namespace FAMS_AngularApi.Models.TransactionStatement
 {
     public class DataAccessLayer
     {
+
+        public Dictionary<string, object> BindTransactionStatementView(JsonFieldsTS Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_TransactionStatement]").With<TransactionStatementView>()
+                          .Execute("@Querytype", "@ReportType", "@FromDate", "@ToDate", "@CustomerAccount", "GetTransactionStatement_View", Data.ReportType, Data.FromDate, Data.ToDate, Data.CustomerAccount));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public Dictionary<string, object> BindGrid(JsonFields Data)
         {
             FAMSEntities context = new FAMSEntities();

@@ -12,6 +12,14 @@ namespace FAMS_AngularApi.Controllers
     {
         DataAccessLayer ObjDAL = new DataAccessLayer();
         [HttpPost]
+        [Route("api/TransactionStatement/BindTransactionStatementView")]
+        public Dictionary<string, object> BindTransactionStatementView(JsonFieldsTS Data)
+        {
+            return ObjDAL.BindTransactionStatementView(Data);
+        }
+
+
+        [HttpPost]
         [Route("api/TransactionStatement/BindGrid")]
         public Dictionary<string, object> BindGriidApi(JsonFields Data)
         {

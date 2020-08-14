@@ -8,6 +8,7 @@ namespace EntityDAL
     {
         public static Dictionary<string, object> Getdata(List<IEnumerable> results)
         {
+
             Dictionary<string, object> d = new Dictionary<string, object>();
             string value = "Table";
             for (int i = 0; i < results.Count; i++)

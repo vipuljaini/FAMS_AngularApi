@@ -91,7 +91,20 @@ namespace FAMS_AngularApi.Models.StatementDivident
             }
         }
 
-
+        public Dictionary<string, object> BindViewGrid(GridFields Data)
+        {
+            try
+            {              
+                var CustomerAccountNo = (Data.CustomerAccountNo);
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_StatementDividend]").With<BindViewGridAllFields>()
+                    .Execute("@QueryType",  "@CustomerAccount", "@PageType", "@FromDate", "@ToDate", "@UserId", "BindViewGrid",CustomerAccountNo,Data.PageType,Data.fromdate,Data.todate,Data.UserId));
+                return results;  
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
     }
 }
