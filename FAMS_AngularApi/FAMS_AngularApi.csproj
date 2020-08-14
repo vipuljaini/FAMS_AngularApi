@@ -46,15 +46,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Encryptions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Encryptions.dll</HintPath>
+    <Reference Include="Encryptions">
+      <HintPath>C:\Users\YoekiDev\Downloads\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.dll</HintPath>
+      <HintPath>C:\Users\YoekiDev\Downloads\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>C:\Users\YoekiSoft\Desktop\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>C:\Users\YoekiDev\Downloads\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -345,6 +344,8 @@
     <Compile Include="Models\Security\SecurityCodeDetails.cs" />
     <Compile Include="Models\StatementDivident\StatementDividentDAL.cs" />
     <Compile Include="Models\StatementDivident\StatementDividentModel.cs" />
+    <Compile Include="Models\StateOfExpenses\BindMainGridViewdata.cs" />
+    <Compile Include="Models\StateOfExpenses\PrimaryDetails.cs" />
     <Compile Include="Models\StateOfExpenses\StatementOfExpenses.cs" />
     <Compile Include="Models\StateOfExpenses\StateOfExpenses.cs" />
     <Compile Include="Models\State\State.cs" />
