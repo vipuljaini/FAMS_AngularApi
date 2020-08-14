@@ -11,6 +11,22 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
 {
     public class DataAccessLayer
     {
+        public Dictionary<string, object> BindStatementExpView(JsonFields Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<StatementOfExpView>()
+                          .Execute("@Querytype", "@ReportName","@FromDate","@ToDate", "@CustomerAccount", "GetStatementOfExpenses_View", Data.ReportName,Data.FromDate,Data.ToDate,Data.CustomerAccount));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         public Dictionary<string, object> BindCustomer(string EmployeeId)
         {
             FAMSEntities context = new FAMSEntities();
