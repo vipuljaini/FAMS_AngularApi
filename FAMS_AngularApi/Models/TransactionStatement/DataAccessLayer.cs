@@ -17,7 +17,7 @@ namespace FAMS_AngularApi.Models.TransactionStatement
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_TransactionStatement]").With<TransactionStatementView>()
-                          .Execute("@Querytype", "@ReportName", "@FromDate", "@ToDate", "@CustomerAccount", "GetTransactionStatement_View", Data.ReportName, Data.FromDate, Data.ToDate, Data.CustomerAccount));
+                          .Execute("@Querytype", "@ReportType", "@FromDate", "@ToDate", "@CustomerAccount", "GetTransactionStatement_View", Data.ReportType, Data.FromDate, Data.ToDate, Data.CustomerAccount));
                 return results;
             }
             catch (Exception ex)

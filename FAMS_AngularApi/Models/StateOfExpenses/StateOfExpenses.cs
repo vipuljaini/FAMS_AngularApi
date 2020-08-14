@@ -17,7 +17,7 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<StatementOfExpView>()
-                          .Execute("@Querytype", "@ReportName","@FromDate","@ToDate", "@CustomerAccount", "GetStatementOfExpenses_View", Data.ReportName,Data.FromDate,Data.ToDate,Data.CustomerAccount));
+                          .Execute("@Querytype", "@ReportType","@FromDate","@ToDate", "@CustomerAccount", "GetStatementOfExpenses_View", Data.ReportType,Data.FromDate,Data.ToDate,Data.CustomerAccount));
                 return results;
             }
             catch (Exception ex)
