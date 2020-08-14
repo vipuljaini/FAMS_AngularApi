@@ -133,7 +133,7 @@ namespace FAMS_AngularApi.Controllers
                     string Extension = Path.GetExtension(file.FileName);
 
 
-                    string FolderPath = HttpContext.Current.Server.MapPath("/ExportedFiles");
+                    string FolderPath = HttpContext.Current.Server.MapPath("/FAMSIN");
                     string FilePath = FolderPath + '/' + FileName;
                     if (!Directory.Exists(FolderPath))   // CHECK IF THE FOLDER EXISTS. IF NOT, CREATE A NEW FOLDER.
                     {
