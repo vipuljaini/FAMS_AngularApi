@@ -20,4 +20,18 @@ namespace FAMS_AngularApi.Models.CurrentPortfolio
         public Nullable<decimal> IRRPercent { get; set; }
         public Nullable<decimal> PercentAssets { get; set; }
     }
+
+
+    public class GridFieldDataView
+    {
+        public string CustomerAccountNo { get; set; }
+
+        public string ReportDate { get; set; }
+
+        public string DownloadLink { get; set; }
+
+        //public string Price { get; set; }
+        //public string Price { get; set; }
+    }
+
 }

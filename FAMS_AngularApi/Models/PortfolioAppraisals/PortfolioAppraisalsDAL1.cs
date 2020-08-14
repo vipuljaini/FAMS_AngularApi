@@ -113,5 +113,27 @@ namespace FAMS_AngularApi.Models.PortfolioAppraisals
             }
         }
 
+        //BindGridView
+        public Dictionary<string, object> BindGridView(GridFields Data)
+        {
+            try
+            {
+                FAMSEntities context = new FAMSEntities();
+
+                // var CustomerAccountNo = Dbsecurity.Decrypt(Data.CustomerAccountNo);
+
+
+                //var results = Common.Getdata(context.MultipleResults("[dbo].[SP_PortfolioAppraisal]").With<PortfolioappraisalModel>().With<SumPortfolioappraisalModel>().With<cashportfolio>().With<PortfolioappraisalModel>().With<HDATE>().Execute("@QueryType", "@SeqNo", "@Fromdate", "@CustomerAccount", "GetPortfolioAppraisal", Data.pagecount, Data.Fromdate, Data.CustomerAccountno));
+
+                var results = Common.Getdata(context.MultipleResults("[dbo].[SP_PortfolioAppraisal]").With<gridview>().Execute("@QueryType", "@SeqNo", "@Fromdate", "@CustomerAccount", "BindGridView", Data.pagecount, Data.Fromdate, Data.CustomerAccountno));
+
+
+                return results;  //
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -18,6 +18,14 @@ namespace FAMS_AngularApi.Controllers
             return ObjDAL.BindGrid(Data);
         }
 
+
+        [HttpPost]
+        [Route("api/CurrentPortfolio/BindGridView")]
+        public Dictionary<string, object> BindGriidApiView(JsonFields Data)
+        {
+            return ObjDAL.BindGridView(Data);
+        }
+
         [HttpPost]
         [Route("api/CurrentPortfolio/BindDefaultData")]
         public Dictionary<string, object> DefaultDataApi(DefaultJson Data)
