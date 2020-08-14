@@ -47,5 +47,12 @@ namespace FAMS_AngularApi.Controllers
             return ObjDAL.BindNextData(Data);
         }
 
+        [HttpPost]
+        [Route("api/BankBook/BindGridView")]
+        public Dictionary<string, object> BindGridViewApi(JsonData Data)
+        {
+            return ObjDAL.BindGridView(Data);
+        }
+
     }
 }
