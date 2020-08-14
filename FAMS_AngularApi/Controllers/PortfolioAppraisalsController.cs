@@ -50,6 +50,13 @@ namespace FAMS_AngularApi.Controllers
         }
 
         [HttpPost]
+        [Route("api/PortfolioAppraisals/BindGridView/")]
+        public Dictionary<string, object> BindGridView(GridFields Data)
+        {
+            return ObjDAL.BindGridView(Data);
+        }
+
+        [HttpPost]
         [Route("api/PortfolioAppraisals/BindDefaultData/")]
         public Dictionary<string, object> BindDefaultData(GridFields Data)
         {

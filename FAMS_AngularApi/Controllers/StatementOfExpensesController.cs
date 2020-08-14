@@ -12,6 +12,14 @@ namespace FAMS_AngularApi.Controllers
     {
         DataAccessLayer ObjDAL = new DataAccessLayer();
 
+        [HttpPost]
+        [Route("api/StatementOfExpenses/BindStatementExpView")]
+        public Dictionary<string, object> BindStatementExpView(JsonFields Data)
+        {
+            return ObjDAL.BindStatementExpView(Data);
+        }
+
+
         [HttpGet]
         [Route("api/StatementOfExpenses/BindCustomer/{EmployeeId}")]
         public Dictionary<string, object> BindCustomer(string EmployeeId)
@@ -45,5 +53,14 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.BindDefaultData(CustomerAccount, GUserId);
         }
+        //--Added By Vimal(13 Aug)---//
+        [HttpPost]
+        [Route("api/StatementOfExpenses/BindMainGridView")]
+        public Dictionary<string, object> BindMainGridView([FromBody] PrimaryDetails data)
+        {
+            return ObjDAL.BindMainGridView(data);
+        }
+
+        //--------End---//
     }
 }

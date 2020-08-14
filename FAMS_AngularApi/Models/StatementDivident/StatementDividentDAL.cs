@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web;
 using BusinessLibrary;
 using Encryptions;
 using EntityDAL;
+using Microsoft.Reporting.WebForms;
+using Newtonsoft.Json;
 
 namespace FAMS_AngularApi.Models.StatementDivident
 {
@@ -49,6 +55,7 @@ namespace FAMS_AngularApi.Models.StatementDivident
         }
 
 
+      
 
         public Dictionary<string, object> BindDefaultData(GridFields Data)
         {
@@ -84,7 +91,20 @@ namespace FAMS_AngularApi.Models.StatementDivident
             }
         }
 
-
+        public Dictionary<string, object> BindViewGrid(GridFields Data)
+        {
+            try
+            {              
+                var CustomerAccountNo = (Data.CustomerAccountNo);
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_StatementDividend]").With<BindViewGridAllFields>()
+                    .Execute("@QueryType",  "@CustomerAccount", "@PageType", "@FromDate", "@ToDate", "@UserId", "BindViewGrid",CustomerAccountNo,Data.PageType,Data.fromdate,Data.todate,Data.UserId));
+                return results;  
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
     }
 }

@@ -31,12 +31,77 @@ namespace FAMS_AngularApi.Models.AllCustomer
                 throw ex;
             }
         }
+        public Dictionary<string, object> BindGrid1(JsonUserDetails Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<Customer>().Execute("@QueryType", "@UserId", "BindGraphEUser", Dbsecurity.Decrypt(Data.UserId).ToString()));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public Dictionary<string, object> BindGrid2(JsonUserDetails Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<Customer>().Execute("@QueryType", "@UserId", "BindGraphCUser", Dbsecurity.Decrypt(Data.UserId).ToString()));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public Dictionary<string, object> BindGrid3(JsonUserDetails Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<Customer>().Execute("@QueryType", "@pmsempid", "BindGraphDUser", Data.UserId));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public Dictionary<string, object> BindGrid(string UserId)
         {
             FAMSEntities context = new FAMSEntities();
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<CustomerDetails>().Execute("@QueryType","@UserId", "BindUser",Dbsecurity.Decrypt(UserId).ToString()));
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Dictionary<string, object> BindPiegrid(GraphBind Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            string fromdata = "";
+            string todate = "";
+            try
+            {
+                if (Data.Fromdate != "")
+                {
+                    fromdata = Convert.ToDateTime(Data.Fromdate).ToString("yyyy-MM-dd");
+                }
+                if (Data.Todate != null )
+                {
+                    todate = Convert.ToDateTime(Data.Todate).ToString("yyyy-MM-dd");
+                }
+
+
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Pms_GraphBind]").With<BindpieCapitalStatement>().With<BindcolumnPieCapitalstatement>().Execute("@QueryType", "@FromDate", "@ToDate", "@CustomerAccount", "@Linkid", "@ReportType", "BindAllReport", fromdata, todate, Data.AccountNo,Data.Linkid,Data.ReportType));
                 return results;
             }
             catch (Exception ex)
@@ -54,7 +119,7 @@ namespace FAMS_AngularApi.Models.AllCustomer
                 string Password = string.Empty;
                 List<CustomerResponse> dataList = new List<CustomerResponse>();
                 Password = Dbsecurity.Encrypt(Data.CustomerEmailID.Split('@').ElementAtOrDefault(0));
-                var results = context.MultipleResults("[dbo].[Sp_user]").With<CustomerResponse>().Execute("@QueryType", "@UserId", "@UserName", "@AccountNo", "@EmailId", "@Password", "@pmsempid", "SaveData", Dbsecurity.Decrypt(UserId).ToString(),Data.CustomerUsername.ToString(),Data.CustomerAccount.ToString(), Data.CustomerEmailID.ToString(), Password.ToString(), Data.EmployeeCode.ToString());
+                var results = context.MultipleResults("[dbo].[Sp_user]").With<CustomerResponse>().Execute("@QueryType", "@UserId", "@UserName", "@AccountNo", "@EmailId", "@Password", "SaveData", Dbsecurity.Decrypt(UserId).ToString(),Data.CustomerUsername.ToString(),Data.CustomerAccount.ToString(), Data.CustomerEmailID.ToString(), Password.ToString());
                 //results.tab
                 dataList = results.FirstOrDefault().Cast<CustomerResponse>().ToList();
                 if (dataList.Cast<CustomerResponse>().ToList().Select(x => x.value).First().ToString() == "1")

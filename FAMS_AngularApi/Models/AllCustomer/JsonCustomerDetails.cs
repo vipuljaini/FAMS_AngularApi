@@ -11,6 +11,5 @@ namespace FAMS_AngularApi.Models.AllCustomer
         public string CustomerUsername { get; set; }
         public string CustomerEmailID { get; set; }
         public string CustomerAccount { get; set; }
-        public string EmployeeCode { get; set; }//EmployeeCode
     }
 }

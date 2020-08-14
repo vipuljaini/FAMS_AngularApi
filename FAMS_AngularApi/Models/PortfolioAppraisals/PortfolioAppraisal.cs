@@ -161,4 +161,15 @@ namespace FAMS_AngularApi.Models.PortfolioAppraisals
         public string AsOnDate { get; set; }//AsOnDate
 
     }
+
+
+    public class gridview
+    {
+        
+        public string CustomerAccountNo { get; set; }
+        public string AsOnDate { get; set; }//AsOnDate
+        public string DownloadLink { get; set; }
+
+    }
+
 }
