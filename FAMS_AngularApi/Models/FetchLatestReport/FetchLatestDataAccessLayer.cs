@@ -20,6 +20,7 @@ namespace FAMS_AngularApi.Models.FetchLatestReport
                           .Execute("@Querytype", "@ReportType", "@FromDate", "@ToDate", "@CustomerAccount", "TestQueryType", Data.ReportName, Data.CustomerAccount));
                 return results;
             }
+
             catch (Exception ex)
             {
                 throw ex;
