@@ -125,8 +125,10 @@ namespace FAMS_AngularApi.Models.PortfolioAppraisals
 
                 //var results = Common.Getdata(context.MultipleResults("[dbo].[SP_PortfolioAppraisal]").With<PortfolioappraisalModel>().With<SumPortfolioappraisalModel>().With<cashportfolio>().With<PortfolioappraisalModel>().With<HDATE>().Execute("@QueryType", "@SeqNo", "@Fromdate", "@CustomerAccount", "GetPortfolioAppraisal", Data.pagecount, Data.Fromdate, Data.CustomerAccountno));
 
-                var results = Common.Getdata(context.MultipleResults("[dbo].[SP_PortfolioAppraisal]").With<gridview>().Execute("@QueryType", "@SeqNo", "@Fromdate", "@CustomerAccount", "BindGridView", Data.pagecount, Data.Fromdate, Data.CustomerAccountno));
+                //var results = Common.Getdata(context.MultipleResults("[dbo].[SP_PortfolioAppraisal]").With<gridview>().Execute("@QueryType", "@SeqNo", "@Fromdate", "@CustomerAccount", "@ReportType", "BindGridView", Data.pagecount, Data.Fromdate, Data.CustomerAccountno,Data.ReportType));
 
+
+                var results = Common.Getdata(context.MultipleResults("[dbo].[SP_PortfolioAppraisal]").With<gridview>().Execute("@QueryType", "@SeqNo", "@Fromdate", "@CustomerAccount", "@ReportType", "@GUserId", "BindGridView", Data.pagecount, Data.Fromdate, Data.CustomerAccountno, Data.ReportType,Data.UserID));
 
                 return results;  //
             }
