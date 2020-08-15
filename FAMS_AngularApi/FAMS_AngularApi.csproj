@@ -347,6 +347,8 @@
     <Compile Include="Models\Security\SecurityCodeDetails.cs" />
     <Compile Include="Models\StatementDivident\StatementDividentDAL.cs" />
     <Compile Include="Models\StatementDivident\StatementDividentModel.cs" />
+    <Compile Include="Models\StateOfExpenses\BindMainGridViewdata.cs" />
+    <Compile Include="Models\StateOfExpenses\PrimaryDetails.cs" />
     <Compile Include="Models\StateOfExpenses\StatementOfExpenses.cs" />
     <Compile Include="Models\StateOfExpenses\StateOfExpenses.cs" />
     <Compile Include="Models\State\State.cs" />
