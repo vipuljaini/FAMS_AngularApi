@@ -75,6 +75,7 @@ namespace FAMS_AngularApi.Models.PortfolioAppraisals
         public string UserID { get; set; }
         public string Fromdate { get; set; }
         public string pagecount { get; set; }
+        public string ReportType { get; set; }
 
     }
 
