@@ -76,6 +76,7 @@ namespace FAMS_AngularApi.Models.PortfolioAppraisals
         public string Fromdate { get; set; }
         public string pagecount { get; set; }
         public string ReportType { get; set; }
+        public string Scheme { get; set; }
 
     }
 
@@ -170,6 +171,8 @@ namespace FAMS_AngularApi.Models.PortfolioAppraisals
         public string CustomerAccountNo { get; set; }
         public string AsOnDate { get; set; }//AsOnDate
         public string DownloadLink { get; set; }
+        public string Scheme { get; set; }
+
 
     }
 
