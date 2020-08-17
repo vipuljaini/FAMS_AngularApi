@@ -27,6 +27,13 @@ namespace FAMS_AngularApi.Controllers
         }
 
         [HttpPost]
+        [Route("api/CurrentPortfolio/BindGridOncustomerChange")]
+        public Dictionary<string, object> BindGridOncustomerChange(JsonFields Data)
+        {
+            return ObjDAL.BindGridOncustomerChange(Data);
+        }
+
+        [HttpPost]
         [Route("api/CurrentPortfolio/BindDefaultData")]
         public Dictionary<string, object> DefaultDataApi(DefaultJson Data)
         {
