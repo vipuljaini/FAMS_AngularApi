@@ -47,7 +47,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Encryptions">
-
       <HintPath>C:\Users\dhruv\Desktop\New dll\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
@@ -55,7 +54,6 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\..\..\QuickZip(Angular)\QuickZipWebApi\LoginWebApi\bin\EntityFramework.SqlServer.dll</HintPath>
-
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -422,6 +420,15 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Customerwisedata\1\6010001\6010001_01-01-2020To30-06-2020.pdf" />
+    <Content Include="Customerwisedata\2\6010001\6010001_30-06-2020.pdf" />
+    <Content Include="Customerwisedata\3\6010001\6010001_30-06-2020.pdf" />
+    <Content Include="Customerwisedata\4\6010001\6010001_30-06-2020.pdf" />
+    <Content Include="Customerwisedata\5\6010001\6010001_30-06-2020.pdf" />
+    <Content Include="Customerwisedata\6\6010001\6010001_01-01-2020To30-06-2020.pdf" />
+    <Content Include="Customerwisedata\7\6010001\6010001_01-01-2020To30-06-2020.pdf" />
+    <Content Include="Customerwisedata\8\6010001\6010001_01-01-2020To30-06-2020.pdf" />
+    <Content Include="Customerwisedata\9\6010001\6010001_01-01-2020To30-06-2020.pdf" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />

@@ -197,5 +197,12 @@ namespace FAMS_AngularApi.Controllers
             return Obj.BindViewGrid(Data);
         }
 
+        [HttpPost]
+        [Route("api/StatementDividend/ChangeAccountFun/")]
+        public Dictionary<string, object> ChangeAccountFunApi(GridFields Data)
+        {
+            return Obj.ChangeAccountFun(Data);
+        }
+
     }
 }
