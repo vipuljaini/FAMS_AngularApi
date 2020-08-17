@@ -13,5 +13,6 @@ namespace FAMS_AngularApi.Models.CurrentPortfolio
         public string ToDate { get; set; }
         public string ReportDate { get; set; }
         public string PageCount { get; set; }
+        public string ReportType { get; set; }
     }
 }

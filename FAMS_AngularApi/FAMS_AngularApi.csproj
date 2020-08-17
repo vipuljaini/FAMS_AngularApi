@@ -47,7 +47,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Encryptions">
-
       <HintPath>C:\Users\dhruv\Desktop\New dll\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
@@ -55,7 +54,15 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\..\..\QuickZip(Angular)\QuickZipWebApi\LoginWebApi\bin\EntityFramework.SqlServer.dll</HintPath>
-
+    </Reference>
+    <Reference Include="Interop.Acrobat">
+      <HintPath>..\..\..\PDFREADERONAPI\PDFReader\PDFReader\bin\Interop.Acrobat.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.AFORMAUTLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Users\Yoeki-PC\Desktop\DLLWORK\Interop.AFORMAUTLib.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
@@ -87,6 +94,10 @@
       <HintPath>..\..\FAMS\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="PDFReader, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Yoeki-PC\Desktop\DLLWORK\PDFReader.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -381,6 +392,8 @@
     <Compile Include="Models\TransactionStatement\BindMainGrid.cs" />
     <Compile Include="Models\TransactionStatement\DataAccessLayer.cs" />
     <Compile Include="Models\TransactionStatement\JsonFields.cs" />
+    <Compile Include="Models\TransactionStatement\Responsecls.cs" />
+    <Compile Include="Models\TransactionStatement\SchemeMasterdata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report\DataSet1.Designer.cs" />
     <Compile Include="Report\StatementDividend.aspx.cs">
@@ -422,6 +435,25 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="ExportedFiles\BANK BOOK Client.csv" />
+    <Content Include="ExportedFiles\BANK BOOK Client.xls" />
+    <Content Include="ExportedFiles\BankBook %281%29.pdf" />
+    <Content Include="ExportedFiles\BankBook %2814%29.pdf" />
+    <Content Include="ExportedFiles\BankBook %2821%29.pdf" />
+    <Content Include="ExportedFiles\BankBook %283%29.pdf" />
+    <Content Include="ExportedFiles\BankBook %289%29.pdf" />
+    <Content Include="ExportedFiles\Current Portfolio Clientwise.csv" />
+    <Content Include="ExportedFiles\CurrentPortfolio %2822%29.pdf" />
+    <Content Include="ExportedFiles\Performance Appraisal Clientwise.csv" />
+    <Content Include="ExportedFiles\Portfolio Appraisal Clientwise.csv" />
+    <Content Include="ExportedFiles\Portfolio Fact Sheet.csv" />
+    <Content Include="ExportedFiles\PortfolioFact %283%29.pdf" />
+    <Content Include="ExportedFiles\Statement of Capital Gain clientwise.csv" />
+    <Content Include="ExportedFiles\Statement of Dividend Clientwise.csv" />
+    <Content Include="ExportedFiles\Statement of Expenses Clientwise.csv" />
+    <Content Include="ExportedFiles\StatementOfExpenses %284%29.pdf" />
+    <Content Include="ExportedFiles\StatementOfExpenses_Html %2812%29.pdf" />
+    <Content Include="ExportedFiles\Transaction Statement Cleintwise.csv" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
@@ -455,6 +487,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Customerwisedata\1\6010001\" />
+    <Folder Include="Customerwisedata\2\6010001\" />
+    <Folder Include="Customerwisedata\3\6010001\" />
+    <Folder Include="Customerwisedata\4\6010001\" />
+    <Folder Include="Customerwisedata\5\6010001\" />
+    <Folder Include="Customerwisedata\6\6010001\" />
+    <Folder Include="Customerwisedata\7\6010001\" />
+    <Folder Include="Customerwisedata\8\6010001\" />
+    <Folder Include="Customerwisedata\9\6010001\" />
+    <Folder Include="FAMSIN\" />
+    <Folder Include="FAMSOUT\2020-08-11\" />
     <Folder Include="Notificationattachments\" />
     <Folder Include="Views\City\" />
     <Folder Include="Views\Country\" />

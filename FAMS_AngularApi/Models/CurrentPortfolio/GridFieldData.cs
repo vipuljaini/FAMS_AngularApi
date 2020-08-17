@@ -30,6 +30,7 @@ namespace FAMS_AngularApi.Models.CurrentPortfolio
 
         public string DownloadLink { get; set; }
 
+        public string Scheme { get; set; }
         //public string Price { get; set; }
         //public string Price { get; set; }
     }
