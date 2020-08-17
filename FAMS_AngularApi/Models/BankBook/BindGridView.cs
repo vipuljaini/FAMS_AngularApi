@@ -15,5 +15,7 @@ namespace FAMS_AngularApi.Models.BankBook
         public string Scheme { get; set; }
 
 
+
+
     }
 }
