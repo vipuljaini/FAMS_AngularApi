@@ -47,7 +47,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Encryptions">
-
       <HintPath>C:\Users\dhruv\Desktop\New dll\Encryptions.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
@@ -55,7 +54,6 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\..\..\QuickZip(Angular)\QuickZipWebApi\LoginWebApi\bin\EntityFramework.SqlServer.dll</HintPath>
-
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">

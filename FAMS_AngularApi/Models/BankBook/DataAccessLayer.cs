@@ -91,7 +91,7 @@ namespace FAMS_AngularApi.Models.BankBook
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_BankBook]").With<BindGridView>()
+                      var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_BankBook]").With<BindGridView>()
                            .Execute("@Querytype", "@FromDate", "@ToDate", "@CustomerAccount", "@ReportType", "BindGridView", Data.FromDate, Data.ToDate,Data.CustomerAccount,Data.ReportType));
                 return results;
 
@@ -102,5 +102,20 @@ namespace FAMS_AngularApi.Models.BankBook
             }
         }
 
+        public Dictionary<string, object> BindGridOncustomerchange(JsonData Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_BankBook]").With<BindGridView>()
+                     .Execute("@Querytype",  "@CustomerAccount", "@ReportType", "BindGridOncustomerchange", Data.CustomerAccount, Data.ReportType));
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
