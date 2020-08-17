@@ -108,5 +108,57 @@ namespace FAMS_AngularApi.Controllers
             catch (Exception ex) { throw ex; }
         }
 
+        [HttpPost]
+        [Route("api/FileUpload/ReadPDF")]
+        public Dictionary<string, object> ReadPDF()
+        {
+
+            FAMSEntities context = new FAMSEntities();
+            System.Data.DataTable dt1 = new System.Data.DataTable();
+            dt1.Columns.Add("Result", typeof(int));
+            var y = 0;
+            try
+            {             
+                HttpResponseMessage result = null;
+                var httpRequest = HttpContext.Current.Request;
+                            
+
+                if (httpRequest.Files.Count > 0)
+                {
+                    HttpPostedFile file = httpRequest.Files[0];
+                    Stream stream = file.InputStream;
+
+
+                    string FileName = Path.GetFileName(file.FileName);
+                    string Extension = Path.GetExtension(file.FileName);
+
+
+                    string FolderPath = HttpContext.Current.Server.MapPath("/FAMSIN");
+                    string FilePath = FolderPath + '/' + FileName;
+                    if (!Directory.Exists(FolderPath))   // CHECK IF THE FOLDER EXISTS. IF NOT, CREATE A NEW FOLDER.
+                    {
+                        Directory.CreateDirectory(FolderPath);
+                    }
+
+                    if (File.Exists(FilePath))
+                    {
+                        File.Delete(FilePath);
+                    }
+                    file.SaveAs(FilePath);
+
+                   
+                }               
+            }
+            catch (Exception ex) {
+                //throw ex;
+                dt1.Rows.Add();
+                dt1.Rows[y]["Result"] = -1;
+                return ClsJson.JsonMethods.ToJson(dt1);
+            }
+            dt1.Rows.Add();
+            dt1.Rows[y]["Result"] = 1;
+            return ClsJson.JsonMethods.ToJson(dt1);
         }
+
+    }
     }

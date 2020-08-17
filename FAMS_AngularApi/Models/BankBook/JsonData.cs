@@ -12,5 +12,7 @@ namespace FAMS_AngularApi.Models.BankBook
         public string ToDate { get; set; }
         public string CustomerAccount { get; set; }
         public string PageCount { get; set; }
+        public string  ReportType { get; set; }
+
     }
 }

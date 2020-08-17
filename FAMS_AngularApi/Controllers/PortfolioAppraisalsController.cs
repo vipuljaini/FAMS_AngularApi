@@ -55,6 +55,14 @@ namespace FAMS_AngularApi.Controllers
         {
             return ObjDAL.BindGridView(Data);
         }
+        
+
+               [HttpPost]
+        [Route("api/PortfolioAppraisals/BindGridOncustomerChange/")]
+        public Dictionary<string, object> BindGridOncustomerChange(GridFields Data)
+        {
+            return ObjDAL.BindGridOncustomerChange(Data);
+        }
 
         [HttpPost]
         [Route("api/PortfolioAppraisals/BindDefaultData/")]

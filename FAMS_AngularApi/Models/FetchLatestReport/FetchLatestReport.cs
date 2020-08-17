@@ -8,6 +8,6 @@ namespace FAMS_AngularApi.Models.FetchLatestReport
     public class FetchLatestReport
     {
         public string CustomerAccount { get; set; }
-        public string ReportName { get; set; }
+        public int ReportName { get; set; }
     }
 }

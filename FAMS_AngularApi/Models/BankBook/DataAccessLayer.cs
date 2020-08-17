@@ -85,5 +85,37 @@ namespace FAMS_AngularApi.Models.BankBook
                 throw ex;
             }
         }
+
+        public Dictionary<string, object> BindGridView(JsonData Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                      var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_BankBook]").With<BindGridView>()
+                           .Execute("@Querytype", "@FromDate", "@ToDate", "@CustomerAccount", "@ReportType", "BindGridView", Data.FromDate, Data.ToDate,Data.CustomerAccount,Data.ReportType));
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Dictionary<string, object> BindGridOncustomerchange(JsonData Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_BankBook]").With<BindGridView>()
+                     .Execute("@Querytype",  "@CustomerAccount", "@ReportType", "BindGridOncustomerchange", Data.CustomerAccount, Data.ReportType));
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -40,11 +40,18 @@ namespace FAMS_AngularApi.Controllers
             return ObjDAL.NextRecordBind(CustomerAccount, FromDate, ToDate, SeqNo);
         }
 
-        [HttpGet]
-        [Route("api/StatementOfExpenses/BindGridAllFields/{CustomerAccount}/{FromDate}/{ToDate}/{SeqNo}")]
-        public Dictionary<string, object> BindGridApi(string CustomerAccount, string FromDate, string ToDate, string SeqNo)
+        //[HttpGet]
+        //[Route("api/StatementOfExpenses/BindGridAllFields/{CustomerAccount}/{FromDate}/{ToDate}/{SeqNo}")]
+        //public Dictionary<string, object> BindGridApi(string CustomerAccount, string FromDate, string ToDate, string SeqNo)
+        //{
+        //    return ObjDAL.BindGrid(CustomerAccount,FromDate, ToDate, SeqNo);
+        //} //Commented by bibhu on 15Aug2020
+
+        [HttpPost]
+        [Route("api/StatementOfExpenses/BindGridAllFields/")]
+        public Dictionary<string, object> BindGridApi(JsonFields Data)
         {
-            return ObjDAL.BindGrid(CustomerAccount,FromDate, ToDate, SeqNo);
+            return ObjDAL.BindGrid(Data);
         }
 
         [HttpGet]

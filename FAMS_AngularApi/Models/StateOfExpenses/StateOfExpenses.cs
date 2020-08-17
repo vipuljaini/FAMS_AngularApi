@@ -85,7 +85,7 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
                 throw ex;
             }
         }
-        public Dictionary<string, object> BindGrid(string CustomerAccount,string FromDate, string ToDate, string SeqNo)
+        public Dictionary<string, object> BindGrid(JsonFields Data)
         {
             FAMSEntities context = new FAMSEntities();
             try
@@ -95,7 +95,7 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
 
 
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_DemoReport]").With<StatementOfExpenses3>().With<StatementOfExpenses4>().With<StatementOfExpenses5>()
-                        .Execute("@Querytype", "@CustomerAccount", "@FromDate", "@ToDate", "@SeqNo", "GetStatementOfExpenses", CustomerAccount, FromDate, ToDate,SeqNo));
+                        .Execute("@Querytype", "@CustomerAccount", "@FromDate", "@ToDate", "@SeqNo", "GetStatementOfExpenses", Data.CustomerAccount, Data.FromDate, Data.ToDate,Data.SeqNo));
                 return results;
             }
             catch (Exception ex)
@@ -112,7 +112,7 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_TransactionStatement]").With<BindMainGridViewdata>()
-                           .Execute("@Querytype", "@CustomerAccount",  "@ReportType", "@Fromdate", "@Todate", "GetTransactionStatement_View", data.accountNumber.Trim(),data.ReportName,data.Fromdate,data.Todate));
+                           .Execute("@Querytype", "@CustomerAccount", "@ReportType", "@Fromdate", "@Todate", "GetTransactionStatement_View", data.accountNumber.Trim(), data.ReportName, data.Fromdate, data.Todate));
                 return results;
 
             }

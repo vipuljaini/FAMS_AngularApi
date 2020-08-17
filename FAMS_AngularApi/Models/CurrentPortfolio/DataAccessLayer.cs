@@ -45,7 +45,30 @@ namespace FAMS_AngularApi.Models.CurrentPortfolio
                 //var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldData>().With<Header>().With<GridTotalFieldData>().With<NextGrid>()
                 //          .Execute("@Querytype", "@ReportDate", "@CustomerAccount", "@PageCount", "BindGrid", Data.ReportDate, Data.CustomerAccountNo, Data.PageCount));
 
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldDataView>().Execute("@Querytype", "@ReportDate", "@CustomerAccount", "@PageCount", "BindGridView", Data.ReportDate, Data.CustomerAccountNo, Data.PageCount));
+                //var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldDataView>().Execute("@Querytype", "@ReportDate", "@CustomerAccount", "@PageCount", "@ReportType", "BindGridView", Data.ReportDate, Data.CustomerAccountNo, Data.PageCount,Data.ReportType));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldDataView>().Execute("@Querytype", "@ReportDate", "@CustomerAccount", "@PageCount", "@ReportType", "BindGridView", Data.ReportDate, Data.CustomerAccountNo, Data.PageCount, Data.ReportType));
+                return results;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //BindGridOncustomerChange
+
+        public Dictionary<string, object> BindGridOncustomerChange(JsonFields Data)
+        {
+            FAMSEntities context = new FAMSEntities();
+            try
+            {
+
+                //var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldData>().With<Header>().With<GridTotalFieldData>().With<NextGrid>()
+                //          .Execute("@Querytype", "@ReportDate", "@CustomerAccount", "@PageCount", "BindGrid", Data.ReportDate, Data.CustomerAccountNo, Data.PageCount));
+
+                //var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldDataView>().Execute("@Querytype", "@ReportDate", "@CustomerAccount", "@PageCount", "@ReportType", "BindGridView", Data.ReportDate, Data.CustomerAccountNo, Data.PageCount,Data.ReportType));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_CurrentPortfolio]").With<GridFieldDataView>().Execute("@Querytype", "@ReportDate", "@CustomerAccount", "@PageCount", "@ReportType", "BindChangeCustomerAccount", Data.ReportDate, Data.CustomerAccountNo, Data.PageCount, Data.ReportType));
                 return results;
 
             }

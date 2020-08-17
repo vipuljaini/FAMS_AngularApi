@@ -19,7 +19,7 @@ namespace FAMS_AngularApi.Controllers
         FetchLatestDataAccessLayer ObjDAL = new FetchLatestDataAccessLayer();
         [HttpPost]
         [Route("api/FetchLatestReport/GetFetchLatestReport")]
-        public Dictionary<string, object> GetFetchLatestReport(FetchLatestReport Data)
+        public string GetFetchLatestReport(FetchLatestReport Data)
         {
             return ObjDAL.GetFetchLatestReport(Data);
         }
