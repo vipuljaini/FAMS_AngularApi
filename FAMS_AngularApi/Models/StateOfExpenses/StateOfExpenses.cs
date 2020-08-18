@@ -112,7 +112,7 @@ namespace FAMS_AngularApi.Models.StateOfExpenses
             try
             {
                 var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_TransactionStatement]").With<BindMainGridViewdata>()
-                           .Execute("@Querytype", "@CustomerAccount", "@ReportType", "@Fromdate", "@Todate", "GetTransactionStatement_View", data.accountNumber.Trim(), data.ReportName, data.Fromdate, data.Todate));
+                           .Execute("@Querytype", "@CustomerAccount", "@ReportType", "@Fromdate", "@Todate", "BindGridView_Common", data.accountNumber.Trim(), data.ReportName, data.Fromdate, data.Todate));
                 return results;
 
             }
