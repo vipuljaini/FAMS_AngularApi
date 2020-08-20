@@ -12,6 +12,10 @@ namespace FAMS_AngularApi.Controllers
     {
         DataAccessLayer ObjDAL = new DataAccessLayer();
 
+
+        
+
+
         [HttpPost]
         [Route("api/StatementOfExpenses/BindStatementExpView")]
         public Dictionary<string, object> BindStatementExpView(JsonFields Data)

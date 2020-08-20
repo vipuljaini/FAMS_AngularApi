@@ -219,6 +219,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AllCustomerController.cs" />
+    <Compile Include="Controllers\AutoReportRequestController.cs" />
     <Compile Include="Controllers\BankBookController.cs" />
     <Compile Include="Controllers\BrokerMasterController.cs" />
     <Compile Include="Controllers\DataAnalysisController.cs" />
@@ -267,6 +268,8 @@
     <Compile Include="Models\AllCustomer\GraphBind.cs" />
     <Compile Include="Models\AllCustomer\JsonCustomerDetails.cs" />
     <Compile Include="Models\AllCustomer\JsonUserDetails.cs" />
+    <Compile Include="Models\AutoReportRequest\AutoReportRequest.cs" />
+    <Compile Include="Models\AutoReportRequest\Result.cs" />
     <Compile Include="Models\BankBook\BindCustomers.cs" />
     <Compile Include="Models\BankBook\BindEmployees.cs" />
     <Compile Include="Models\BankBook\BindGrid.cs" />
@@ -499,6 +502,7 @@
     <Folder Include="FAMSIN\" />
     <Folder Include="FAMSOUT\2020-08-11\" />
     <Folder Include="Notificationattachments\" />
+    <Folder Include="Views\AutoReportRequest\" />
     <Folder Include="Views\City\" />
     <Folder Include="Views\Country\" />
     <Folder Include="Views\DataAnalysis\" />
