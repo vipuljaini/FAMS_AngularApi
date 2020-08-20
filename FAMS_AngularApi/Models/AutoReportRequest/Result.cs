@@ -38,4 +38,19 @@ namespace FAMS_AngularApi.Models.AutoReportRequest
     {
         public string ResultSaveUpdate { get; set; }
     }
+    public class ViewAllAutoReportRequest
+    {
+        public string ReportName { get; set; }
+        public string FrequencyType { get; set; }
+    }
+
+    public class SendMailAllAutoReportRequest
+    {
+        public string EmailId { get; set; }
+        public string UserName { get; set; }
+        public string AccountNo { get; set; }
+        public string DownloadLink { get; set; }
+    }
+
+
 }
