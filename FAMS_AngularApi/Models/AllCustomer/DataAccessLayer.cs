@@ -36,7 +36,7 @@ namespace FAMS_AngularApi.Models.AllCustomer
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<Customer>().Execute("@QueryType", "@UserId", "BindGraphEUser", Dbsecurity.Decrypt(Data.UserId).ToString()));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<Customer>().Execute("@QueryType", "@UserId", "BindGraphEUser", Data.UserId.ToString()));
                 return results;
             }
             catch (Exception ex)
@@ -49,7 +49,7 @@ namespace FAMS_AngularApi.Models.AllCustomer
             FAMSEntities context = new FAMSEntities();
             try
             {
-                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<Customer>().Execute("@QueryType", "@UserId", "BindGraphCUser", Dbsecurity.Decrypt(Data.UserId).ToString()));
+                var results = Common.Getdata(context.MultipleResults("[dbo].[Sp_user]").With<Customer>().Execute("@QueryType", "@UserId", "BindGraphCUser", Data.UserId.ToString()));
                 return results;
             }
             catch (Exception ex)
