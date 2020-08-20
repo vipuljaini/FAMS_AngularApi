@@ -39,5 +39,20 @@ namespace FAMS_AngularApi.Controllers
         {
             return objmandate.BindAllAutoReportRequest();
         }
+
+        [HttpPost]
+        [Route("api/AutoReportRequest/ViewAllAutoReportRequest")]
+        public Dictionary<string, object> ViewAllAutoReportRequest(JsonFields Data)
+        {
+            return objmandate.ViewAllAutoReportRequest(Data);
+        }
+
+        [HttpPost]
+        [Route("api/AutoReportRequest/SendMailAllAutoReportRequest")]
+        public Dictionary<string, object> SendMailAllAutoReportRequest(JsonFields Data)
+        {
+            return objmandate.SendMailAllAutoReportRequest(Data);
+        }
+
     }
 }

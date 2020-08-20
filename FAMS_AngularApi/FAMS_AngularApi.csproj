@@ -490,15 +490,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Customerwisedata\1\6010001\" />
-    <Folder Include="Customerwisedata\2\6010001\" />
-    <Folder Include="Customerwisedata\3\6010001\" />
-    <Folder Include="Customerwisedata\4\6010001\" />
-    <Folder Include="Customerwisedata\5\6010001\" />
-    <Folder Include="Customerwisedata\6\6010001\" />
-    <Folder Include="Customerwisedata\7\6010001\" />
-    <Folder Include="Customerwisedata\8\6010001\" />
-    <Folder Include="Customerwisedata\9\6010001\" />
     <Folder Include="FAMSIN\" />
     <Folder Include="FAMSOUT\2020-08-11\" />
     <Folder Include="Notificationattachments\" />
